@@ -1,7 +1,8 @@
 <video id="video" class="play video-js vjs-big-play-centered" controls
        controlsList="nodownload" preload="preload" data-setup='{}' language="zh-CN" poster="{{ video.cover }}">
     {% if video.m3u8 %}
-        <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>
+{#        <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>#}
+        <source src="{{ video.m3u8 }}" type="application/vnd.apple.mpegurl"/>
 {#        <source src="https://haokan.pw/m3u8/ddrk/SybjK/OzaG69dE.m3u8" type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
