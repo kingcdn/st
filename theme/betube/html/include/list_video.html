@@ -1,0 +1,33 @@
+<div class="item large-3 medium-6 columns group-item-grid-default">
+    <div class="post thumb-border">
+        <div class="post-thumb"  style="background-image: url('{{ video.cover }}');">
+            <img src="{{ video.cover_thum }}" alt="new video">
+            <a href="/v/{{ video.id }}.html" class="hover-posts">
+                <span><i class="fa fa-play"></i>立即播放</span>
+            </a>
+            <div class="video-stats clearfix">
+{#                <div class="thumb-stats pull-left">#}
+{#                    <span>{{ video.rate }}分</span>#}
+{#                </div>#}
+{##}
+{#                <div class="thumb-stats pull-right">#}
+{#                    <span>{{ video.time_format }}</span>#}
+{#                </div>#}
+            </div>
+        </div>
+        <div class="post-des">
+            <h6><a href="/v/{{ video.id }}.html">{{ video.name }}</a></h6>
+            <div class="post-stats clearfix">
+                <p class="pull-left">
+                    <i class="fa fa-clock-o"></i>
+                    <span>{{ video.time_format }}</span>
+                </p>
+                <p class="pull-left">
+                    <i class="fa fa-thumbs-o-up"></i>
+                    <span>{{ video.rate }}分</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<video id="video" class="play video-js vjs-big-play-centered" controls
+       controlsList="nodownload" preload="preload" data-setup='{}'>
+    <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>
+</video>
+{% if site.preview %}
+    <div class="preview_box hide" style="position: absolute;top: 10px;left: 10px;">
+        <a class="bofang-btn" href="/user.html">预览结束，升级VIP无限制播放</a>
+    </div>
+{% endif %}
+<div class="advertisement hide">
+    <a href="{{ video_ad.link.url }}" target="_blank">
+        <img src="{{ video_ad.link.img.icon }}"/>
+        <div>
+            <span>前往</span>「 {{ video_ad.link.name }} 」<span>app</span><br/>
+            {% if video_ad.match_keyword %}
+                <span>欣赏更多“{{ video_ad.match_keyword }}”高清原片</span>
+            {% else %}
+                <span>欣赏高清原片</span>
+            {% endif %}
+        </div>
+    </a>
+</div>
+<link rel="stylesheet" type="text/css" href="{{ static_common('css/ads_small.css') }}"/>
+<script src="https://cdn.bootcss.com/video.js/7.7.5/video.min.js"></script>
+<script src="https://cdn.bootcss.com/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.7.0/videojs.ads.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var myPlayer = videojs('video');
+        myPlayer.on('play', function () {
+            $('.advertisement').removeClass('hide');
+        });
+        myPlayer.on('play', function () {
+            {% if preview %}
+                var elePreview = $('.preview_box');
+                if (!elePreview.hasClass("finished")) {
+                    elePreview.removeClass("hide");
+                } else {
+                    if (myPlayer.currentTime() >= 300) {
+                        myPlayer.pause();
+                    } else {
+                        elePreview.removeClass("finished");
+                    }
+                }
+            {% endif %}
+        });
+        {% if site.preview %}
+            var elePreview = $('.preview_box');
+            elePreview.find("a").text("预览中");
+
+            myPlayer.on("timeupdate", function (e) {
+                var seconds = 300 - Math.ceil(myPlayer.currentTime());
+                var mins = Math.floor(seconds / 60)
+                seconds = seconds - mins * 60
+                elePreview.find("a").text("" + mins + "分" + seconds + "秒后结束预览");
+                if (myPlayer.currentTime() >= 300 - 1 || elePreview.hasClass("finished")) {
+                    myPlayer.pause();
+                    elePreview.find("a").text("预览结束，升级VIP无限制播放");
+                    elePreview.addClass("finished")
+                }
+            });
+        {% endif %}
+    });
+</script>

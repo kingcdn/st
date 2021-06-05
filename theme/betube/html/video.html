@@ -1,0 +1,165 @@
+{% extends site.theme|layout %}
+{% block head %}
+    {% include("html/no-referer"|common) %}
+{% endblock %}
+
+{% block content %}
+    <section id="breadcrumb" class="breadcrumb-video-2">
+        <div class="row">
+            <div class="large-12 columns">
+                <nav aria-label="You are here:" role="navigation">
+                    <ul class="breadcrumbs">
+                        <li><i class="fa fa-home"></i><a href="/">首页</a></li>
+                        <li>
+                            <span class="show-for-sr">Current: </span> {{ video.name }}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <div class="row">
+        <!-- left side content area -->
+        <div class="large-8 columns">
+            <!--single inner video-->
+            <section class="inner-video">
+                <div class="row secBg">
+                    <div class="large-12 columns inner-flex-video" style="padding: 14px">
+                        {% include("html/video_player"|common) %}
+                    </div>
+                </div>
+            </section>
+            <!-- single post stats -->
+            <section class="SinglePostStats">
+                <!-- newest video -->
+                <div class="row secBg">
+                    <div class="large-12 columns">
+                        <div class="media-object stack-for-small">
+                            <div class="media-object-section object-second">
+                                <div class="author-des clearfix">
+                                    <div class="post-title">
+                                        <h4>《{{ video.name }}》</h4>
+                                        <p>
+                                            <span><i class="fa fa-clock-o"></i>{{ video.time_format }}</span>
+                                            <span><i class="fa fa-thumbs-o-up"></i>{{ video.rate }}</span>
+                                            <span><i class="fa fa-commenting"></i>{{ video.comments|length }}</span>
+                                        </p>
+                                        <p>
+                                            类型：{{ search_links(video.type_name)|safe }}
+                                        </p>
+                                        <p>
+                                            导演：{{ search_links(video.directors)|safe }}
+                                        </p>
+                                        <p>
+                                            演员：{{ search_links(video.actors)|safe }}
+                                        </p>
+                                        <p>
+                                            国家/地区：{{ search_links(video.area)|safe }}
+                                        </p>
+
+                                        <p>
+                                            简介：{{ video.desc }}
+                                        </p>
+                                    </div>
+                                    {#                                            <div class="subscribe">#}
+                                    {#                                                <form method="post">#}
+                                    {#                                                    <button type="submit" name="subscribe">Subscribe</button>#}
+                                    {#                                                </form>#}
+                                    {#                                            </div>#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- related Posts -->
+            <section class="content content-with-sidebar related">
+                <div class="row secBg">
+                    <div class="large-12 columns">
+                        <div class="main-heading borderBottom">
+                            <div class="row padding-14">
+                                <div class="medium-12 small-12 columns">
+                                    <div class="head-title">
+                                        <i class="fa fa-film"></i>
+                                        <h4>相关视频</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row list-group">
+                            {% include("html/videos_related"|common) %}
+                        </div>
+                    </div>
+                </div>
+            </section><!--end related posts-->
+
+            <!-- single post description -->
+            <section class="singlePostDescription">
+
+                <div class="row secBg">
+                    <div class="large-12 columns" style="padding-top: 10px">
+                        {% include("html/comments"|common) %}
+                    </div>
+                </div>
+            </section><!-- End single post description -->
+
+        </div><!-- end left side content area -->
+        <!-- sidebar -->
+        <div class="large-4 columns">
+            <aside class="secBg sidebar">
+                <div class="row">
+                    <!-- search Widget -->
+                    <div class="large-12 medium-7 medium-centered columns">
+                        <div class="widgetBox">
+                            <form id="searchform" method="get" role="search" action="/search">
+                                <div class="input-group">
+                                    <input class="input-group-field" type="text" name="keyword"
+                                           placeholder="输入 “关键词” 搜索">
+                                    <div class="input-group-button">
+{#                                        <input type="submit" class="button" value="Tìm kiếm">#}
+                                        <input class="button" name="search" type="submit" value="搜索"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- End search Widget -->
+
+                    <!-- most view Widget -->
+                    <div class="large-12 medium-7 medium-centered columns">
+                        <div class="widgetBox">
+                            <div class="widgetTitle">
+                                <h5>热门视频</h5>
+                            </div>
+                            <div class="widgetContent">
+                                {% for video in videos_hot %}
+                                <div class="video-box thumb-border">
+                                    <div class="video-img-thumb">
+                                        <img src="{{ video.cover }}" alt="{{ video.name }}">
+                                        <a href="/v/{{ video.id }}.html" class="hover-posts">
+                                            <span><i class="fa fa-play"></i>立即播放</span>
+                                        </a>
+                                    </div>
+                                    <div class="video-box-content">
+                                        <h6><a href="#">{{ video.name }}</a></h6>
+                                        <p>
+                                            <span><i class="fa fa-clock-o"></i>{{ video.time_format }}</span>
+                                            <span><i class="fa fa-thumbs-o-up"></i>{{ video.rate }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div><!-- end most view Widget -->
+                </div>
+            </aside>
+        </div><!-- end sidebar -->
+    </div>
+
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}

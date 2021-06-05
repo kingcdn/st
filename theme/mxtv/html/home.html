@@ -1,0 +1,103 @@
+{% extends site.theme|layout %}
+
+{% block content %}
+    <div style="padding: 0px 0px">
+        {% include("html/top_ads"|common) %}
+    </div>
+
+    {% if site.multi_sources %}
+        <div class="nav_type">
+            <div class="listdx">
+                {% for source in site.multi_sources %}
+                    <div class="item-box ">
+                        <a href="{{ link(site,source.key_display,tag_now,order_now) }}">
+                            <div class="item {% if(source.key_display==source_now) %}active{% endif %}">{{ source.name }}</div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="">
+        <form action="/search">
+            <div class="search">
+                <input id="search" type="text" placeholder="输入 “关键词” 搜索" name="keyword">
+                <input type="submit" value="搜索"/>
+                {#                <div onclick="search()">搜索</div>#}
+            </div>
+        </form>
+    </div>
+    {% for tag_group in tags %}
+        <div class="nav_type">
+            <div class="listdx">
+                {% for tag in tag_group %}
+                    <div class="item-box ">
+                        <a href="{{ link(site,source_now,tag,order_now) }}">
+                            <div class="item {% if(tag_now==tag) %}active{% endif %}">{{ tag }}</div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+
+    <div class="nav_type">
+        <div class="listdx">
+            {% for order in orders %}
+                <div class="item-box ">
+                    <a href="{{ link(site,source_now,tag_now,order) }}">
+                        <div class="item {% if(order==order_now) %}active{% endif %}">{{ order }}</div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="videos">
+
+        <div class="listdx">
+            <div class="rowdx">
+                {% include("html/ads/timeline_begin_keywords"|common) %}
+                {% include("html/list_videos"|common) %}
+                {% include("html/ads/timeline_end"|common) %}
+            </div>
+        </div>
+        <div class="page">
+            <div class="rowdx">
+                <div>
+                    <a href="{{ link(site,source_now,tag_now,order_now,1) }}">
+                        <div class="item">首页</div>
+                    </a>
+                </div>
+                {% if(page>1) %}
+                    <div>
+                        <a href="{{ link(site,source_now,tag_now,order_now,page-1) }}">
+                            <div class="item">上一页</div>
+                        </a>
+                    </div>
+                {% endif %}
+                <div>
+                    <div class="item selection">第{{ page }}页</div>
+                </div>
+
+
+                <div>
+                    <a href="{{ link(site,source_now,tag_now,order_now,page + 1) }}">
+                        <div class="item">下一页</div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ static('js/ximg.js?v=3',site.theme) }}"></script>
+    <script>
+        replaceImages('.ximg');
+    </script>
+{% endblock %}
+
+{#{% include("data"|common) %}#}

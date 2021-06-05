@@ -1,0 +1,23 @@
+<form method="post" action="/register.html" class="reg-form">
+    <p class="title">
+        用户注册
+    </p>
+    <div class="error">
+        {% if error %}
+            {{ error }}
+        {% endif %}
+    </div>
+    <div>
+        {% if redirect_vid %}
+            <input type="hidden" value="{{ redirect_vid }}" name="_r"/>
+        {% endif %}
+        <input type="text" placeholder="手机号" value="{{ mobile }}" name="mobile"/>
+    </div>
+    <div>
+        <input type="text" placeholder="密码" value="{{ password }}" name="password"/>
+    </div>
+    <div><input type="submit" placeholder="密码" value="立即注册{% if site.nianka_100 %}，领最高200元优惠券{% endif %}"/></div>
+    <div style="margin-top: 10px;"><a class="pay-btn" href="/login.html{% if redirect_vid %}?_r={{ redirect_vid }}{% endif %}">已有账号，立即登录</a></div>
+
+</form>
+<link rel="stylesheet" type="text/css" href="{{ static_common('css/reg_login.css') }}"/>

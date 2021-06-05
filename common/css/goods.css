@@ -1,0 +1,41 @@
+.goods {
+    text-align: center;
+}
+
+.good {
+    box-shadow: 0 10px 40px -10px rgb(0 64 128 / 60%);
+    transition: box-shadow .3s;
+    margin: 8px;
+    border-radius: 6px;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+    animation-name: item;
+    animation-duration: .4s;
+    display: inline-block;
+    animation-fill-mode: backwards;
+    text-align: center;
+    background-color: #ffe2ed;
+    animation-delay: 0ms;
+}
+
+.good .top {
+    color: #e6427a;
+    font-size: 24px;
+}
+
+.good .top > span {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.good .infoOne {
+    color: #646464;
+    font-size: 14px;
+}
+
+.good .infoTwo {
+    color: #e6427a;
+    font-size: 14px;
+    margin-top: 10px;
+}

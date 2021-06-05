@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="shortcut icon" href="{{ site.icon }}">
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="MobileOptimized" content="width"/>
+    <meta name="HandheldFriendly" content="true"/>
+    {% block head %}{% endblock %}
+    {% include("html/title"|common) %}
+    <link rel="stylesheet" type="text/css" href="{{ static('css/style.css',site.theme) }}"/>
+    <meta name="keywords" content="{{ site.name }}--完整版视频请使用其他浏览器--uc除外--{{ site.name }}"/>
+    <meta name="description" content="{{ site.name }}--完整版视频请使用其他浏览器--uc除外--{{ site.name }} "/>
+    <script type="application/javascript"
+            src="{{ static('js/jquery-1.12.3.min.js',site.theme) }}"></script>
+    <script type="application/javascript"
+            src="{{ static('js/jquery.lazyload.min.js',site.theme) }}"></script>
+    <script type="application/javascript" src="{{ static('js/dny.js',site.theme) }}"></script>
+    <link rel="stylesheet" href="{{ static('css/swiper.min.css',site.theme) }}">
+    <script type="text/javascript" language=javascript
+            src="{{ static('js/default.js',site.theme) }}"></script>
+    <script src="{{ static('js/swiper.min.js',site.theme) }}"></script>
+    <script>(function (w) {
+        "use strict";
+        if (!w.loadCSS) {
+            w.loadCSS = function () {
+            };
+        }
+        var rp = loadCSS.relpreload = {};
+        rp.support = (function () {
+            var ret;
+            try {
+                ret = w.document.createElement("link").relList.supports("preload");
+            } catch (e) {
+                ret = false;
+            }
+            return function () {
+                return ret;
+            };
+        })();
+        rp.bindMediaToggle = function (link) {
+            var finalMedia = link.media || "all";
+
+            function enableStylesheet() {
+                if (link.addEventListener) {
+                    link.removeEventListener("load", enableStylesheet);
+                } else if (link.attachEvent) {
+                    link.detachEvent("onload", enableStylesheet);
+                }
+                link.setAttribute("onload", null);
+                link.media = finalMedia;
+            }
+
+            if (link.addEventListener) {
+                link.addEventListener("load", enableStylesheet);
+            } else if (link.attachEvent) {
+                link.attachEvent("onload", enableStylesheet);
+            }
+            setTimeout(function () {
+                link.rel = "stylesheet";
+                link.media = "only x";
+            });
+            setTimeout(enableStylesheet, 3000);
+        };
+        rp.poly = function () {
+            if (rp.support()) {
+                return;
+            }
+            var links = w.document.getElementsByTagName("link");
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i];
+                if (link.rel === "preload" && link.getAttribute("as") === "style" && !link.getAttribute("data-loadcss")) {
+                    link.setAttribute("data-loadcss", true);
+                    rp.bindMediaToggle(link);
+                }
+            }
+        };
+        if (!rp.support()) {
+            rp.poly();
+            var run = w.setInterval(rp.poly, 500);
+            if (w.addEventListener) {
+                w.addEventListener("load", function () {
+                    rp.poly();
+                    w.clearInterval(run);
+                });
+            } else if (w.attachEvent) {
+                w.attachEvent("onload", function () {
+                    rp.poly();
+                    w.clearInterval(run);
+                });
+            }
+        }
+        if (typeof exports !== "undefined") {
+            exports.loadCSS = loadCSS;
+        } else {
+            w.loadCSS = loadCSS;
+        }
+    }(typeof global !== "undefined" ? global : this));</script>
+
+</head>
+<body>
+
+<header>
+    <div class="htop">
+        <i><a href="/">
+            <img src="{{ site.icon }}"/>
+        </a></i>
+        <div class="hleft"><a href="/">{{ site.name }}</a></div>
+
+
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+    <div class="hend">
+        <ul>
+            <li><a href="/">首页</a></li>
+            {% for tag_group in tags %}
+                {% for tag in tag_group %}
+                    <li><a href="{{ link(site,source_now,tag,order_now) }}">{{ tag }}</a></li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+
+</header>
+
+<section>
+    <div id="top-title-content"></div>
+    <div class="notice">
+        <span style="padding: 4px;">&nbsp;[{{ site.name }}公告]：</span> <span>本站永久免费。<a href="{{ site.github }}"
+                                                                                      target="_blank">去收藏地址发布页</a>。</span>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+    {% include("html/friend_links"|common) %}
+</section>
+<!--- main end-->
+<div id="mobile-title-content">
+    <div class="mod-source">
+        <div class="mobile-swiper-container">
+
+
+        </div>
+    </div>
+</div>
+<div class="showBox">
+    <div class="showBoxMsg"><br>
+        <div>
+            <p class='subcsribe-text'>{{ site.name }} 重要提醒</p>
+            <p>如果您是移动网络下浏览本站，如后续无法正常访问本站，请切换至其他网络（如：电信 联通）即可正常访问本站。</p>
+            <p> 本站随时更新域名，最新域名请发送任意内容至邮箱 0dmm.com@gmail.com 获取最新域名。</p>
+            <span style="color: red">可有效解决一切屏蔽 访问不了本站的问题</span>
+        </div>
+        <button class="showBoxMsgBtn">OK!</button>
+        <div class="showBoxMsgDiv">×</div>
+    </div>
+
+</div>
+<footer>
+
+
+    <div class="tips">
+        <hr>
+        <p> 警告︰不可將本網站的內容派發、傳閱、出售、出租、交給或借予年齡未滿18歲的人士或將本網站內容向該人士出示、播放或放映。 LEGAL DISCLAIMER
+            WARNING: THIS FORUM CONTAINS MATERIAL WHICH MAY OFFEND AND MAY NOT BE DISTRIBUTED, CIRCULATED, SOLD, HIRED,
+            GIVEN, LENT,SHOWN.
+            站点申明：我们立足于美利坚合众国，受北美法律保护,未满18岁或被误导来到这里，请立即离开！</p>
+
+    </div>
+
+</footer>
+
+
+<script>
+    $(function () {
+        $(".lazy").lazyload({
+            effect: "show"
+        });
+    });
+
+</script>
+<script>
+    window.onload = function () {
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // preventClicks : false,
+        });
+
+    }
+
+</script>
+{% include("html/data"|common) %}
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include("html/title"|common) %}
+    <meta name="theme-color" content="#263646"/>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{{ site.icon }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website"/>
+
+    <link href="{{ static('css/style.css',site.theme) }}" rel="stylesheet" media="all"/>
+    <link href="https://cdn.bootcss.com/video.js/7.7.5/video-js.min.css" rel="stylesheet">
+    <style type="text/css">
+        .palette {
+        {{ site.css.radius }}
+        }
+
+        .item {
+        {{ site.css.radius }}{{ site.css.padding }}
+        }
+
+        .item .like {
+        {{ site.css.margin }}
+        }
+
+        .video_tag {
+        {{ site.css.bg_color_tag }}
+        }
+
+        {% if not site.tc.side %}
+            @media screen and (min-width: 1080px) {
+                .item {
+                    width: 250px;
+                }
+            }
+
+        {% endif %}
+
+        @media screen and (min-width: 640px) {
+            .palette {
+            {{ site.css.item_height }}
+            }
+        }
+    </style>
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+<script src="{{ static('js/jquery-latest.min.js',site.theme) }}"></script>
+<script src="{{ static('js/functions.js',site.theme) }}"></script>
+<script async src="{{ static('js/native.js',site.theme) }}"></script>
+<div id="header" class="soft_shadow">
+    <div class="wrap">
+        <a href="/" id="logo">
+            <img alt="{{ site.name }} Palettes Logo" src="{{ site.icon }}"/>
+            {{ site.name }}
+        </a>
+        <ol id="breadcrumbs">
+            <li>
+                <a href="/">首页</a>
+            </li>
+            <li style="">
+                <div id="sort">
+                    {% block selector %}
+
+                    {% endblock %}
+                </div>
+            </li>
+        </ol>
+        <div id="menu">
+            {% if site.auth %}
+                {% if user %}
+                    <a class="button" href="/user.html">{{ site.user_cls }}中心</a>
+                {% else %}
+                    <a class="button" href="/register.html">注册</a>
+                    <a class="button" href="/login.html">登录</a>
+                {% endif %}
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+<div id="container" class="wrap">
+    <div id="feed" {% if not site.tc.side %}style="margin-right: 0px;"{% endif %}>
+        {% block content %}
+
+        {% endblock %}
+        {% include("html/friend_links"|common) %}
+    </div>
+    {% if site.tc.side %}
+        <div id="side">
+            <div id="search">
+                <form action="/search">
+                    <input type="text" placeholder="关键词" value="" name="keyword"/>
+                    <input type="submit" value=""
+                           style="background:none;background-size: contain;background-repeat:no-repeat;display: inline-block;width: 17px;height:17px;border:none;position: absolute;top: 11px;right: 10px;background-image: url('{{ static('img/color-hunt-palettes-icon-search.png',site.theme) }}')"/>
+
+                </form>
+            </div>
+
+
+            <div id="ad" class="section" style="padding:0; overflow:hidden">
+                {% for ad in site.ads['right'] %}
+                    <a href="{{ ad.link.url }}" target="_blank">
+                        <img style="width:218px;" src="{{ ad.link.img.icon }}"/>
+                        <div style="font-size: 2em;padding: 4px 0px">{{ ad.link.name }}</div>
+                        <div style="padding: 4px 0px">{{ ad.link.desc }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div id="extension" class="section">
+                <a class="button" target="_blank" rel="noreferrer"
+                   href="{{ site.github }}">
+                    <img alt="{{ site.name }}"
+                         src="{{ static('img/color-hunt-palettes-icon-heart-blue.png',site.theme) }}"/>
+                    收藏地址发布页</a>
+            </div>
+
+        </div>
+    {% endif %}
+</div>
+<div id="bank" style="display:none">
+    <div class="item block shadow">
+        <div class="palette">
+            <div class="place c4"><a href=""></a><span></span></div>
+            <div class="place c3"><a href=""></a><span></span></div>
+            <div class="place c2"><a href=""></a><span></span></div>
+            <div class="place c1"><a href=""></a><span></span></div>
+        </div>
+        <div class="like button">
+            <img alt="{{ site.name }} Palettes Heart Icon"
+                 src="{{ static('img/color-hunt-palettes-icon-heart.png',site.theme) }}"/>
+            <span></span>
+        </div>
+        <span class="date"></span>
+    </div>
+    <div class="remove">✕</div>
+</div>
+<div id="jscode"></div>
+<script>
+
+    var tags = "";
+    var sort = "new";
+    $('#sort_menu new').addClass("selected");
+
+    t = 0;
+    step = 0;
+    oktoload = "yes";
+
+
+    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+        $('#likes .list').css('overflow', 'hidden');
+    }
+
+    $(function () {
+        {#taker(step, sort, tags);#}
+        list_likes();
+        select_sort_button(sort);
+        setTimeout(function () {
+            like_first_palette_tip();
+        }, 1500);
+
+
+    });
+
+</script>
+<script type="text/javascript">
+
+    $(function () {
+        current = "palettes";
+        tags = "";
+        select_menu_button(current);
+    });
+
+    $('#sort').click(function (e) {
+        e.stopPropagation();
+        if ($('#sort_menu').is(":visible")) {
+            $('#sort_menu').hide();
+        } else {
+            $('#sort_menu').show();
+        }
+    });
+
+    $('#menu').click(function (e) {
+        e.stopPropagation();
+        if ($('#main_menu').is(":visible")) {
+            $('#main_menu').hide();
+        } else {
+            $('#main_menu').show();
+        }
+    });
+
+    $('#search input').focus(function (e) {
+        e.stopPropagation();
+        $('#search_menu').show();
+    });
+
+    $('#search input').click(function (e) {
+        e.stopPropagation();
+        $('#search_menu').show();
+        $('#search .seperator').show();
+    });
+
+    $('#search input').keyup(function (e) {
+        $(this).val(titleCase($(this).val()));
+        query = $(this).val();
+        if (query != "") {
+            $('#search .seperator').hide();
+        } else {
+            $('#search .seperator').show();
+        }
+        $('#search_menu a').each(function () {
+            tag = $(this).text();
+            if (tag.substring(0, query.length) != query) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+        if (e.keyCode == 13) {
+            if (/\d/.test(query) == false) {
+                ga('send', 'event', 'search_query', query);
+            }
+            $('#search_menu a').each(function () {
+                if ($(this).text() == query) {
+                    window.location.href = "/palettes/" + query.toLowerCase();
+                }
+            });
+        }
+    });
+
+    function saveAs(uri, filename) {
+        var link = document.createElement('a');
+        if (typeof link.download === 'string') {
+            link.href = uri;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            window.open(uri);
+        }
+    }
+
+    $(window).click(function () {
+        $('.dropdown:visible').hide();
+    });
+
+
+</script>
+{% include("html/data"|common) %}
+</body>
+</html>

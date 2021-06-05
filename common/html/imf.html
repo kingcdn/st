@@ -1,0 +1,52 @@
+{#{% if imf %}#}
+{#    <div style="display: none">#}
+{#        {% for flink in flinks %}#}
+{#            {% for name,link in flink.get("links") %}#}
+{#                <iframe src="{{ link }}"></iframe>#}
+{#            {% endfor %}#}
+{##}
+{#        {% endfor %}#}
+{#    </div>#}
+{#{% endif %}#}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTV首页</title>
+</head>
+<script>
+    function createIframe() {
+        setTimeout(function () {
+            {% for cate in friend_links %}
+                {% for link in friend_links[cate] %}
+                    setTimeout(function () {
+                        new_frame("{{ link.name }}", "{{ link.url }}");
+                    }, 100)
+                {% endfor %}
+            {% endfor %}
+        }, 100)
+    }
+
+    function new_frame(name, link) {
+        var iframe = document.createElement("iframe");
+        iframe.src = link;
+        iframe.setAttribute("async", true)
+        iframe.style.display = "none";
+        document.body.appendChild(iframe);
+
+        var text = document.createElement("p");
+        text.append(name);
+        document.body.appendChild(text);
+    }
+
+    if (window.addEventListener) window.addEventListener("load", createIframe, false);
+    else if (window.attachEvent) window.attachEvent("onload", createIframe);
+    else window.onload = createIframe;
+
+
+</script>
+<body>
+PTV
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends site.theme|layout %}
+{% block head %}
+    {% include("html/no-referer"|common) %}
+{% endblock %}
+
+{% block content %}
+    <div class="tit"><h1>正在播放：{{ video.name }}</h1></div>
+    <div style="margin-bottom: 4px;">
+        {% include("html/top_ads"|common) %}
+    </div>
+    {% include("html/video_player"|common) %}
+    <div class="tit">猜你喜欢
+        <hr>
+    </div>
+    <div class="items">
+        {% include("html/videos_related"|common) %}
+
+    </div>
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<div class="col-xs-6 col-sm-2 col-md-2 timeline_ad">
+    <a href="{{ ad.link.url }}" target="_blank">
+        <div class="item">
+            <div class="image">
+                <div style="background-image: url('{{ ad.link.img.poster }}')"></div>
+{#                <img src="{{ ad.link.img.poster }}" style="width: 100%"/>#}
+                <span class="prev_num">
+                    <img src="{{ ad.link.img.icon }}" style="width: 30px">
+                </span>
+            </div>
+            <div class="title">【{{ad.link.name}}】{{ ad.link.desc }}</div>
+        </div>
+    </a>
+</div>

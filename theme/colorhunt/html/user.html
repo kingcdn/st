@@ -1,0 +1,16 @@
+{% extends site.theme|layout %}
+{% block selector %}
+    <span>{{ site.user_cls }}中心</span>
+{% endblock %}
+{% block content %}
+    <div>
+        <div class="about_container">
+            <h2>{{ site.user_cls }}信息：</h2>
+            <p>账号：{{ user.user_name }}</p>
+            <p><a href="/logout.html">退出登录</a></p>
+            <p>账号类型：{% if user.is_vip %}VIP用户（{{ user.vip_left_days }}天后到期）{% else %}免费用户{% endif %}</p>
+            {% include("html/pay/goods"|common) %}
+        </div>
+
+    </div>
+{% endblock %}

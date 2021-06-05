@@ -1,0 +1,35 @@
+
+.advertisement:hover {
+    padding: 10px 20px 10px 8px;
+    opacity: 1;
+}
+
+.advertisement {
+    position: absolute;
+
+    padding: 10px 4px;
+    text-align: center;
+    background: #ffc200;
+    bottom: 50px;
+    right: 0;
+    font-size: 14px;
+    z-index: 1 !important;
+    opacity: 0.9;
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+
+}
+
+.advertisement a {
+    color: black;
+}
+
+.advertisement span {
+    font-size: 10px;
+}
+
+.advertisement img {
+    width: 60px;
+    border-radius: 16px;
+    margin-bottom: 6px;
+}

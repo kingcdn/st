@@ -1,0 +1,13 @@
+<div class="comments-seg">
+    <h4>评论：</h4>
+    <div class="comments">
+        <ul>
+            {% for comment in video.comments %}
+                <li>
+                    <p><b>{% if comment[2]>1 %}【VIP】{% endif %}{{ comment[1] }}
+                        ：</b>{{ comment[3] }}<i>({{ comment[0]|time_format }})</i></p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

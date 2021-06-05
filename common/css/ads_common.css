@@ -1,0 +1,162 @@
+.seg-parts {
+    background-color: black;
+    color: white;
+    padding: 8px;
+    border-top: 1px solid #918d8d;
+}
+
+.seg-parts > .parts {
+    padding: 0px 38px;
+}
+
+.seg-parts > .seg {
+    font-size: 15px;
+}
+
+.seg-parts a {
+    color: #1f5f9b;
+    padding: 0px 4px;
+}
+
+.seg-parts a:hover {
+    color: white;
+}
+
+.bofang {
+    width: 100%;
+    /* min-height: 37vh; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bofang .playerbox {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 4px;
+    width: 90vw;
+    padding: 15px 10px;
+    border-radius: 10px;
+    max-width: 768px;
+}
+
+.bofang .title {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.bofang .play {
+    width: 100%;
+    /*height: 35vh;*/
+    max-height: 400px;
+}
+
+.bofang .tips {
+    padding: 10px 0 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+}
+
+.bofang .buuton-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 0 0;
+}
+
+.bofang .buuton-book {
+    padding: 5px 20px;
+    border: 2px solid #333;
+    color: #333;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.bofang .buuton-yellow {
+    padding: 5px 20px;
+    border: 2px solid #333;
+    color: #333;
+    font-weight: 700;
+    border-radius: 20px;
+    background-color: #ffc200;
+}
+
+.videoContainer {
+    /*max-width: 400px;*/
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.bofang-vip {
+    position: relative;
+    height: 440px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /*padding: 200px 0px;*/
+}
+
+
+.bofang-vip .btns {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 0px auto;
+    position: absolute;
+    top: 180px;
+}
+
+@media only screen and (max-width: 400px) {
+    .bofang-vip {
+        height: 200px;
+        /*padding: 80px 0px;*/
+    }
+
+    .bofang-vip .btns {
+        top: 65px;
+    }
+}
+
+.bofang-btn {
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 8px;
+    display: inline-block;
+    background-color: rgba(43, 51, 63, .7);
+    padding: 8px 12px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 2px;
+}
+
+.bofang-btn img {
+    max-width: 60px;
+    border-radius: 8px;
+    opacity: 0.6;
+}
+
+@media only screen and (max-width: 400px) {
+    .bofang-btn {
+        font-size: 12px;
+        padding: 2px 4px;
+        border-radius: 4px;
+    }
+
+    .bofang-btn img {
+        border-radius: 4px;
+        display: none;
+    }
+}
+
+.bofang-btn:hover {
+    background-color: rgba(91, 94, 96, 0.7);
+    color: white;
+}
+
+.ad-min {
+
+}

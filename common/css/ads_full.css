@@ -1,0 +1,135 @@
+.bofang .play {
+    width: 100%;
+    /*height: 25vh;*/
+    /*max-height: 640px;*/
+}
+
+@media screen and (max-width: 420px) {
+    .bofang .play {
+        width: 100%;
+        height: 25vh;
+        max-height: 640px;
+    }
+}
+
+.advertisement {
+    cursor: pointer;
+    position: absolute;
+    color: black;
+    text-align: center;
+    bottom: 50px;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    z-index: 1 !important;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+}
+
+.advertisement .main {
+    padding: 10px 0px;
+    position: absolute;
+    width: 100%;
+    /*height: 150px;*/
+    /*margin-top: -100px;*/
+    /*border: 1px solid #00F;*/
+    background-color: #000000b8;
+
+    cursor: pointer;
+    bottom: 0px;
+}
+
+.advertisement .content .ad_icon, .ad_desc {
+    display: inline-block;
+    text-align: left;
+    float: left;
+}
+
+.advertisement .content .ad_desc {
+    margin-left: 10px;
+}
+
+.advertisement .content {
+
+    display: inline-block;
+    float: left;
+    padding: 14px 20px;
+}
+
+.advertisement .actions {
+    display: inline-block;
+    float: right;
+    /*padding: 100px 0;*/
+}
+
+.advertisement .actions > div {
+    background-color: #3482ebb8;
+    color: white;
+    font-size: 15px;
+    border-right: none;
+    padding: 6px 12px;
+    margin: 4px 0px;
+    cursor: pointer;
+    text-align: center;
+}
+.advertisement .actions > div>*{
+}
+
+.advertisement svg {
+    fill: white;
+    width: 28px;
+    height: 28px;
+}
+
+.advertisement .name {
+    color: white;
+    font-size: 28px;
+    text-shadow: 2px 2px #3a3434;
+}
+
+.advertisement .desc {
+    color: white;
+    text-shadow: 2px 2px #3a3434;
+    font-size: 14px;
+    text-align: left;
+}
+
+
+.advertisement img {
+    height: 60px;
+    border-radius: 16px;
+    /*margin-bottom: -8px;*/
+    /*margin: 28px 0px 4px;*/
+}
+
+@media screen and (max-width: 420px) {
+    .advertisement .main {
+
+    }
+
+    .advertisement .actions > div {
+        font-size: 12px;
+        padding: 4px 6px;
+    }
+
+    .advertisement .name {
+        font-size: 16px;
+    }
+
+    .advertisement .desc {
+        font-size: 11px;
+    }
+
+    .advertisement .name, .desc {
+
+    }
+
+    .advertisement img {
+        height: 40px;
+        margin-bottom: -6px;
+    }
+}

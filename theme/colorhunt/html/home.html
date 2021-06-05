@@ -1,0 +1,36 @@
+{% extends site.theme|layout %}
+{% block selector %}
+    <span>{{ tag_now }}</span>
+    <img alt="{{ site.name }} Palettes Dropdown Icon"
+         src="{{ static('img/color-hunt-palettes-icon_dropdown.png',site.theme) }}"/>
+    <div id="sort_menu" class="shadow block dropdown">
+        {% for tag_group in tags %}
+            {% for tag in tag_group %}
+                <a href="{{ link(site,source_now,tag,order_now) }}">{{ tag }}</a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block content %}
+    <div style="padding: 0px 10px">
+        {% include("html/top_ads"|common) %}
+    </div>
+    {% include("html/ads/timeline_begin_keywords"|common) %}
+    {% include("html/list_videos"|common) %}
+    {% include("html/ads/timeline_end"|common) %}
+
+    <div style="text-align: center">
+        <div class="button light_button"><a href="{{ link(site,source_now,tag_now,order_now,1) }}">首页</a></div>
+
+        {% if(page>1) %}
+            <div class="button light_button"><a href="{{ link(site,source_now,tag_now,order_now,page-1) }}">上一页</a>
+            </div>
+        {% endif %}
+        <div class="button light_button">第{{ page }}页</div>
+
+        <div class="button light_button"><a href="{{ link(site,source_now,tag_now,order_now,page + 1) }}">下一页</a>
+        </div>
+
+
+    </div>
+{% endblock %}

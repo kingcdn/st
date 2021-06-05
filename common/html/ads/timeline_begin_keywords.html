@@ -1,0 +1,5 @@
+{% for ad in keywords_ads %}
+    {% if ad.poster %}
+        {% include theme_inclue(site.theme,"timeline_ad") %}
+    {% endif %}
+{% endfor %}

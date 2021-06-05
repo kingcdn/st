@@ -1,0 +1,9 @@
+{% for ad in keywords_ads %}
+    {% if ad.link.img.bar %}
+        <div>
+            <a href="{{ ad.link.url }}" target="_blank">
+                <img style="width:100%;" src="{{ ad.link.img.bar }}"/>
+            </a>
+        </div>
+    {% endif %}
+{% endfor %}

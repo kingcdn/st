@@ -1,0 +1,28 @@
+.reg-form {
+    margin: 0px auto;
+    text-align: center;
+}
+
+.reg-form .title {
+    font-size: 21px;
+}
+.reg-form .error{
+    color: red;
+}
+.reg-form input {
+    line-height: 36px;
+    padding: 0 12px;
+    border-radius: 4px;
+    transition: all .1s;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #e9f2f9;
+    font-size: 14px;
+    outline: none;
+    margin: 4px 20px;
+    width: 80%;
+    max-width: 400px;
+    min-width: 300px;
+    display: inline-block;
+    clear: both;
+}

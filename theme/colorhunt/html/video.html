@@ -1,0 +1,26 @@
+{% extends site.theme|layout %}
+{% block selector %}
+
+{% endblock %}
+{% block head %}
+    {% include("html/no-referer"|common) %}
+{% endblock %}
+{% block content %}
+    <div class="video_dom">
+        <div style="font-size: 22px;padding: 13px 0px 10px;">
+            {% if site.pay and video.is_vip %}
+                [VIP可看]
+            {% endif %}
+            {{ video.name }}
+        </div>
+        {% include("html/video_player"|common) %}
+    </div>
+    <div class="item_tags">
+        {% for keyword in video.keywords() %}
+            <a href="/search?keyword={{ keyword }}">#{{ keyword }}</a>
+        {% endfor %}
+    </div>
+    <div>
+        {% include("html/videos_related"|common) %}
+    </div>
+{% endblock %}

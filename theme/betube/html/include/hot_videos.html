@@ -1,0 +1,31 @@
+{% if site.hots_num>0 and videos_hot|length>0 %}
+        <section class="content">
+            <!-- newest video -->
+            <div class="main-heading" style="margin-top: 20px">
+                <div class="row secBg padding-14">
+                    <div class="medium-8 small-8 columns">
+                        <div class="head-title">
+                            <i class="fa fa-film"></i>
+                            <h4>热门推荐</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row secBg">
+                <div class="large-12 columns">
+                    <div class="row column head-text clearfix">
+                        <p class="pull-left">
+{#                            广告2#}
+                        </p>
+                    </div>
+                    <div class="tabs-content" data-tabs-content="newVideos">
+                        <div class="tabs-panel is-active" id="new-all">
+                            <div class="row list-group">
+                                {% include("html/list_hot_videos"|common) %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}

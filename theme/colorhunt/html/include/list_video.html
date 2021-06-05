@@ -1,0 +1,19 @@
+<div class="item block shadow timeline"
+     style="animation-delay: 0ms;">
+    <a href="/v/{{ video.id }}.html">
+        <div class="palette" style="background-image: url('{{ video.cover_thum }}');">
+            <div class="video_tag">
+                {% if keyword %}
+                    <a href="/search?keyword={{ keyword }}">#{{ keyword }}</a>
+                {% elif site.pay and video.is_vip%}
+                    VIP可看
+                {% else %}
+                    {{ video.time_format }}
+                {% endif %}
+            </div>
+        </div>
+    </a>
+    <div class="like">
+        <a href="/v/{{ video.id }}.html">{{ video.name }}</a>
+    </div>
+</div>

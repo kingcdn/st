@@ -1,0 +1,79 @@
+{% extends site.theme|layout %}
+
+{% block content %}
+    <!-- layerslider -->
+    {% if site.adc.sliders|length>0 %}
+    <section id="slider">
+        <div id="full-slider-wrapper">
+            <div id="layerslider" style="height:500px;width: 100%;">
+                {% for ad in site.adc.sliders %}
+                    <a href="{{ ad.url }}" target="_blank" class="ls-slide"
+                       data-ls="transition2d:1;timeshift:-1000;">
+                        <img src="{{ ad.img }}" class="ls-bg" alt="Slide background"
+                             style="-webkit-filter: brightness(50%);width: 100%;"/>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section><!--end slider-->
+    {% endif %}
+    <!-- main content -->
+    {% if tag_now=="所有" %}
+        {% include theme_inclue(site.theme,"hot_videos") %}
+    {% endif %}
+
+    <section class="content">
+        <div class="main-heading" style="margin-top: 20px;">
+            <div class="row secBg padding-14">
+                <div class="medium-8 small-8 columns">
+                    <div class="head-title">
+                        <i class="fa fa-star"></i>
+                        {% if tag_now=="所有" %}
+                            <h4>最近更新</h4>
+                        {% else %}
+                            <h4>{{ tag_now }}相关的作品</h4>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row secBg">
+            <div class="large-12 columns">
+                <div class="row column head-text clearfix">
+                    <p class="pull-left">
+{#                        广告1#}
+                    </p>
+                </div>
+                <div class="tabs-content" data-tabs-content="popularVideos">
+                    <div class="tabs-panel is-active" id="popular-all">
+                        <div class="row list-group">
+                            {% include("html/list_videos"|common) %}
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center row-btn">
+
+                    {% if(page>1) %}
+                        <a class="button radius" href="{{ link(site,source_now,tag_now,order_now,1) }}">首页</a>
+                        <a class="button radius"
+                           href="{{ link(site,source_now,tag_now,order_now,page-1) }}">上一页</a>
+                    {% endif %}
+                    <a class="button radius"
+                       href="{{ link(site,source_now,tag_now,order_now,page + 1) }}">下一页</a>
+                </div>
+            </div>
+        </div>
+    </section><!-- End main content -->
+
+    {% if tag_now!="所有" %}
+        {% include theme_inclue(site.theme,"hot_videos") %}
+    {% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
+
+{#{% include("data"|common) %}#}

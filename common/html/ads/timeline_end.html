@@ -1,0 +1,19 @@
+{% for ad in site.ads['timeline_end'] %}
+    {% if ad.link.img.poster %}
+        {% include theme_inclue(site.theme,"timeline_ad") %}
+    {% endif %}
+{% endfor %}
+
+<script>
+    var ads = $('.timeline_ad');
+    var videos = $('.timeline');
+    if (ads.length > 1 && videos.length > 0) {
+        for (var i = 0; i < ads.length; i++) {
+            var ad = ads[i];
+            var insertPos = Math.floor(Math.random() * 1000 % (videos.length - 1) / 2) + 1;
+            console.log(ad, insertPos)
+            $(ad).insertAfter($(videos[insertPos]))
+        }
+    }
+
+</script>

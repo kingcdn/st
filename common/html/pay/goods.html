@@ -1,0 +1,46 @@
+{% if site.pay %}
+    <h2 class="pay-title">{% if user.is_vip %}续费VIP{% else %}升级成为VIP会员{% endif %}：</h2>
+    <div class="goods">
+        {% for pay_type in pay_types %}
+            <div class="good" {% if site.nianka_100 and pay_type['goods_id']==6 and nianka_100_get %}style="background-color:#2d3e2e"{% endif %}>
+                <div class="info">
+                    <div class="top">￥<span>{{ pay_type['price'] }}</span>/{{ pay_type['name'] }}</div>
+
+                    <p class="infoOne"
+                       {% if site.nianka_100 and pay_type['goods_id']==6 and nianka_100_get %}style="color:red"{% endif %}>{{ pay_type['desc'] }}</p>
+                    <p class="infoTwo">随心所欲观看视频不受限制</p></div>
+                <div>
+                    {% if site.nianka_100 and pay_type['goods_id']==6 and not nianka_100_get %}
+                        <a class="pay-btn nianka-100">
+                            点击参与“夏日艳艳”抽奖活动
+                        </a>
+                    {% else %}
+                        <a class="pay-btn pay_action" data-pay-id="5"
+                           data-goods-id="{{ pay_type['goods_id'] }}">微信支付</a>
+                        <a class="pay-btn pay_action" data-pay-id="12"
+                           data-goods-id="{{ pay_type['goods_id'] }}" id="goods-{{ pay_type['goods_id'] }}-12">支付宝支付</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <link rel="stylesheet" type="text/css" href="{{ static_common('css/goods.css') }}"/>
+    {% include("html/pay/js"|common) %}
+    <script>
+        $(function () {
+            $('.nianka-100').click(function () {
+                $(this).text("努力抽奖中！")
+                $.getJSON("/nianka_100", function () {
+                    alert("太厉害了！打败了82%的用户，获得了一张价值100元的年卡抵扣券！");
+                    window.location.reload();
+                })
+            });
+            $('.nianka-100-use').click(function () {
+                $('#goods-6-12').click();
+            });
+            if (window.location.search.indexOf("nianka_100=1") !== -1) {
+                $($('.nianka-100')[0]).click();
+            }
+        })
+    </script>
+{% endif %}

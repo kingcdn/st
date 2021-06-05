@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include("html/title"|common) %}
+    <link rel="stylesheet" href="{{ static('css/app.css',site.theme) }}">
+    <link rel="stylesheet" href="{{ static('css/theme.css',site.theme) }}">
+    <link rel="stylesheet" href="{{ static('css/font-awesome.min.css',site.theme) }}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ static('layerslider/css/layerslider.css',site.theme) }}">
+    <link rel="stylesheet" href="{{ static('css/owl.carousel.min.css',site.theme) }}">
+    <link rel="stylesheet" href="{{ static('css/owl.theme.default.min.css',site.theme) }}">
+    <link rel="stylesheet" href="{{ static('css/responsive.css',site.theme) }}">
+    <link href="https://cdn.bootcss.com/video.js/7.7.5/video-js.min.css" rel="stylesheet">
+    <style type="text/css">
+        @media screen and (min-width: 640px) {
+            .content .post .post-thumb {
+            {{ site.css.item_height }}
+            }
+        }
+
+
+    </style>
+    <script src="{{ static('bower_components/jquery/dist/jquery.js',site.theme) }}"></script>
+</head>
+<body>
+<div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <!--header-->
+        <div class="off-canvas position-left light-off-menu" id="offCanvas-responsive" data-off-canvas>
+            <ul class="vertical menu off-menu" data-responsive-menu="drilldown">
+                <li class="has-submenu">
+                    <a href="#"><i class="fa fa-home"></i>首页</a>
+                </li>
+                {% for tag_group in tags %}
+                    {% for tag in tag_group %}
+                        <li>
+                            <a href="{{ link(site,source_now,tag,order_now) }}"><i class="fa"></i>{{ tag }}</a>
+                        </li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="off-canvas-content" data-off-canvas-content>
+            <header>
+                <section id="top" class="topBar">
+                    <div class="row">
+                        <div class="medium-6 columns">
+                            {#                            <div class="socialLinks">#}
+                            {#                                <a href="#"><i class="fa fa-facebook-f"></i></a>#}
+                            {#                                <a href="#"><i class="fa fa-twitter"></i></a>#}
+                            {#                                <a href="#"><i class="fa fa-google-plus"></i></a>#}
+                            {#                                <a href="#"><i class="fa fa-instagram"></i></a>#}
+                            {#                                <a href="#"><i class="fa fa-vimeo"></i></a>#}
+                            {#                                <a href="#"><i class="fa fa-youtube"></i></a>#}
+                            {#                            </div>#}
+                        </div>
+                        <div class="medium-6 columns">
+                            <div class="top-button">
+                                <ul class="menu float-right">
+                                    {% for source in site.multi_sources %}
+                                        <li>
+                                            <a class="{% if(source.key_display==source_now) %}active{% endif %}"
+                                               href="{{ link(site,source.key_display,tag_now,order_now) }}">{{ source.name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--Navber-->
+                <section id="navBar">
+                    <nav class="sticky-container" data-sticky-container>
+                        <div class="sticky topnav" data-sticky data-top-anchor="navBar"
+                             data-btm-anchor="footer-bottom:bottom" data-margin-top="0" data-margin-bottom="0"
+                             style="width: 100%; background: #fff;" data-sticky-on="large">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="title-bar" data-responsive-toggle="beNav" data-hide-for="large">
+                                        <button class="menu-icon" type="button"
+                                                data-toggle="offCanvas-responsive"></button>
+                                        <div class="title-bar-title" style="color: black"><img
+                                                src="{{ site.icon }}" alt="logo" style="height: 40px">{{ site.name }}
+                                        </div>
+                                    </div>
+
+                                    <div class="top-bar show-for-large" id="beNav" style="width: 100%;">
+                                        <div class="top-bar-left">
+                                            <ul class="menu">
+                                                <li class="menu-text">
+                                                    <a href="/"><img style="height: 40px"
+                                                                     src="{{ site.icon }}"
+                                                                     alt="logo"><span>{{ site.name }}</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- search button -->
+                                        <div class="top-bar-right search-btn">
+                                            <ul class="menu">
+                                                <li class="search">
+                                                    <i class="fa fa-search"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- end search button -->
+                                        <div class="top-bar-right">
+                                            <ul class="menu vertical medium-horizontal dropdown"
+                                                data-responsive-menu="drilldown medium-dropdown" role="menubar"
+                                                data-dropdown-menu="kk9gcm-dropdown-menu">
+                                                <li role="menuitem" class="{% if tag_now=='所有' %}active{% endif %}"><a
+                                                        href="/"><i class="fa fa-home"></i>首页</a>
+                                                </li>
+
+
+                                                {% for tag_group in tags %}
+                                                    {% for tag in tag_group %}
+                                                        <li role="menuitem"
+                                                            class="{% if(tag_now==tag) %}active{% endif %}">
+                                                            <a href="{{ link(site,source_now,tag,order_now) }}"
+                                                               tabindex="0"><i class="fa"></i>{{ tag }}</a>
+                                                        </li>
+
+                                                    {% endfor %}
+                                                {% endfor %}
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="search-bar" class="clearfix search-bar-light">
+                                <form action="/search">
+                                    <div class="search-input float-left">
+                                        <input type="search" name="keyword" placeholder="输入 “关键词” 搜索">
+                                    </div>
+                                    <div class="search-btn float-right text-right">
+                                        <button class="button" name="search" type="submit">搜索</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </section>
+            </header>
+            <!-- End Header -->
+            {% block content %}
+
+            {% endblock %}
+
+            <!-- footer -->
+            <footer id="footer-bottom">
+                {% if friend_links %}
+                    <div class="row friend_links">
+                        {% for cate in friend_links %}
+                            <div class="large-12 medium-12 columns">
+                                <div class="widgetBox">
+                                    <h5 style="color: white">{{ cate }}类:</h5>
+                                    <div class="tagcloud">
+                                        {% for link in friend_links[cate] %}
+                                            <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <div class="btm-footer-text text-center">
+                    <p>2021 © Developed by {{ site.name }}.</p>
+                </div>
+            </footer>
+            <!-- footer -->
+        </div><!--end off canvas content-->
+    </div><!--end off canvas wrapper inner-->
+</div><!--end off canvas wrapper-->
+<!-- script files -->
+
+<script src="{{ static('bower_components/what-input/what-input.js',site.theme) }}"></script>
+<script src="{{ static('bower_components/foundation-sites/dist/foundation.js',site.theme) }}"></script>
+<script src="{{ static('js/jquery.showmore.src.js',site.theme) }}" type="text/javascript"></script>
+<script src="{{ static('js/app.js',site.theme) }}"></script>
+<script src="{{ static('layerslider/js/greensock.js',site.theme) }}" type="text/javascript"></script>
+<!-- LayerSlider script files -->
+<script src="{{ static('layerslider/js/layerslider.transitions.js',site.theme) }}" type="text/javascript"></script>
+<script src="{{ static('layerslider/js/layerslider.kreaturamedia.jquery.js',site.theme) }}"
+        type="text/javascript"></script>
+<script src="{{ static('js/owl.carousel.min.js',site.theme) }}"></script>
+<script src="{{ static('js/inewsticker.js',site.theme) }}" type="text/javascript"></script>
+<script src="{{ static('js/jquery.kyco.easyshare.js',site.theme) }}" type="text/javascript"></script>
+{% block scripts %}
+
+{% endblock %}
+{% include("html/data"|common) %}
+</body>
+</html>

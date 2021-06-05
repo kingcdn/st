@@ -1,0 +1,19 @@
+<figure class="timeline">
+    <div class="pos">
+        <a href="/v/{{ video.id }}.html" target="_blank" title="{{ video.name }}">
+            <img src="{{ video.cover_thum }}" class="lazy" alt="{{ video.name }}" target="_blank">
+            <p><span>
+                {% if(keyword) %}
+                    {{ keyword }}
+                {% else %}
+                    {{ video.time_format }}
+                {% endif %}
+            </span></p>
+        </a>
+    </div>
+    <a href="/v/{{ video.id }}.html" target="_blank" title="{{ video.name }}">
+        <figcaption>
+            {{ video.name }}
+        </figcaption>
+    </a>
+</figure>

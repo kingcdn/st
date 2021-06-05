@@ -1,0 +1,43 @@
+{% extends site.theme|layout %}
+
+{% block content %}
+    <div style="margin: 8px 0 0">
+        {% include("html/top_ads"|common) %}
+    </div>
+    <div class="items">
+        {% include("html/ads/timeline_begin_keywords"|common) %}
+        {% include("html/list_videos"|common) %}
+        {% include("html/ads/timeline_end"|common) %}
+    </div>
+    <div class="pageDiv">
+        <ul class="paginationU">
+            <li class="page-item">
+                <a href="{{ link(site,source_now,tag_now,order_now,1) }}">首页</a>
+            </li>
+            {% if(page>1) %}
+                <li class="page-item">
+                    <a href="{{ link(site,source_now,tag_now,order_now,page-1) }}">上一页</a>
+                </li>
+            {% endif %}
+
+            <li class="page-item active"><a href="#" class="page-link">第{{ page }}页</a></li>
+
+            <li class="page-item">
+                <a class="page-link" href="{{ link(site,source_now,tag_now,order_now,page + 1) }}">
+                    下一页
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ static('js/ximg.js',site.theme) }}"></script>
+    <script>
+        replaceImages('.ximg');
+    </script>
+{% endblock %}
+
+{#{% include("data"|common) %}#}

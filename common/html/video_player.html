@@ -1,0 +1,54 @@
+<div class="bofang" style="display: flex;flex-wrap: wrap;justify-content: center;">
+    <link rel="stylesheet" type="text/css" href="{{ static_common('css/ads_common.css') }}"/>
+    <div style="padding: 0px;border-radius: 10px;width: 100%;margin: 0px;">
+        <div class="videoContainer">
+            {% if not site.preview and site.auth and not user and video.is_vip %}
+                <div class="bofang-vip" style="background-image: url('{{ video.cover }}')">
+                    <div class="btns">
+                        <a class="bofang-btn" href="/register.html?_r={{ video.id }}">免费注册，精彩视频免费看</a>
+                        <a class="bofang-btn" href="/login.html?_r={{ video.id }}">立即登录</a>
+                    </div>
+                </div>
+            {% elif not site.preview and site.pay and not user.is_vip and video.is_vip %}
+                <div class="bofang-vip" style="background-image: url('{{ video.cover }}')">
+                    <div class="btns">
+                        <a class="bofang-btn" href="/user.html">充值VIP，海量视频任意观看</a>
+                        {% if site.nianka_100 %}
+                            {% if nianka_100_get %}
+                                <a class="bofang-btn" href="/user.html">有一张100元的优惠券未使用</a>
+                            {% else %}
+                                <a class="bofang-btn" href="/user.html?nianka_100=1">抽最高200元的年卡抵扣券</a>
+                            {% endif %}
+                        {% endif %}
+                        <a class="bofang-btn" href="/v/{{ video.id }}.html?preview=1">预览5分钟</a>
+                    </div>
+                </div>
+            {% else %}
+                {% if(video_ad.if_video_inside_ads_full) %}
+                    {% include("html/video_ads_full"|common) %}
+                {% else %}
+                    {% include("html/video_ads_small"|common) %}
+                {% endif %}
+            {% endif %}
+        </div>
+        {% if video.m3u8_list|length>0 and video.m3u8_list[0]['parts']|length>1 %}
+            <div class="seg-parts">
+                {% for m3u8_source in video.m3u8_list %}
+                    {% if video.m3u8_list|length>1 %}
+                        <div class="seg">{{ m3u8_source.name }}：</div>
+                    {% endif %}
+                    <div class="parts">
+                        {% for part in m3u8_source['parts'] %}
+                            {% if m3u8_source.name==s1 and part.name==s2 %}
+                                <span>{{ part['name'] }}</span>
+                            {% else %}
+                                <a href="?s1={{ m3u8_source.name }}&s2={{ part['name'] }}">{{ part['name'] }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    </div>
+</div>

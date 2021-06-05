@@ -1,0 +1,15 @@
+<figure class="timeline_ad">
+    <div class="pos">
+        <a href="{{ ad.link.url }}" target="_blank" title="{{ ad.name }}">
+            <img src="{{ ad.link.img.poster }}" style="" class="lazy" alt="{{ ad.name }}">
+            <p><span>
+               {{ ad.name }}
+            </span></p>
+        </a>
+    </div>
+    <a href="{{ ad.link.url }}" target="_blank" title="{{ ad.link.desc }}">
+        <figcaption>
+            【{{ad.link.name}}】{{ ad.link.desc }}
+        </figcaption>
+    </a>
+</figure>
