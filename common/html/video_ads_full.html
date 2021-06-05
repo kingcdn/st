@@ -1,5 +1,5 @@
 <video id="video" class="play video-js vjs-big-play-centered" controls
-       controlsList="nodownload" preload="preload" data-setup='{}' language="zh-CN" poster="{{ video.cover }}">
+       controlsList="nodownload" preload="preload" data-setup='{"customControlsOnMobile": true,"nativeControlsForTouch":false}' language="zh-CN" poster="{{ video.cover }}">
     {% if video.m3u8 %}
 {#        <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>#}
         <source src="{{ video.m3u8 }}" type="application/vnd.apple.mpegurl"/>
@@ -59,7 +59,7 @@
 <link href="https://cdn.jsdelivr.net/npm/video.js@7.9.7/dist/video-js.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{ static_common('css/ads_full.css') }}"/>
 
-<script src="https://cdn.jsdelivr.net/npm/video.js@7.7.5/dist/video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/video.js@7.9.7/dist/video.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/video.js@7.9.7/dist/lang/zh-CN.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls@5.15.0/dist/videojs-contrib-hls.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-ads@6.7.0/dist/videojs.ads.min.js"></script>
