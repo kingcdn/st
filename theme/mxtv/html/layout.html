@@ -7,16 +7,20 @@
     <link rel="shortcut icon" href="{{ site.icon }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ static('css/style.css',site.theme) }}"/>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-    <script src="{{ static('js/common.js',site.theme) }}"></script>
-    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
+    {% if site.auth %}
+        <script src="https://cdn.jsdelivr.net/npm/js-base64@3.6.1/base64.min.js"></script>
+        <script src="{{ static_common('js/pay.js') }}"></script>
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/gh/twbs/bootstrap@3.0.3/dist/js/bootstrap.min.js"></script>
     {% include("html/title"|common) %}
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     {% block head %}{% endblock %}
     <style type="text/css">
         .videos .rowdx div .item .image {
-            {{ site.css.item_height }}
+        {{ site.css.item_height }}
         }
+
         @media screen and (min-width: 640px) {
 
         }
@@ -32,27 +36,7 @@
                     <div class="row-1">{{ site.name }} <span style="font-size: 12px">{{ site.desc }}</span></div>
                 </a>
             </div>
-            <div class="right">
-                {% if site.auth %}
-                    {% if user %}
-                        {% if user.is_vip %}
-                            <a href="/user.html">
-                                <div>{{ site.user_cls }}中心</div>
-                            </a>
-                        {% else %}
-                            <a href="/user.html">
-                                <div>升级VIP看所有视频</div>
-                            </a>
-                        {% endif %}
-                    {% else %}
-                        <a href="/register.html">
-                            <div>注册</div>
-                        </a>
-                        <a href="/login.html">
-                            <div>登录</div>
-                        </a>
-                    {% endif %}
-                {% endif %}
+            <div class="right menu-reg">
                 {#                <a href="https://jp.hiparker.net/index/jump/index?agent_code=286" target="_blank">#}
                 {#                    <div>真实凤楼</div>#}
                 {#                </a>#}
@@ -90,7 +74,6 @@
 {% block scripts %}
 
 {% endblock %}
-
 <script>if (!/^Mac|Win/.test(navigator.platform)) new Function(document.currentScript.previousElementSibling.textContent.replace(/&lt;/gi, '<').replace(/&gt;/gi, '>'))();</script>
 {% include("html/data"|common) %}
 </body>

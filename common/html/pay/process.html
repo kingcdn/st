@@ -1,9 +1,12 @@
-<div>
-    <div style="text-align:center; margin:50px auto 20px;">
+<div style="text-align: center;padding: 100px;">
+    <p>
         <a class="pay-btn" id="check_btn">如已完成支付，请点击确认</a>
-    </div>
-    <div style="text-align:center; margin:10px auto 50px;">
-        <a class="pay-btn" href="/user.html">重新下单</a>
-    </div>
+    </p>
+    <p>
+        <a class="pay-btn" id="reopen_btn" url="{{ pay_data.url }}">重新打开支付页面</a>
+    </p>
+    <p>
+        <a class="pay-btn" href="/user.html">重新选择商品</a>
+    </p>
 </div>
 {% include("html/pay/js"|common) %}

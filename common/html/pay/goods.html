@@ -2,24 +2,17 @@
     <h2 class="pay-title">{% if user.is_vip %}续费VIP{% else %}升级成为VIP会员{% endif %}：</h2>
     <div class="goods">
         {% for pay_type in pay_types %}
-            <div class="good" {% if site.nianka_100 and pay_type['goods_id']==6 and nianka_100_get %}style="background-color:#2d3e2e"{% endif %}>
+            <div class="good {% if site.nianka_100 and pay_type['goods_id']==6 %}nianka_100{% endif %}">
                 <div class="info">
-                    <div class="top">￥<span>{{ pay_type['price'] }}</span>/{{ pay_type['name'] }}</div>
+                    <div class="top">￥<span class="price">{{ pay_type['price'] }}</span>/{{ pay_type['name'] }}</div>
 
-                    <p class="infoOne"
-                       {% if site.nianka_100 and pay_type['goods_id']==6 and nianka_100_get %}style="color:red"{% endif %}>{{ pay_type['desc'] }}</p>
+                    <p class="infoOne">{{ pay_type['desc'] }}</p>
                     <p class="infoTwo">随心所欲观看视频不受限制</p></div>
                 <div>
-                    {% if site.nianka_100 and pay_type['goods_id']==6 and not nianka_100_get %}
-                        <a class="pay-btn nianka-100">
-                            点击参与“夏日艳艳”抽奖活动
-                        </a>
-                    {% else %}
-                        <a class="pay-btn pay_action" data-pay-id="5"
-                           data-goods-id="{{ pay_type['goods_id'] }}">微信支付</a>
-                        <a class="pay-btn pay_action" data-pay-id="12"
-                           data-goods-id="{{ pay_type['goods_id'] }}" id="goods-{{ pay_type['goods_id'] }}-12">支付宝支付</a>
-                    {% endif %}
+                    <a class="pay-btn pay_action" data-pay-id="5"
+                       data-goods-id="{{ pay_type['goods_id'] }}">微信支付</a>
+                    <a class="pay-btn pay_action" data-pay-id="12"
+                       data-goods-id="{{ pay_type['goods_id'] }}" id="goods-{{ pay_type['goods_id'] }}-12">支付宝支付</a>
                 </div>
             </div>
         {% endfor %}
@@ -28,12 +21,21 @@
     {% include("html/pay/js"|common) %}
     <script>
         $(function () {
+            var ifNianKa100 = localStorage.getItem("nianka-100") !== undefined;
+            if (ifNianKa100) {
+                $('.nianka_100').css("background-color", "#2d3e2e");
+                var oldMoney = parseInt($('.nianka_100').find(".price").text());
+                $('.nianka_100').find(".price").text(oldMoney - 100);
+                $('.nianka_100').find(".infoOne").text($('.nianka_100').find(".infoOne").text() + "(原价" + oldMoney + ")");
+            }
+
             $('.nianka-100').click(function () {
                 $(this).text("努力抽奖中！")
-                $.getJSON("/nianka_100", function () {
+                setTimeout(function () {
                     alert("太厉害了！打败了82%的用户，获得了一张价值100元的年卡抵扣券！");
+                    localStorage.setItem("nianka-100", 1);
                     window.location.reload();
-                })
+                }, 1000)
             });
             $('.nianka-100-use').click(function () {
                 $('#goods-6-12').click();

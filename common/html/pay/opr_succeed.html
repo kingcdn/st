@@ -1,0 +1,12 @@
+{% extends "common/html/blank_script.html" %}
+{% block contents %}
+{{ opr }}成功
+{% endblock %}
+{% block scripts %}
+    <script>
+        localStorage.setItem("_d", "{{ _d }}")
+    </script>
+{% endblock %}
+{% block metas %}
+    <meta http-equiv="Refresh" content="1;url={{ _c }}"/>
+{% endblock %}

@@ -2,34 +2,37 @@
     <link rel="stylesheet" type="text/css" href="{{ static_common('css/ads_common.css') }}"/>
     <div style="padding: 0px;border-radius: 10px;width: 100%;margin: 0px;">
         <div class="videoContainer">
-            {% if not site.preview and site.auth and not user and video.is_vip %}
-                <div class="bofang-vip" style="background-image: url('{{ video.cover }}')">
-                    <div class="btns">
-                        <a class="bofang-btn" href="/register.html?_r={{ video.id }}">免费注册，精彩视频免费看</a>
-                        <a class="bofang-btn" href="/login.html?_r={{ video.id }}">立即登录</a>
-                    </div>
+
+
+            <div class="bofang-vip {% if not preview and site.pay and video.is_vip %}state-check-vip{% endif %}"
+                 style="background-image: url('{{ video.cover }}');display: none;">
+                <div class="btns">
+                    <a class="bofang-btn" href="/user.html">充值VIP，海量视频任意观看</a>
+                    {% if site.nianka_100 %}
+                        <a class="bofang-btn" href="/user.html?nianka_100=1">抽最高200元的年卡抵扣券</a>
+                    {% endif %}
+                    <a class="bofang-btn" href="/p/{{ video.id }}.html">预览5分钟</a>
                 </div>
-            {% elif not site.preview and site.pay and not user.is_vip and video.is_vip %}
-                <div class="bofang-vip" style="background-image: url('{{ video.cover }}')">
-                    <div class="btns">
-                        <a class="bofang-btn" href="/user.html">充值VIP，海量视频任意观看</a>
-                        {% if site.nianka_100 %}
-                            {% if nianka_100_get %}
-                                <a class="bofang-btn" href="/user.html">有一张100元的优惠券未使用</a>
-                            {% else %}
-                                <a class="bofang-btn" href="/user.html?nianka_100=1">抽最高200元的年卡抵扣券</a>
-                            {% endif %}
-                        {% endif %}
-                        <a class="bofang-btn" href="/v/{{ video.id }}.html?preview=1">预览5分钟</a>
-                    </div>
+            </div>
+
+            <div class="bofang-vip {% if not preview and site.auth and video.is_vip %}state-check-login{% endif %}"
+                 style="background-image: url('{{ video.cover }}');display: none;">
+                <div class="btns">
+                    <a class="bofang-btn" href="/register.html?_r={{ video.id }}">免费注册，精彩视频免费看</a>
+                    <a class="bofang-btn" href="/login.html?_r={{ video.id }}">立即登录</a>
                 </div>
-            {% else %}
-                {% if(video_ad.if_video_inside_ads_full) %}
-                    {% include("html/video_ads_full"|common) %}
+            </div>
+            <div class="state-{% if preview %}preview{% else %}default{% endif %}" style="{% if preview and not site.preview %}display: none;{% endif %}">
+                {% if(video.from_iframe) %}
+                    {% include("html/video_layer_iframe"|common) %}
                 {% else %}
-                    {% include("html/video_ads_small"|common) %}
+                    {% if(video_ad.if_video_inside_ads_full) %}
+                        {% include("html/video_ads_full"|common) %}
+                    {% else %}
+                        {% include("html/video_ads_small"|common) %}
+                    {% endif %}
                 {% endif %}
-            {% endif %}
+            </div>
         </div>
         {% if video.m3u8_list|length>0 and video.m3u8_list[0]['parts']|length>1 %}
             <div class="seg-parts">

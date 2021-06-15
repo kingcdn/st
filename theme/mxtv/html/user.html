@@ -7,28 +7,18 @@
     <div class="statistical-top">
         <div class="item">
             <div class="num">账号</div>
-            <div class="title">{{ user.user_name }}</div>
+            <div class="title" id="tag_user_name"></div>
         </div>
         <div class="item">
             <div class="num">账号类型</div>
-            <div class="title">{% if user.is_vip %}VIP用户（剩余{{ user.vip_left_days }}天）{% else %}免费用户{% endif %}</div>
+            <div class="title" id="tag_user_type"></div>
         </div>
-        <a href="/logout.html" class="pay-btn">
+        <a class="pay-btn" id="menu_logout">
             <div>退出登录</div>
         </a>
     </div>
     {% if site.nianka_100 %}
-        <div class="statistical-top">
-            {% if nianka_100_get %}
-                <a class="pay-btn nianka-100-use">
-                    立即使用100元年卡优惠券
-                </a>
-            {% else %}
-                <a class="pay-btn nianka-100">
-                    点击参与“夏日艳艳”抽奖活动
-                </a>
-            {% endif %}
-        </div>
+        <div class="statistical-top" id="niaka_100_opr"></div>
     {% endif %}
     <div class="block-box">
         {% include("html/pay/goods"|common) %}
@@ -36,6 +26,15 @@
 
 {% endblock %}
 {% block scripts %}
-
+    <script>
+        $(function () {
+            var ifNianKa100 = localStorage.getItem("nianka-100") !== undefined;
+            if (ifNianKa100) {
+                $('#niaka_100_opr').append('<a class="pay-btn nianka-100-use">立即使用100元年卡优惠券</a>')
+            }else{
+                $('#niaka_100_opr').append('<a class="pay-btn nianka-100">点击参与“夏日艳艳”抽奖活动</a>')
+            }
+        })
+    </script>
 
 {% endblock %}

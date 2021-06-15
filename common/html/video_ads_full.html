@@ -1,23 +1,23 @@
 <video id="video" class="play video-js vjs-big-play-centered" controls
-       controlsList="nodownload" preload="preload" data-setup='{"customControlsOnMobile": true,"nativeControlsForTouch":false}' language="zh-CN" poster="{{ video.cover }}">
+       controlsList="nodownload" preload="preload"
+       language="zh-CN" poster="{{ video.cover }}">
     {% if video.m3u8 %}
-{#        <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>#}
-        <source src="{{ video.m3u8 }}" type="application/vnd.apple.mpegurl"/>
-{#        <source src="https://haokan.pw/m3u8/ddrk/SybjK/OzaG69dE.m3u8" type="application/x-mpegURL"/>#}
+        <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>
+        {#                <source src="https://videos3.naibago.com/20201115/FC2-PPV-1191974_5/index.m3u8" type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">
     {% endif %}
 </video>
-{% if site.preview %}
+{% if preview %}
     <div class="preview_box hide" style="position: absolute;top: 10px;left: 10px;z-index: 20 !important">
-        {% if site.preview.redirect_source %}
+        {% if preview.redirect_source %}
             <a class="bofang-btn" href="{{ video.surl }}" target="_blank">预览结束，前往{{ video.sname }}观看完整版视频</a>
         {% else %}
             <a class="bofang-btn" href="/user.html" target="_blank">预览结束，升级VIP无限制播放</a>
         {% endif %}
     </div>
-    {% if site.preview.redirect_source %}
+    {% if preview.redirect_source %}
         <div class="" style="position: absolute;top: 10px;right: 10px;z-index: 20 !important">
             <a class="bofang-btn" href="{{ video.surl }}" target="_blank">
                 <div><img src="{{ video.sicon }}"/></div>
@@ -56,12 +56,12 @@
         </div>
     </div>
 {% endif %}
-<link href="https://cdn.jsdelivr.net/npm/video.js@7.9.7/dist/video-js.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/video.js@7.12.3/dist/video-js.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{ static_common('css/ads_full.css') }}"/>
 
-<script src="https://cdn.jsdelivr.net/npm/video.js@7.9.7/dist/video.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/video.js@7.9.7/dist/lang/zh-CN.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls@5.15.0/dist/videojs-contrib-hls.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/video.js@7.12.3/dist/video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/video.js@7.12.3/dist/lang/zh-CN.min.js"></script>
+{#<script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls@5.15.0/dist/videojs-contrib-hls.min.js"></script>#}
 <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-ads@6.7.0/dist/videojs.ads.min.js"></script>
 {#<script src="https://cdn.bootcss.com/video.js/7.7.5/video.min.js"></script>#}
 {#<script src="https://cdn.bootcss.com/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"></script>#}
@@ -77,6 +77,7 @@
             "subtitles settings": "设置"
         });
         var myPlayer = videojs('video', {
+            "customControlsOnMobile": true, "nativeControlsForTouch": false, "html5": {"vhs": {"overrideNative": true}},
             fluid: true, liveui: true, userActions: {
                 doubleClick: function () {
 
@@ -136,7 +137,7 @@
 
 
         myPlayer.on('play', function () {
-            {% if site.preview %}
+            {% if preview %}
                 var elePreview = $('.preview_box');
                 if (!elePreview.hasClass("finished")) {
                     elePreview.removeClass("hide");
@@ -155,26 +156,26 @@
                 }
             {% endif %}
         });
-        {% if site.preview %}
+        {% if preview %}
             var elePreview = $('.preview_box');
             elePreview.find("a").text("预览中");
             myPlayer.on("seeking", function (e) {
                 console.log("seeking", e);
             })
             myPlayer.on("timeupdate", function (e) {
-                var mins_all = {{ site.preview.mins*60 }};
+                var mins_all = {{ preview.mins*60 }};
                 var seconds = mins_all - Math.ceil(myPlayer.currentTime());
                 var mins = Math.floor(seconds / 60)
                 seconds = seconds - mins * 60
                 var todo = "结束预览"
-                {% if site.preview.redirect_source %}
+                {% if preview.redirect_source %}
                     todo = "前往“{{ video.so.name }}”观看完整视频"
                 {% endif %}
                 elePreview.find("a").text("" + mins + "分" + seconds + "秒后" + todo);
                 if (myPlayer.currentTime() >= mins_all - 1 || elePreview.hasClass("finished")) {
                     myPlayer.pause();
                     var finished_text = "预览结束，升级VIP无限制播放"
-                    {% if site.preview.redirect_source %}
+                    {% if preview.redirect_source %}
                         finished_text = "预览结束，请前往{{ video.so.name }}观看完整版视频"
                         //if ($('.redirect_source_target').hasClass("hide")) {
                         //    $('.redirect_source_target').removeClass("hide");

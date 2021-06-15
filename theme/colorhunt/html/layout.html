@@ -11,7 +11,6 @@
     <meta property="og:type" content="website"/>
 
     <link href="{{ static('css/style.css',site.theme) }}" rel="stylesheet" media="all"/>
-    <link href="https://cdn.bootcss.com/video.js/7.7.5/video-js.min.css" rel="stylesheet">
     <style type="text/css">
         .palette {
         {{ site.css.radius }}
@@ -49,6 +48,10 @@
 </head>
 <body>
 <script src="{{ static('js/jquery-latest.min.js',site.theme) }}"></script>
+{% if site.auth %}
+    <script src="https://cdn.jsdelivr.net/npm/js-base64@3.6.1/base64.min.js"></script>
+    <script src="{{ static_common('js/pay.js') }}"></script>
+{% endif %}
 <script src="{{ static('js/functions.js',site.theme) }}"></script>
 <script async src="{{ static('js/native.js',site.theme) }}"></script>
 <div id="header" class="soft_shadow">
@@ -69,15 +72,8 @@
                 </div>
             </li>
         </ol>
-        <div id="menu">
-            {% if site.auth %}
-                {% if user %}
-                    <a class="button" href="/user.html">{{ site.user_cls }}中心</a>
-                {% else %}
-                    <a class="button" href="/register.html">注册</a>
-                    <a class="button" href="/login.html">登录</a>
-                {% endif %}
-            {% endif %}
+        <div id="menu" class="menu-reg">
+
         </div>
 
     </div>
