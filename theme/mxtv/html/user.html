@@ -31,7 +31,10 @@
             var ifNianKa100 = localStorage.getItem("nianka-100") !== undefined;
             if (ifNianKa100) {
                 $('#niaka_100_opr').append('<a class="pay-btn nianka-100-use">立即使用100元年卡优惠券</a>')
-            }else{
+                $('.nianka-100-use').click(function () {
+                    $('#goods-6-12').click();
+                });
+            } else {
                 $('#niaka_100_opr').append('<a class="pay-btn nianka-100">点击参与“夏日艳艳”抽奖活动</a>')
             }
         })

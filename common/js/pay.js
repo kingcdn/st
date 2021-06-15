@@ -27,6 +27,7 @@ $(function () {
             $('#tag_user_type').text("免费用户");
             $('.state-check-vip').css("display", "block");
             $('.state-check-login').css("display", "none");
+            $('.state-pay').css("display", "none");
         }
         $('#tag_user_name').text(userInfo.user_name);
     } else {

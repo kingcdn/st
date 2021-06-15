@@ -109,7 +109,7 @@
 
 <header>
     <div class="htop">
-        <i><a href="/">
+        <i><a href="/index.html">
             <img src="{{ site.icon }}"/>
         </a></i>
         <div class="hleft"><a href="/">{{ site.name }}</a></div>
@@ -129,7 +129,7 @@
     </div>
     <div class="hend">
         <ul>
-            <li><a href="/">首页</a></li>
+            <li><a href="/index.html">首页</a></li>
             {% for tag_group in tags %}
                 {% for tag in tag_group %}
                     <li><a href="{{ link(site,source_now,tag,order_now) }}">{{ tag }}</a></li>
