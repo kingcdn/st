@@ -3,7 +3,7 @@
        language="zh-CN" poster="{{ video.cover }}">
     {% if video.m3u8 %}
         <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>
-        {#                <source src="https://videos3.naibago.com/20201115/FC2-PPV-1191974_5/index.m3u8" type="application/x-mpegURL"/>#}
+{#                        <source src="https://upcdn0006.top/cdn/obj/b264eed2-ab74-4ae9-bbbd-b31fb17efb39/b264eed2-ab74-4ae9-bbbd-b31fb17efb39.m3u8" type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">
