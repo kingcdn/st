@@ -3,12 +3,13 @@
        language="zh-CN" poster="{{ video.cover }}">
     {% if video.m3u8 %}
         <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>
-{#                        <source src="https://upcdn0006.top/cdn/obj/b264eed2-ab74-4ae9-bbbd-b31fb17efb39/b264eed2-ab74-4ae9-bbbd-b31fb17efb39.m3u8" type="application/x-mpegURL"/>#}
+        {#                        <source src="https://upcdn0006.top/cdn/obj/b264eed2-ab74-4ae9-bbbd-b31fb17efb39/b264eed2-ab74-4ae9-bbbd-b31fb17efb39.m3u8" type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">
     {% endif %}
 </video>
+
 {% if preview %}
     <div class="preview_box hide" style="position: absolute;top: 10px;left: 10px;z-index: 20 !important">
         {% if preview.redirect_source %}
@@ -85,6 +86,20 @@
             },
             language: 'zh-CN',
         });
+        {% if site.video_watermark %}
+            var watermark = document.createElement('img');
+            watermark.src = "{{ site.icon }}";
+            watermark.className = "vjs-watermark";
+            watermark.draggable = false;
+            {% if site.video_watermark.width %}
+                watermark.style.width = "{{ site.video_watermark.width }}"
+            {% endif %}
+            {% if site.video_watermark.height %}
+                watermark.style.height = "{{ site.video_watermark.height }}"
+            {% endif %}
+            myPlayer.el().appendChild(watermark);
+
+        {% endif %}
         myPlayer.on("dblclick", function (e) {
             $(this).pause()
         })

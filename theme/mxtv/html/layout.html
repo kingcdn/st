@@ -56,9 +56,10 @@
             <p>{{ site.site_desc }}</p>
         {% endif %}
         {% if site.github %}
-            <a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a>
-        {% elif site.email %}
-            <a href="mailto:{{ site.email }}">发邮件到 {{ site.email }} 自动回复最新地址</a>
+            <p><a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a></p>
+        {% endif %}
+        {% if site.email %}
+            <p><a href="mailto:{{ site.email }}">发邮件到 {{ site.email }} 自动回复最新地址</a></p>
         {% endif %}
     </div>
 </div>

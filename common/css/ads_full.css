@@ -1,3 +1,14 @@
+.vjs-control-bar {
+    z-index: 20000;
+}
+
+.vjs-watermark {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 200;
+}
+
 .bofang .play {
     width: 100%;
     /*height: 25vh;*/
@@ -76,7 +87,8 @@
     cursor: pointer;
     text-align: center;
 }
-.advertisement .actions > div>*{
+
+.advertisement .actions > div > * {
 }
 
 .advertisement svg {

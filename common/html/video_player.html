@@ -22,9 +22,10 @@
                     <a class="bofang-btn" href="/login.html?_r={{ video.id }}">立即登录</a>
                 </div>
             </div>
-            <div class="state-{% if preview %}preview{% elif video.is_vip %}pay{% endif %}" style="{% if preview and not site.preview %}display: none;{% endif %}">
+            <div class="state-{% if preview %}preview{% elif video.is_vip %}pay{% endif %}"
+                 style="{% if preview and not site.preview %}display: none;{% endif %}">
                 {% if(video.from_iframe) %}
-                    {% include("html/video_layer_iframe"|common) %}
+                    {% include("html/video_player_iframe"|common) %}
                 {% else %}
                     {% if(video_ad.if_video_inside_ads_full) %}
                         {% include("html/video_ads_full"|common) %}
