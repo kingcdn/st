@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="{{ static_common('html/sitemap.xsl') }}"?><!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="4.0.9" -->
+<!-- generated-on="2021/03/13 19:25" -->
+<sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
+              xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for tag in tags %}
+        <sitemap>
+            <loc>https://{{ site.domain }}/{{ tag }}/最新/1.html</loc>
+            {% if today %}
+                <lastmod>{{ today }}T02:00:00+00:00</lastmod>
+            {% endif %}
+        </sitemap>
+    {% endfor %}
+    {% for date in dates %}
+        <sitemap>
+            <loc>https://{{ site.domain }}/sitemap/video-post-{{ date }}.{{ ext }}</loc>
+            <lastmod>{{ date }}-01T02:00:00+00:00</lastmod>
+        </sitemap>
+    {% endfor %}
+    {% for video in videos %}
+        <sitemap>
+            <loc>https://{{ site.domain }}/v/{{ video.id }}.html</loc>
+            <lastmod>{{ video.time_add }}+00:00</lastmod>
+        </sitemap>
+    {% endfor %}
+</sitemapindex>

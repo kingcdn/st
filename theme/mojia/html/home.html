@@ -1,0 +1,104 @@
+{% extends site.theme|layout %}
+{% block selector %}
+    <span>{{ tag_now }}</span>
+    <img alt="{{ site.name }} Palettes Dropdown Icon"
+         src="{{ static('img/color-hunt-palettes-icon_dropdown.png',site.theme) }}"/>
+    <div id="sort_menu" class="shadow block dropdown">
+        {% for tag_group in tags %}
+            {% for tag in tag_group %}
+                <a href="{{ link(site,source_now,tag,order_now) }}">{{ tag }}</a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="mo-cols-case mo-java-waps" data-mob="0" data-wap="/">
+        {% if not from_box %}
+            {% if site.adc.sliders|length>0 %}
+                <div class="mo-swip-container mo-cols-rows mo-part-round mo-mtxs-0px mo-mtsm-10px mo-mtmd-20px">
+                    <ul class="mo-swip-wrapper mo-cols-zero">
+                        {% for ad in site.adc.sliders %}
+                            <li class="mo-swip-slide">
+                                <a class="mo-situ-pics mo-lazy-color mo-swip-lazy mo-lazy-broad mo-byxs-3by2 mo-bymd-5by2"
+                                   href="{{ ad.url }}" style="background: url('{{ ad.img }}')">
+                                    <div class="mo-swip-title mo-cols-rows mo-part-ramp mo-text-white mo-wrap-arow">
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            <div class="mo-paxs-10px mo-cols-lays mo-back-white mo-part-round mo-cols-rows">
+                {% for tag_group in tags %}
+                    <dl class="mo-scre-info mo-paxs-10x5 mo-pamd-1510 mo-bord-muted mo-part-slip mo-scre-show"
+                        tabindex="2"
+                        style="overflow: hidden; outline: none;">
+                        {% for tag in tag_group %}
+                            <dd class="mo-coxs-iblock">
+                                <a class="mo-scre-name mo-text-hover mo-mrxs-10px mo-lhxs-24px {% if(tag_now==tag) %}mo-part-bans mo-text-mojia mo-java-area{% endif %}"
+                                   href="{{ link(site,source_now,tag,order_now,1,cate_now) }}">{{ tag }}</a>
+                            </dd>
+                        {% endfor %}
+
+                    </dl>
+
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="mo-cols-lays mo-back-white mo-part-round">
+            <div class="mo-cols-rows mo-paxs-5px mo-pamd-10px">
+                <h2 class="mo-fsxs-14px mo-fsss-16px mo-fsmd-18px mo-cols-zero">
+                    {% if not from_box %}
+                        {% for order in orders %}
+                            <a class="mo-mrxs-5px mo-mrmd-10px {% if(order==order_now) %}mo-text-mojia{% endif %}"
+                               href="{{ link(site,source_now,tag_now,order,1,cate_now) }}">{{ order }}</a>
+                        {% endfor %}
+                    {% else %}
+                        搜索到与&nbsp;“<span class="mo-java-hunt mo-text-mojia">{{ tag_now }}</span>”&nbsp;相关的结果
+                    {% endif %}
+                </h2>
+            </div>
+            <ul class="mo-cols-rows">
+                {% include("html/list_videos"|common) %}
+            </ul>
+            <div class="mo-page-info mo-cols-zero mo-pzxs-10px mo-coxs-center" data-aid="11">
+
+                <a href="{{ link(site,source_now,tag_now,order_now,1,cate_now) }}"
+                   class="mo-page-item mo-part-vert mo-part-btns mo-bord-muted mo-bord-round mo-lhxs-30px mo-lhmd-34px mo-mnxs-0x2 mo-pnxs-5px mo-pnmd-15px mo-fsxs-14px mo-back-hover mo-coxs-iblock mo-back-click"
+                   data-nums="2">首页</a>
+                {% if(page>1) %}
+                    <a href="{{ link(site,source_now,tag_now,order_now,page-1,cate_now) }}"
+                       class="mo-page-item mo-part-vert mo-part-btns mo-bord-muted mo-bord-round mo-lhxs-30px mo-lhmd-34px mo-mnxs-0x2 mo-pnxs-5px mo-pnmd-15px mo-fsxs-14px mo-back-hover mo-comd-iblock mo-back-click mo-cols-hide"
+                       data-nums="2">上一页</a>
+                {% endif %}
+                <a href="{{ link(site,source_now,tag_now,order_now,page,cate_now) }}"
+                   class="mo-page-item mo-part-vert mo-part-btns mo-bord-muted mo-bord-round mo-lhxs-30px mo-lhmd-34px mo-mnxs-0x2 mo-pnxs-5px mo-pnmd-15px mo-fsxs-14px mo-back-hover mo-comd-iblock mo-back-click mo-cols-hide mo-back-mojia"
+                   data-nums="1" data-href="/index.php/vod/type/id/6/page/1.html">{{ page }}</a>
+
+                <a href="{{ link(site,source_now,tag_now,order_now,page + 1,cate_now) }}"
+                   class="mo-page-item mo-part-vert mo-part-btns mo-bord-muted mo-bord-round mo-lhxs-30px mo-lhmd-34px mo-mnxs-0x2 mo-pnxs-5px mo-pnmd-15px mo-fsxs-14px mo-back-hover mo-coxs-iblock mo-back-click"
+                >下一页</a>
+            </div>
+        </div>
+
+        <div class="mo-cols-lays mo-back-white mo-part-round">
+            {% if friend_links %}
+                {% for cate in friend_links %}
+                    <div class="mo-cols-rows mo-paxs-5px mo-pamd-10px">
+                        <h2 class="mo-fsxs-14px mo-fsss-16px mo-fsmd-18px mo-text-mojia">{{ cate }}</h2>
+                    </div>
+                    <ul class="mo-cols-rows">
+                        {% for link in friend_links[cate] %}
+                            <li class="mo-paxs-5px mo-pamd-10px mo-cols-info mo-cols-xs3 mo-cols-sm2 mo-cols-xl1x">
+                                <a class="mo-wrap-arow mo-lhxs-20px mo-fsxs-14px" href="{{ link.url }}"
+                                   target="_blank">{{ link.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
