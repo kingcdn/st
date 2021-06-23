@@ -15,6 +15,7 @@
     <meta name="HandheldFriendly" content="true"/>
     {% block head %}{% endblock %}
     {% include("html/title"|common) %}
+    {% include("html/meta_seo"|common) %}
     <link rel="stylesheet" type="text/css" href="{{ static('css/style.css',site.theme) }}"/>
     <meta name="keywords" content="{{ site.name }}--完整版视频请使用其他浏览器--uc除外--{{ site.name }}"/>
     <meta name="description" content="{{ site.name }}--完整版视频请使用其他浏览器--uc除外--{{ site.name }} "/>

@@ -1,10 +1,2 @@
-<title>
-    {% if video %}
-        {{ video.name }}
-    {% elif tag_now and tag_now!=tag_default %}
-        {{ tag_now }}
-    {% else %}
-        首页
-    {% endif %}
-    - {{ site.name }}
-</title>
+<title>{% if video %}{{ video.name }}{% elif tag_now and tag_now!=tag_default %}{{ tag_now }}{% else %}首页{% endif %}- {{ site.name }}</title>
+<meta property="og:title" content="{% if video %}{{ video.name }}{% elif tag_now and tag_now!=tag_default %}{{ tag_now }}{% else %}首页{% endif %}- {{ site.name }}"/>

@@ -3,7 +3,7 @@
        language="zh-CN" poster="{{ video.cover }}">
     {% if video.m3u8 %}
         <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>
-        {#                        <source src="https://upcdn0006.top/cdn/obj/b264eed2-ab74-4ae9-bbbd-b31fb17efb39/b264eed2-ab74-4ae9-bbbd-b31fb17efb39.m3u8" type="application/x-mpegURL"/>#}
+        {#                                <source src="https://n1.szjal.cn/20210401/9wmy5Obt/index.m3u8" type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">
@@ -58,7 +58,7 @@
     </div>
 {% endif %}
 <link href="https://cdn.jsdelivr.net/npm/video.js@7.12.3/dist/video-js.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{ static_common('css/ads_full.css') }}"/>
+
 
 <script src="https://cdn.jsdelivr.net/npm/video.js@7.12.3/dist/video.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/video.js@7.12.3/dist/lang/zh-CN.min.js"></script>
@@ -70,6 +70,7 @@
 {#<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.7.0/videojs.ads.min.js"></script>#}
 <script>
     $(document).ready(function () {
+        $ = jQuery;
         videojs.addLanguage('zh-CN', {
             "The media could not be loaded, either because the server or network failed or because the format is not supported.": "没有获取到视频地址，请尝试稍后刷新本页",
             "Toggle theater mode": "网页全屏",
@@ -91,6 +92,7 @@
             watermark.src = "{{ site.icon }}";
             watermark.className = "vjs-watermark";
             watermark.draggable = false;
+
             {% if site.video_watermark.width %}
                 watermark.style.width = "{{ site.video_watermark.width }}"
             {% endif %}
@@ -98,6 +100,7 @@
                 watermark.style.height = "{{ site.video_watermark.height }}"
             {% endif %}
             myPlayer.el().appendChild(watermark);
+            document.getElementsByClassName("vjs-control-bar")[0].style.zIndex = "20000";
 
         {% endif %}
         myPlayer.on("dblclick", function (e) {
@@ -170,6 +173,9 @@
                     removeAd();
                 }
             {% endif %}
+            setTimeout(function () {
+                $('#inline-ad').css("display", "none");
+            }, 10000);
         });
         {% if preview %}
             var elePreview = $('.preview_box');
