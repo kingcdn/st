@@ -1,0 +1,23 @@
+{% for m3u8_source in video.m3u8_list %}
+    <div class="mo-cols-lays mo-back-white mo-part-round mo-cols-rows mo-part-over">
+        <div class="mo-sort-head mo-cols-rows mo-paxs-5px mo-pamd-10px">
+            <h2 class="mo-fsxs-14px mo-fsss-16px mo-fsmd-18px mo-cols-zero mo-part-slip mo-cols-xs8 mo-cols-sm9 mo-cols-lg10"
+                tabindex="2" style="overflow: hidden; outline: none;">
+                <a class="mo-movs-btns mo-mrxs-5px mo-mrmd-10px {% if m3u8_source.name==s1 %}mo-text-mojia{% endif %}"
+                   href="javascript:;"><i
+                        class="mo-prxs-2px mo-fsxs-16px mo-fsmd-18px mo-icon-font mo-icon-play"></i>{{ m3u8_source.name }}
+                </a>
+            </h2>
+        </div>
+        <ul class="mo-movs-item mo-sort-boxs mo-cols-rows mo-pamd-5px mo-cols-show">
+            {% for part in m3u8_source['parts'] %}
+                <li class="mo-paxs-5px mo-cols-info mo-cols-xs2 mo-cols-lg1">
+                    <a class="mo-part-btns mo-fsxs-14px mo-bord-muted mo-bord-round mo-cols-show mo-wrap-arow mo-lhxs-40px mo-back-click mo-back-write {% if m3u8_source.name==s1 and part.name==s2 %}mo-text-mojia{% endif %}"
+                       href="?s1={{ m3u8_source.name }}&s2={{ part['name'] }}"
+                       target="_self">{{ part['name'] }}</a>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+{% endfor %}

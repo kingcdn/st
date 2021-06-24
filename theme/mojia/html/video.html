@@ -5,6 +5,9 @@
 
 {% block content %}
     <div class="mo-cols-case mo-java-waps" data-mob="0" data-wap="/">
+        {% if video.m3u8_list|length>0 and site.part_show_pos=="above" %}
+            {% include theme_inclue(site.theme,"list_parts") %}
+        {% endif %}
 
         <div class="mo-play-info mo-cols-rows mo-back-white mo-part-round mo-mtxs-0px mo-mtsm-10px mo-mtmd-20px">
             {% include("html/video_player"|common) %}
@@ -16,10 +19,7 @@
                 <dt class="mo-paxs-5px mo-pamd-10px mo-cols-info mo-cols-xs4 mo-cols-sm3 mo-cols-lg2">
                     <a class="mo-situ-pics mo-situ-lazy mo-lazy-color mo-bord-round mo-cols-rows mo-lazy-highs mo-byxs-2by3"
                        href="{{ video.url }}"
-                       style="display: block; background-image: url({{ video.cover }});">
-                        <img class="mo-part-full"
-                             src="{{ video.cover }}"
-                             alt="{{ video.name }}">
+                       style="display: block; background-image: url({{ video.cover_thum }});">
                         <span class="mo-situ-play"></span>
                         <span class="mo-situ-tips mo-fsxs-12px mo-bord-round mo-back-mojia">推荐</span>
                     </a>
@@ -74,38 +74,19 @@
             </dl>
             <dl class="mo-deta-info mo-part-bbsd mo-bord-muted mo-maxs-5px mo-mrmd-10px mo-mlmd-10px"></dl>
         </div>
-        {% if video.m3u8_list|length>0 %}
-            {% for m3u8_source in video.m3u8_list %}
-                <div class="mo-cols-lays mo-back-white mo-part-round mo-cols-rows mo-part-over">
-                    <div class="mo-sort-head mo-cols-rows mo-paxs-5px mo-pamd-10px">
-                        <h2 class="mo-fsxs-14px mo-fsss-16px mo-fsmd-18px mo-cols-zero mo-part-slip mo-cols-xs8 mo-cols-sm9 mo-cols-lg10"
-                            tabindex="2" style="overflow: hidden; outline: none;">
-                            <a class="mo-movs-btns mo-mrxs-5px mo-mrmd-10px {% if m3u8_source.name==s1 %}mo-text-mojia{% endif %}" href="javascript:;"><i
-                                    class="mo-prxs-2px mo-fsxs-16px mo-fsmd-18px mo-icon-font mo-icon-play"></i>{{ m3u8_source.name }}
-                            </a>
-                        </h2>
-                    </div>
-                    <ul class="mo-movs-item mo-sort-boxs mo-cols-rows mo-pamd-5px mo-cols-show">
-                        {% for part in m3u8_source['parts'] %}
-                            <li class="mo-paxs-5px mo-cols-info mo-cols-xs2 mo-cols-lg1">
-                                <a class="mo-part-btns mo-fsxs-14px mo-bord-muted mo-bord-round mo-cols-show mo-wrap-arow mo-lhxs-40px mo-back-click mo-back-write {% if m3u8_source.name==s1 and part.name==s2 %}mo-text-mojia{% endif %}"
-                                   href="?s1={{ m3u8_source.name }}&s2={{ part['name'] }}" target="_self">{{ part['name'] }}</a>
-                            </li>
-                        {% endfor %}
-
-                    </ul>
-                </div>
-            {% endfor %}
+        {% if video.m3u8_list|length>0 and site.part_show_pos=="below" %}
+            {% include theme_inclue(site.theme,"list_parts") %}
         {% endif %}
-
-        <div class="mo-cols-lays mo-back-white mo-part-round">
-            <div class="mo-cols-rows mo-paxs-5px mo-pamd-10px">
-                <h2 class="mo-fsxs-14px mo-fsss-16px mo-fsmd-18px">猜你喜欢</h2>
+        {% if videos_related|length>0 %}
+            <div class="mo-cols-lays mo-back-white mo-part-round">
+                <div class="mo-cols-rows mo-paxs-5px mo-pamd-10px">
+                    <h2 class="mo-fsxs-14px mo-fsss-16px mo-fsmd-18px">猜你喜欢</h2>
+                </div>
+                <ul class="mo-cols-rows">
+                    {% include("html/videos_related"|common) %}
+                </ul>
             </div>
-            <ul class="mo-cols-rows">
-                {% include("html/videos_related"|common) %}
-            </ul>
-        </div>
+        {% endif %}
     </div>
 
 {% endblock %}

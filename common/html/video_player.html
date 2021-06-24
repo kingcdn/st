@@ -55,7 +55,7 @@
                 </script>
             </div>
         </div>
-        {% if site.part_show and video.m3u8_list|length>0 and video.m3u8_list[0]['parts']|length>1 %}
+        {% if site.part_show_pos=="inside" and video.m3u8_list|length>0 and video.m3u8_list[0]['parts']|length>1 %}
             <div class="seg-parts">
                 {% for m3u8_source in video.m3u8_list %}
                     {% if video.m3u8_list|length>1 %}
