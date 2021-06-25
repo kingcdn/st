@@ -8,8 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="/sitemap.xml" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
-    <link href="{{ static('img/favicon.png',site.theme) }}" rel="shortcut icon" type="image/ico"/>
-    <link href="{{ static('img/favicon.png',site.theme) }}" rel="apple-touch-icon-precomposed"/>
+    <link rel="shortcut icon" href="{{ site.icon }}">
     {% include("html/title"|common) %}
     {% include("html/meta_seo"|common) %}
     {% block head %}{% endblock %}
@@ -334,7 +333,7 @@
                             src="{{ site.icon }}"
                             alt="{{ site.name }}"/><span style="margin: 0px 4px">{{ site.name }}</span></a></li>
                     <li class="mo-navs-item mo-coxs-iblock mo-fsxs-16px"><a
-                            class="mo-text-hover mo-cols-show mo-java-navs" href="/">首页</a></li>
+                            class="mo-text-hover mo-cols-show mo-java-navs {% if not cate_now %}mo-text-mojia{% endif %}" href="/">首页</a></li>
                     {% for cate in site.cates %}
                         <li class="mo-navs-item mo-coxs-iblock mo-fsxs-16px"><a
                                 class="mo-text-hover mo-cols-show  {% if(cate_now==cate) %}mo-text-mojia{% endif %}"

@@ -1,10 +1,10 @@
 <li class="mo-paxs-5px mo-pamd-10px mo-cols-info {% if site.site_type=="影视" %}mo-cols-xs4 mo-cols-sm3 mo-cols-lg2{% else %}mo-cols-xs6 mo-cols-sm4 mo-cols-lg3{% endif %}">
     <a class="mo-situ-pics mo-situ-lazy mo-lazy-color mo-bord-round mo-cols-rows mo-lazy-broad {% if site.site_type=="影视" %}mo-byxs-2by3{% else %}mo-byxs-16by9{% endif %}"
-       href="{{ ad.link.url }}" style="display:block;background-image: url('{{ ad.link.img.poster }}');">
+       href="{{ ad.link.url }}" style="display:block;background-image: url('{{ ad.link.img.poster }}');" target="_blank">
         <span class="mo-situ-play"></span>
         <span class="mo-situ-tips mo-fsxs-12px mo-bord-round mo-back-mojia"><img src="{{ ad.link.img.icon }}" style="width: 30px"></span>
     </a>
-    <a class="mo-situ-name mo-fsxs-14px mo-coxs-center mo-comd-left mo-wrap-arow"
+    <a target="_blank" class="mo-situ-name mo-fsxs-14px mo-coxs-center mo-comd-left mo-wrap-arow"
        href="{{ ad.link.url }}">【{{ad.link.name}}】{{ ad.link.desc }}</a>
 </li>
 

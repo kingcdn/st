@@ -388,8 +388,11 @@ input:-webkit-autofill:focus {background-clip: content-box !important;}
 	.mo-pnss-10px {padding: 0 0.625rem}
 	.mo-ptss-10px {padding-top: 0.625rem;}
 }
+@media(max-width:576px) {
+    /*.mo-navs-left{display: none;}*/
+}
 @media(min-width:576px) {
-	/* 576 */
+
 	.mo-cols-minh {height: calc(100vh - (9.375rem))}
 	.mo-cols-sm1 {width: 8.33333333%}
 	.mo-cols-sm2 {width: 16.66666667%}
@@ -630,7 +633,7 @@ input:-webkit-autofill:focus {background-clip: content-box !important;}
 .mo-part-maxw {max-width: 400px;margin: 0 auto}
 .mo-part-advs {position: absolute;top: 0;right: 0;bottom: 3.125rem;width: 20px;height: 20px;line-height: 20px;background-color: rgba(0, 0, 0, 0.5);z-index: 998}
 .mo-part-ramp {background-image: linear-gradient(transparent, rgba(0, 0, 0, .5))}
-.mo-part-slip {white-space: nowrap;overflow-y: hidden;overflow-x: overlay;-webkit-overflow-scrolling: touch}
+.mo-part-slip {white-space: unset;overflow-y: hidden;overflow-x: overlay;-webkit-overflow-scrolling: touch}
 .mo-part-seal {position: relative;top: -0.0625rem;font-size: .75rem;padding: .0625rem .3125rem;border-radius: .125rem;margin-right: .3125rem;}
 .mo-part-mask {height: 100%;position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 999}
 .mo-part-btns {text-align: center;user-select: none;border: 0;cursor: pointer}
@@ -680,7 +683,7 @@ input:-webkit-autofill:focus {background-clip: content-box !important;}
 .mo-head-info .mo-navs-item {line-height: 40px;padding-right: 10px;vertical-align: middle}
 .mo-head-info .mo-navs-item:first-child {padding-left: 10px;}
 .mo-head-info .mo-navs-right {position: absolute;top: 30px}
-.mo-head-info .mo-navs-form {position: relative;margin: .625rem 96px .625rem 10px}
+.mo-head-info .mo-navs-form {position: relative;margin: .625rem 10px .625rem 10px}
 .mo-head-info .mo-navs-cuts {position: absolute;left: 10px;line-height: 30px}
 .mo-head-info .mo-navs-input {width: 100%;padding: 0 2.5rem 0 20px;line-height: 1.875rem;border: 0;border-radius: 1.875rem}
 .mo-head-info .mo-navs-submit {position: absolute;top: 0;right: 0.0625rem;border: 0;cursor: pointer;}
