@@ -87,16 +87,19 @@
             },
             language: 'zh-CN',
         });
-        {% if site.video_watermark %}
-            var watermark = document.createElement('div');
-            watermark.innerHTML='{{ site.video_watermark.html(site)|safe }}';
-            watermark.draggable = false;
-            {% for key in site.video_watermark.css %}
-                watermark.style.{{ key }}="{{ site.video_watermark.css[key] }}";
-            {% endfor %}
+        {% if site.watermarks|length>0 %}
+            {% for wm in site.watermarks %}
+                var watermark = document.createElement('div');
+                var innerHtml = '{{ wm.html(site,video)|safe }}';
+                watermark.innerHTML = innerHtml;
+                watermark.draggable = false;
+                {% for key in wm.css %}
+                    watermark.style.{{ key }} = "{{ wm.css[key] }}";
+                {% endfor %}
 
-            myPlayer.el().appendChild(watermark);
-            document.getElementsByClassName("vjs-control-bar")[0].style.zIndex = "20000";
+                myPlayer.el().appendChild(watermark);
+                document.getElementsByClassName("vjs-control-bar")[0].style.zIndex = "20000";
+            {% endfor %}
 
         {% endif %}
         myPlayer.on("dblclick", function (e) {
@@ -207,6 +210,7 @@
                 }
             });
         {% endif %}
+
 
     });
 </script>
