@@ -2,7 +2,7 @@
        controlsList="nodownload" preload="preload"
        language="zh-CN" poster="{{ video.cover }}">
     {% if video.m3u8 %}
-        <source src="{{ video.m3u8 }}" type="application/x-mpegURL"/>
+        <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
         {#                                <source src="https://n1.szjal.cn/20210401/9wmy5Obt/index.m3u8" type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
@@ -88,17 +88,13 @@
             language: 'zh-CN',
         });
         {% if site.video_watermark %}
-            var watermark = document.createElement('img');
-            watermark.src = "{{ site.icon }}";
-            watermark.className = "vjs-watermark";
+            var watermark = document.createElement('div');
+            watermark.innerHTML='{{ site.video_watermark.html(site)|safe }}';
             watermark.draggable = false;
+            {% for key in site.video_watermark.css %}
+                watermark.style.{{ key }}="{{ site.video_watermark.css[key] }}";
+            {% endfor %}
 
-            {% if site.video_watermark.width %}
-                watermark.style.width = "{{ site.video_watermark.width }}"
-            {% endif %}
-            {% if site.video_watermark.height %}
-                watermark.style.height = "{{ site.video_watermark.height }}"
-            {% endif %}
             myPlayer.el().appendChild(watermark);
             document.getElementsByClassName("vjs-control-bar")[0].style.zIndex = "20000";
 

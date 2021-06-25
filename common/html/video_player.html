@@ -34,11 +34,14 @@
                         {% include("html/video_ads_small"|common) %}
                     {% endif %}
                 {% endif %}
-                <div id="inline-ad">
-                    <a href="https://8f166.com/" target="_blank">本片由<span style="color: #a79e0a;font-weight: bold;">太阳城8f166.com</span>独家赞助播出
-                        <br/>火爆全网 美女直播 棋牌游戏
-                        AG视讯 百家乐 存款送20%</a>
-                </div>
+                {% if not site.adc.video_inside %}
+                    <div id="inline-ad" style="{% if not video.from_iframe %}bottom: 0px;{% endif %}">
+                        <a href="https://8f166.com/" target="_blank" style="color: white">本片由<span
+                                style="color: #a79e0a;font-weight: bold;">太阳城8f166.com</span>独家赞助播出
+                            <br/>火爆全网 美女直播 棋牌游戏
+                            AG视讯 百家乐 存款送20%</a>
+                    </div>
+                {% endif %}
                 <script>
                     $(function () {
                         var inline_ad = $('#inline-ad');
