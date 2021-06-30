@@ -1,0 +1,54 @@
+.tjimgwap {
+	background-color: #fff;
+	width: 100%;
+}
+.changgewap {
+    padding:12px 30px;
+    font-size:14px;
+}
+.changgewap span {
+    color:#999;		margin-top: 5px;
+}
+.changgewap ul li {
+    float:left;
+    margin-right:10px;
+    margin-bottom:10px;		text-align: center;
+}
+.changgewap ul li img{
+margin: 0 auto;padding: 0px;width: 32px;height: 32px;border-radius: 32px;display: block;
+}
+.changgewap ul a {
+    color:#3c9387;
+    font-size:14px;
+}
+.changgewap ul a:hover img{
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out 0s;
+}
+.changgewap ul a:hover {
+    color:#36F;
+}
+.changgewap {
+	padding: 5px 10px;
+	font-size: 14px;
+}
+.changgewap ul a {
+	color: #3c9387;
+	font-size: 14px;
+	white-space: nowrap;
+}
+
+.changgewap ul a {
+	color: #3c9387;
+	font-size: 14px;
+	white-space: nowrap;
+}
+
+.changgewap ul li {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	width: 22%;
+	margin-right: 3%;
+}
