@@ -81,7 +81,7 @@ body{ font-family:'Microsoft Yahei',Tahoma,Simsun; background-color:#111; font-s
 .web .web_list li a{ display:block; height:28px; width:130px; line-height:28px; text-indent:30px; text-transform:capitalize; background:url(../images/point_1.png) 7px center no-repeat; background-size:16px 16px; position:absolute; left:0; top:0; overflow:hidden;}
 .web .web_list li a:hover{ color:#FFF;}
 .web .web_list li a.hot{ background:url(../images/hot_1.gif) 7px center no-repeat;}
-.zhanzhang{ display: ; width:950px; background:#FFF; margin:auto; margin-top:1px; padding-bottom:15px;}
+.zhanzhang{ display: block; width:950px; background:#FFF; margin:auto; margin-top:1px; padding-bottom:15px;}
 .zhanzhang .zhanzhang_title{ height:40px; line-height:40px; text-align:center; background:#1a90d4; color:#FFF; margin-bottom:15px}
 .zhanzhang .zhanzhang_list{ padding:4px 20px;}
 .zhanzhang .zhanzhang_list h5{ margin:1px; display:inline-block; color:#222; font-weight:normal; padding:4px 10px; background:#f0f0f0; transition:0.2s; border:1px solid #333; float:left; color:#222;}

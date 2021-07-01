@@ -1,0 +1,347 @@
+{% extends site.theme|layout %}
+
+{% block style %}
+    <style type="text/css">@media screen and (max-device-width: 950px) {
+        .title {
+            margin: 1%;
+        }
+
+        .title h2 {
+            line-height: 36px;
+            text-align: center;
+            color: #FFF;
+            background: #1a90d4;
+            font-size: 1.2em
+        }
+
+        .title p {
+            padding: 20px;
+            text-align: center;
+            color: #03C;
+            background: #f69;
+            line-height: 30px;
+            font-size: 0.9em
+        }
+
+        .title p span {
+            font-size: 20px;
+            font-weight: 900;
+            color: #F00;
+        }
+
+        .clear {
+            height: 10px;
+            width: 100%;
+            display: block !important;
+            background: none !important;
+        }
+
+        .wrap {
+            margin: 4%;
+        }
+
+        .wrap ul li {
+            background: #F8F8F8;
+            padding: 15px 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            border: 1px solid #F0F0F0;
+        }
+
+        .wrap ul li div {
+            display: none;
+        }
+
+        .wrap ul li p {
+            line-height: 22px;
+        }
+
+        .wrap ul li p a {
+            color: #069;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .wrap ul li p a:hover {
+            color: #36F
+        }
+
+        .wrap ul li:nth-child(1) div {
+            background: #F66;
+        }
+
+        .wrap ul li:nth-child(2) div {
+            background: #00F;
+        }
+
+        .wrap ul li:nth-child(3) div {
+            background: #f69;
+        }
+
+        .wrap ul li:nth-child(4) div {
+            background: #F3F;
+        }
+
+        .wrap ul li:nth-child(5) div {
+            background: #90F;
+        }
+
+        .wrap ul li:nth-child(6) div {
+            background: #F90;
+        }
+
+        .number {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .number a {
+            text-align: center;
+            color: #FFF
+        }
+    }
+
+    @media screen and (min-width: 950px) {
+        .title {
+            width: 890px;
+            padding: 30px;
+            margin: auto;
+            margin-top: 20px;
+            background: #FFF
+        }
+
+        .title h2 {
+            line-height: 40px;
+            text-align: center;
+            color: #FFF;
+            background: #1a90d4;
+            font-size: 18px;
+        }
+
+        .title p {
+            padding: 30px;
+            color: #03C;
+            text-align: center;
+            background: #F8F8F8;
+            line-height: 30px;
+            font-size: 12px;
+            border: 1px solid #F4F4F4;
+        }
+
+        .title p span {
+            font-size: 20px;
+            font-weight: 900;
+            color: #F00;
+        }
+
+        .clear {
+            display: none !important;
+        }
+
+        .wrap {
+            width: 890px;
+            padding: 30px;
+            margin: auto;
+            background: #FFF;
+        }
+
+        .wrap ul li {
+            background: #F8F8F8;
+            height: 22px;
+            padding: 10px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .wrap ul li div {
+            background: #BBB;
+            float: left;
+            line-height: 22px;
+            text-align: center;
+            width: 22px;
+            color: #FFF;
+        }
+
+        .wrap ul li p {
+            line-height: 22px;
+            text-indent: 30px;
+        }
+
+        .wrap ul li p a {
+            color: #069;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .wrap ul li p a:hover {
+            color: #36F
+        }
+
+        .wrap ul li:nth-child(1) div {
+            background: #F66;
+        }
+
+        .wrap ul li:nth-child(2) div {
+            background: #00F;
+        }
+
+        .wrap ul li:nth-child(3) div {
+            background: #f69;
+        }
+
+        .wrap ul li:nth-child(4) div {
+            background: #F3F;
+        }
+
+        .wrap ul li:nth-child(5) div {
+            background: #90F;
+        }
+
+        .wrap ul li:nth-child(6) div {
+            background: #F90;
+        }
+
+        .number {
+            width: 950px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .number a {
+            color: #222
+        }
+    }
+
+    .add .row {
+        margin-top: 10px;
+        padding-bottom: 10px;
+        border: none;
+        border-bottom: 1px dashed #fff
+    }
+
+    .add .row p {
+        margin-bottom: 10px;
+        color: #d75544;
+        font-weight: 700;
+        font-size: 1.125rem;
+        line-height: 1.875rem
+    }
+
+    .add .row ol {
+        padding-left: 30px
+    }
+
+    .add .row ol li {
+        height: 30px;
+        font-size: 1pc
+    }
+
+    .add .form {
+        margin-top: 20px;
+        padding: 20px;
+        background: #fff;
+        color: #000;
+        opacity: .6
+    }
+
+    .add .line {
+        padding: 10px
+    }
+
+    .add .line label {
+        display: block;
+        font-size: 1.125rem
+    }
+
+    .add .line input, .add .line select {
+        display: inline-block;
+        box-sizing: border-box;
+        margin: 8px 0;
+        padding: 9pt 20px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #ccc
+    }
+
+    .add .line button {
+        margin: 8px 0;
+        padding: 14px 20px;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        background: #4CAF50;
+        color: #fff;
+        cursor: pointer
+    }
+
+    .add .line button:hover {
+        background: #f69;
+        color: #d75544
+    }</style>
+
+{% endblock %}
+{% block content %}
+    <div class="title">
+   <h2>关于{{ site.name }}导航</h2>
+   <div></div>
+  </div>
+    <div class="wrap">
+   <ul>
+    <li>
+     <div>
+      1
+     </div> <p> <span style="padding:3px 5px; background:#222; color:#FFF;">本站情怀</span><span style="color:#53868B; font-weight:bolder; margin:0 20px 0 10px; font-size:15px;">每一个网站都有一个情怀，我们的情怀就是：纯净、实用、坚持用户体验至上！</span></p><p></p></li>
+    <li>
+     <div>
+      2
+     </div> <p><span style="padding:3px 5px; background:#222; color:#FFF;">举报网站</span><span style="color:#9A32CD; font-weight:bolder; margin:0 20px 0 10px; font-size:15px;">若您发现导航内所收录的网站存在问题，请发邮件向我们投诉（联系邮箱：{{ site.email }}）</span></p><p></p></li>
+
+    <li>
+     <div>
+      5
+     </div> <p><span style="padding:3px 5px; background:#222; color:#FFF;">最新地址索取邮箱</span><span style="color:#F00; font-weight:bolder; margin:0 20px 0 10px; font-size:15px;">{{ site.email }}（发送任意邮件至该邮箱即可获得最新地址的回复）</span></p><p></p></li>
+
+    <p></p>
+   </ul>
+  </div>
+    <div class="title">
+        <h2>合作说明</h2>
+        <div></div>
+    </div>
+    <div class="wrap">
+        <ul>
+            <li>
+                <div>
+                    1
+                </div>
+                <p><font style="color:#06F;">目前{{ site.name }}流量在上升期，广告价格会根据实时流量情况做适当调整，续费价格不变，广告删除后再次订购将按实时广告价格</font></p></li>
+            <li>
+                <div>
+                    2
+                </div>
+                <p><font style="color:#262626;">来信时请提供贵站地址，拒绝一切恶意、钓鱼等所有带欺骗成分的网站</font></p></li>
+            <li>
+                <div>
+                    3
+                </div>
+                <p><font style="color:#262626;">本站广告不保证效果，也不做点击效果保证，完全自愿投放本站广告</font></p></li>
+            <li>
+                <div>
+                    4
+                </div>
+                <p><font style="color:#262626;">广告投放最低期限为一个月，我站不提供测试</font></p></li>
+            <li>
+                <div>
+                    5
+                </div>
+                <p><font style="color:#262626;">注意：本站山寨版众多！很多无良小人直接复制本站，借用本站的名声招摇撞骗，请大家务必仔细辨别（盗版都是刷量的）</font></p></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
+
+{#{% include("data"|common) %}#}

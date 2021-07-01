@@ -1,0 +1,321 @@
+{% extends site.theme|layout %}
+
+{% block style %}
+    <style type="text/css">@media screen and (max-device-width: 950px) {
+        .title {
+            margin: 1%;
+        }
+
+        .title h2 {
+            line-height: 36px;
+            text-align: center;
+            color: #FFF;
+            background: #1a90d4;
+            font-size: 1.2em
+        }
+
+        .title p {
+            padding: 20px;
+            text-align: center;
+            color: #03C;
+            background: #f69;
+            line-height: 30px;
+            font-size: 0.9em
+        }
+
+        .title p span {
+            font-size: 20px;
+            font-weight: 900;
+            color: #F00;
+        }
+
+        .clear {
+            height: 10px;
+            width: 100%;
+            display: block !important;
+            background: none !important;
+        }
+
+        .wrap {
+            margin: 4%;
+        }
+
+        .wrap ul li {
+            background: #F8F8F8;
+            padding: 15px 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            border: 1px solid #F0F0F0;
+        }
+
+        .wrap ul li div {
+            display: none;
+        }
+
+        .wrap ul li p {
+            line-height: 22px;
+        }
+
+        .wrap ul li p a {
+            color: #069;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .wrap ul li p a:hover {
+            color: #36F
+        }
+
+        .wrap ul li:nth-child(1) div {
+            background: #F66;
+        }
+
+        .wrap ul li:nth-child(2) div {
+            background: #00F;
+        }
+
+        .wrap ul li:nth-child(3) div {
+            background: #f69;
+        }
+
+        .wrap ul li:nth-child(4) div {
+            background: #F3F;
+        }
+
+        .wrap ul li:nth-child(5) div {
+            background: #90F;
+        }
+
+        .wrap ul li:nth-child(6) div {
+            background: #F90;
+        }
+
+        .number {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .number a {
+            text-align: center;
+            color: #FFF
+        }
+    }
+
+    @media screen and (min-width: 950px) {
+        .title {
+            width: 890px;
+            padding: 30px;
+            margin: auto;
+            margin-top: 20px;
+            background: #FFF
+        }
+
+        .title h2 {
+            line-height: 40px;
+            text-align: center;
+            color: #FFF;
+            background: #1a90d4;
+            font-size: 18px;
+        }
+
+        .title p {
+            padding: 30px;
+            color: #03C;
+            text-align: center;
+            background: #F8F8F8;
+            line-height: 30px;
+            font-size: 12px;
+            border: 1px solid #F4F4F4;
+        }
+
+        .title p span {
+            font-size: 20px;
+            font-weight: 900;
+            color: #F00;
+        }
+
+        .clear {
+            display: none !important;
+        }
+
+        .wrap {
+            width: 890px;
+            padding: 30px;
+            margin: auto;
+            background: #FFF;
+        }
+
+        .wrap ul li {
+            background: #F8F8F8;
+            height: 22px;
+            padding: 10px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .wrap ul li div {
+            background: #BBB;
+            float: left;
+            line-height: 22px;
+            text-align: center;
+            width: 22px;
+            color: #FFF;
+        }
+
+        .wrap ul li p {
+            line-height: 22px;
+            text-indent: 30px;
+        }
+
+        .wrap ul li p a {
+            color: #069;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .wrap ul li p a:hover {
+            color: #36F
+        }
+
+        .wrap ul li:nth-child(1) div {
+            background: #F66;
+        }
+
+        .wrap ul li:nth-child(2) div {
+            background: #00F;
+        }
+
+        .wrap ul li:nth-child(3) div {
+            background: #f69;
+        }
+
+        .wrap ul li:nth-child(4) div {
+            background: #F3F;
+        }
+
+        .wrap ul li:nth-child(5) div {
+            background: #90F;
+        }
+
+        .wrap ul li:nth-child(6) div {
+            background: #F90;
+        }
+
+        .number {
+            width: 950px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .number a {
+            color: #222
+        }
+    }
+
+    .add .row {
+        margin-top: 10px;
+        padding-bottom: 10px;
+        border: none;
+        border-bottom: 1px dashed #fff
+    }
+
+    .add .row p {
+        margin-bottom: 10px;
+        color: #d75544;
+        font-weight: 700;
+        font-size: 1.125rem;
+        line-height: 1.875rem
+    }
+
+    .add .row ol {
+        padding-left: 30px
+    }
+
+    .add .row ol li {
+        height: 30px;
+        font-size: 1pc
+    }
+
+    .add .form {
+        margin-top: 20px;
+        padding: 20px;
+        background: #fff;
+        color: #000;
+        opacity: .6
+    }
+
+    .add .line {
+        padding: 10px
+    }
+
+    .add .line label {
+        display: block;
+        font-size: 1.125rem
+    }
+
+    .add .line input, .add .line select {
+        display: inline-block;
+        box-sizing: border-box;
+        margin: 8px 0;
+        padding: 9pt 20px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #ccc
+    }
+
+    .add .line button {
+        margin: 8px 0;
+        padding: 14px 20px;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        background: #4CAF50;
+        color: #fff;
+        cursor: pointer
+    }
+
+    .add .line button:hover {
+        background: #f69;
+        color: #d75544
+    }</style>
+
+{% endblock %}
+{% block content %}
+    <div class="title">
+        <h2>合作说明</h2>
+        <div></div>
+    </div>
+    <div class="wrap">
+   <ul>
+    <li>
+     <div>
+      1
+     </div> <p> <span style="padding:3px 5px; background:#222; color:#FFF;">名称</span><span style="color:#F00; font-weight:bolder; margin:0 20px 0 10px; font-size:15px;">{{site.name}}</span><em class="clear"></em><span style="padding:3px 5px; background:#222; color:#FFF;">地址</span><span style="color:#F00; font-weight:bolder; margin:0 20px 0 10px; font-size:15px;">https://{{ site.domain }}</span><em class="clear"></em>{% if site.email %}<span style="padding:3px 5px; background:#222; color:#FFF;">邮箱</span><span style="color:#F00; font-weight:bolder; margin:0 20px 0 10px; font-size:15px;">{{ site.email}}</span>{% endif %}</p><p></p></li>
+    <li>
+     <div>
+      2
+     </div> <p> <span style="color: #EE3A8C;font-weight:bold ">请在贵站首页前三置处添加本站链接，四五位置择优收录，其他位置暂不收录</span></p></li>
+    <li>
+     <div>
+      3
+     </div> <p> <span style="color: #2E64FE;font-weight:bold ">量大的可以互换更好的位置</span></p></li>
+    <li>
+     <div>
+      4
+     </div> <p> <span style="color:#262626;">跟本站交换过友链的站长请注意，如果上方更新了新的友情链接地址，请及时更换</span></p></li>
+    <li>
+     <div>
+      5
+     </div> <p> <span style="color:#262626;">本站将定期抽查所有网站，如发现链接失效﹑更换本站位置﹑下掉本站链接﹑站群﹑刷量的情况将立即删除</span></p></li>
+    <li>
+     <div>
+      注
+     </div> <p> <span style="color:#F00;">近期发现有小人冒充本站，给本站友情链接站长发邮件，意图篡改本站链接为山寨链接，请不要上当受骗，请认准本站上面的唯一联系邮箱</span></p></li>
+   </ul>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

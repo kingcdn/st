@@ -1,809 +1,290 @@
-<!-- 爱党、爱国、爱人民！ -->
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta charset="utf-8">
-    <title>藏姬阁导航 - 最好的福利导航</title>
-    <meta name="keywords" content="福利视频,福利导航,樱桃福利入口,老司机福利导航,辣椒福利导航,午夜福利导航,最新地址">
-    <meta name="description"
-          content="藏姬阁导航是一个综合类地址大全导航站，我们网罗精彩实用各行各业大全地址，汇集最优秀的网站及资源，及时收录影视、音乐、小说、游戏、软件等分类的地址和内容，提供多种永久发布页和永久网页，提供最好的福利导航、最新地址和精选蓝色福利！">
-    <script type="text/javascript">document.getElementsByTagName("title")[0].innerText = '藏姬阁导航 - 最好的福利导航';</script>
-    <link rel="shortcut icon" href="{{ site.icon }}">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
-    <link rel="stylesheet" type="text/css" media="screen and (max-width:800px)"
-          href="{{ static('css/sj.css',site.theme) }}">
-    <link rel="stylesheet" type="text/css" media="screen and (min-width:800px)"
-          href="{{ static('css/pc.css',site.theme) }}">
-    <link rel="stylesheet" type="text/css" media="screen and (max-width:800px)"
-          href="{{ static('css/wap.css',site.theme) }}">
-    <link rel="stylesheet" type="text/css" media="screen and (max-width:800px)"
-          href="{{ static('css/cjgapp.css',site.theme) }}">
-    <link rel="stylesheet" href="{{ static('css/apppc.css',site.theme) }}" type="text/css">
-    <script type="text/javascript" language="javascript" src="{{ static('js/jquery_2.js',site.theme) }}"></script>
-    <script type="text/javascript" language="javascript" src="{{ static('js/easing_2.js',site.theme) }}"></script>
-    <script type="text/javascript" language="javascript" src="{{ static('js/js_2.js',site.theme) }}"></script>
-    <link rel="stylesheet" href="{{ static('css/tc.css',site.theme) }}">
-    <style>
-        /*downapp-fixed */
-        .downapp-fixed {
-            height: .65rem;
-        }
+{% extends site.theme|layout %}
 
-        .downapp {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #1b4880;
-            box-shadow: 0 0 .1rem rgba(0, 0, 0, .2);
-        }
-
-        .downapp .text {
-            padding: .1rem 0 .1rem .1rem;
-        }
-
-        .downapp .text p {
-            overflow: hidden;
-            padding: .05rem 0 0 .1rem;
-        }
-
-        .modal-downapp .text p strong {
-            font-size: .18rem;
-        }
-
-        .downapp .text img {
-            float: left;
-            width: .48rem;
-            height: .48rem;
-        }
-
-        .downapp .btn-group {
-            position: absolute;
-            top: 0;
-            right: 0;
-            white-space: nowrap;
-            font-size: 0;
-            padding-right: .1rem;
-        }
-
-        .downapp .btn-group .btn {
-            display: inline-block;
-            padding: .07rem .15rem;
-            font-size: .14rem;
-            margin: .15rem 0 0 .1rem;
-        }
-    </style>
-
-
-    <!--弹窗-->
-</head>
-<body data-spy="scroll" data-target="#nav-plane" data-offset="49" ondragstart="window.event.returnValue=true"
-      oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=true">
-<div class="layer" style="display: none;"></div>
-<div id="globalAd" style="display: none;">
-    <div id="hero-img" style="background-color: #1a95ff;background: linear-gradient(to left, #5dadf3 0, #4583ca 100%);">
-    </div>
-    <div id="profile-img">
-        <a href="https://vv39t.com" target="_blank" rel="external nofollow"> <img
-                src="https://3336670.com/df31739edfd44e4ca064f0e700208351.gif"> </a>
-    </div>
-    <div id="content">
-        <span style="font-size:18px;color:#666666;"><a href="https://vv39t.com" target="_blank"><span
-                style="color:#666666;font-size:16px;">澳门威尼斯人vv39t.com</span></a></span>
-        <br>
-        <br>
-        <p>
-            <a href="https://vv39t.com" target="_blank"><span style="font-size:16px;color:#E53333;">现金棋牌 提款秒到帐！</span></a>
-        </p>
-
-        <br>
-        <p>
-            <span style="font-size:18px;color:#666666;"><a href="https://ameblo.jp/panghulaoge/entry-12583201640.html"
-                                                           target="_blank"><span style="color:#666666;font-size:16px;">请务必收藏本站永久地址发布页，开车永不迷路！</span></a></span>
-        </p>
-        <br>
-
-        <a onclick="closeGlobalAd();" class="btn btn-default" rel="nofollow">进入导航</a>
-        <a href="{{ site.github }}" target="_blank" onclick="redirectUrlToActive();" class="btn btn-default"
-           rel="nofollow">永久地址</a>
-    </div>
-</div>
-<script>
-    jQuery.cookie = function (name, value, options) {
-        if (typeof value != 'undefined') {
-            options = options || {};
-            if (value === null) {
-                value = '';
-                options.expires = -1;
-            }
-            var expires = '';
-            if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
-                var date;
-                if (typeof options.expires == 'number') {
-                    date = new Date();
-                    var totalTime = 24 * 3600;
-                    var hour = date.getHours();
-                    var minutes = date.getMinutes();
-                    var seconds = date.getSeconds();
-                    var pastTime = 3600 * hour + 60 * minutes + seconds;
-                    var leftTime = totalTime - pastTime;
-                    date.setTime(date.getTime() + (options.expires * leftTime * 1000));
-                } else {
-                    date = options.expires;
-                }
-                expires = '; expires=' + date.toUTCString();
-            }
-            var path = options.path ? '; path=' + (options.path) : '';
-            var domain = options.domain ? '; domain=' + (options.domain) : '';
-            var secure = options.secure ? '; secure' : '';
-            document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
-        } else {
-            var cookieValue = null;
-            if (document.cookie && document.cookie != '') {
-                var cookies = document.cookie.split(';');
-                for (var i = 0; i < cookies.length; i++) {
-                    var cookie = jQuery.trim(cookies[i]);
-                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
-                    }
-                }
-            }
-            return cookieValue;
-        }
-    };
-    $(function () {
-        var COOKIE_NAME = "{{ site.key }}";
-        if ($.cookie(COOKIE_NAME)) {
-            $(".layer").hide();
-            $("#globalAd").hide();
-        } else {
-            var erdangjiadeH = $(window).height();
-            var erdangjiadeW = $(window).width();
-            $(".layer").show();
-            $("#globalAd").css({
-                'top': erdangjiadeH / 2 - $("#globalAd").height() / 2,
-                'left': erdangjiadeW / 2 - $("#globalAd").width() / 2
-            });
-            $("#globalAd").slideDown(300, function () {
-                setTimeout("closeGloableAd()", '300000');
-            });
-            $.cookie(COOKIE_NAME, "{{ site.key }}", {
-                path: '/',
-                expires: 1
-            });
-        }
-    });
-
-    function closeGlobalAd() {
-        $('#globalAd').hide();
-        $('.layer').hide();
-
-    }
-
-    function redirectUrlToActive() {
-        $('#globalAd').hide();
-        $('.layer').hide();
-    }
-</script>
-<!--弹窗-->
-
-
-<!--顶部-->
-<div class="head">
-    <div class="head_main">
-        <a href="/" class="logo" style="background-image:url({{ static('images/cangjige.png',site.theme) }})"><h1>
-            藏姬阁导航</h1></a>
-        <span class="pc_introduce">藏姬阁导航 - 最好的福利导航</span>
-        <span class="wap_introduce">藏姬阁导航 - 手机版</span>
-        <div class="head_more">
-            <a href="javascript:;" class="open" rel="external nofollow"><span>请务必收藏本站最新地址发布页</span></a>
-            <a href="shoulu.html" class="head_more_links" rel="external nofollow" target="_blank"
-               style="background-image:url({{ static('images/comment_1.png',site.theme) }}); background-position:center 14px;"></a>
-            <a href="about.html" class="head_more_links" rel="external nofollow" target="_blank"
-               style="background-image:url({{ static('images/more_1.png',site.theme) }}); background-position:center center;"></a>
-        </div>
-    </div>
-</div>
-<div id="top"></div>
-<!--左侧-->
-<div id="nav-plane" style="overflow:hidden">
-    <ul>
-        {% if friend_links %}
-            {% for cate in friend_links %}
-                <li class=""><a href="#{{ cate }}" rel="external nofollow">{{ cate }}</a></li>
-            {% endfor %}
-        {% endif %}
-    </ul>
-    <div><p></p></div>
-</div>
-
-<!--右下角图标pc-->
-<!--
+{% block content %}
+    <!--图标102 yszb zxkp 291 127 122 477 221 222 428 223 224.png 126 922 601 103.jpg -->
     <div class="tjimg pc">
-<a href="https://qb71.cc/?code=73SDE" target="_blank" style="z-index:999; position: fixed;right:60px;bottom:6%;display:block;">
-          <img src="{{ static('ico/702.jpg',site.theme) }}" height="100" style="display:block;width:100;">
-      </a>
-</div>-->
-<!--右下角图标web-->
-<!--
-  <div class="tjimgwap wap">
-<a href="https://qb71.cc/?code=73SDE" target="_blank" style="display:block;position: fixed;z-index:100;bottom: 80px;left: 316px;width: 70px;animation: float 3s infinite;-webkit-transition: top 1s ease,opacity 1s ease;transition: top 1s ease,opacity 1s ease;">
-			<img src="{{ static('ico/702.jpg',site.theme) }}" style=" width: 100%;display: block;">
-		</a>
-</div>
- -->
-<!--横幅dcj.gif dxkc.gif-->
-<div id="top" class="banner">
-    {% include("html/top_ads"|common) %}
-</div>
-
-<div id="top" class="web wap">
-    {% include("html/top_ads"|common) %}
-</div>
-
-<!--导航-->
-<div id="精品" class="nav">
-    <a class="on" href="../">首頁</a>
-    <a href="/shoulu.html" target="_blank">收录</a>
-    <a href="/about.html" target="_blank">关于</a>
-
-    <!--a href="AD.html">广告</a-->
-    <span class="hong cu pc"> 》》》富强，民主，文明，和谐；自由，平等，公正，法制；爱国，敬业，诚信，友善《《《 </span>
-</div>
-<!--图标102 yszb zxkp 291 127 122 477 221 222 428 223 224.png 126 922 601 103.jpg -->
-<div class="tjimg pc">
-    <div class="change">
-        <ul>
-            {% if friend_links and friend_links.get('TOP') %}
-                {% for link in friend_links['TOP'] %}
-                    <li><a href="{{ link.url }}" title="{{ link.name }}" target="_blank" rel="external nofollow">
-                        <img alt="{{ link.name }}" src="{{ link.img.url }}"><span>{{ link.name }}</span></a>
-                    </li>
-                {% endfor %}
-            {% endif %}
-        </ul>
-        <div style="clear:both"></div>
-    </div>
-</div>
-
-<!--wap-->
-<div class="tjimgwap wap">
-    <div class="changgewap">
-        <ul>
-            {% if friend_links and friend_links.get('TOP') %}
-                {% for link in friend_links['TOP'] %}
-                    <li><a href="{{ link.url }}" title="{{ link.name }}" target="_blank" rel="external nofollow">
-                        <img alt="{{ link.name }}" src="{{ link.img.url }}"><span>{{ link.name }}</span></a>
-                    </li>
-                {% endfor %}
-            {% endif %}
-        </ul>
-        <div style="clear:both"></div>
-    </div>
-</div>
-<!--导航-->
-<div class="look">
-    <div class="focus">
-        {% if friend_links and friend_links.get('精品') %}
-            {% for link in friend_links['精品'] %}
-                <a href="{{ link.url }}" title="{{ link.name }}" target="_blank"
-                   rel="external nofollow">{{ link.name }}</a>
-            {% endfor %}
-        {% endif %}
-    </div>
-    <div class="flash">
-        <a class="flash_bg" href="/" target="_blank" rel="external nofollow"
-           style="background-position:center center; background-image:url(http://cangjigedh.life/116.jpg)"></a>
-        <a class="flash_wd" href="/" target="_blank" rel="external nofollow">国产自拍、啪啪视频</a>
-
-    </div>
-    <div class="news">
-        <div class="news_box">
-            <div class="news_title">
-                <h2>回家的路</h2>
-                <p></p>
-            </div>
-            <ul class="news_list">
-                <li><span>1 ：</span>
-                    {% if site.github %}
-                        <a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a>
-                    {% endif %}
-                </li>
-
-            </ul>
-        </div>
-        <a class="news_url open" href="{{ site.github }}" target="_blank" rel="external nofollow">
-            <div>永久地址发布页</div>
-            <span class="fs17 border hong">点击进入</span>
-        </a>
-    </div>
-</div>
-<div class="clear"></div>
-<div class="collect">
-    <font class="hei wap">欢迎回家！ 请 <span>收藏</span> 本站地址发布页，开车永不迷路</font>
-    <font class="pc">欢迎回家！ 请 <span>收藏</span> 本站地址发布页，开车永不迷路，一直被模仿，从未被超越</font>
-</div>
-<div class="collect wap">
-    <a class="lan cu" href="/cjg.apk" target="_blank">安装本站安卓客户端</a> <font class="hei wap">丨</font> <a class="hong cu"
-                                                                                                      href="https://t.me/icjgdh"
-                                                                                                      target="_blank">加入官方电报频道</a>
-</div>
-<!-- 公告 -->
-<div class="show_zhanzhang pc">
-
-    <font class="hong">本站明确包含成人内容，请遵守当地法律访问，未满18周岁严格禁止访问！</font>
-
-</div>
-
-<!--文字-->
-<div class="words">
-    <div class="words_box">
-        <div class="words_list"><!--红绿蓝粉紫黑-->
-            <a href="http://1024x1.com/" target="_blank" rel="external nofollow noopener" title="杨幂3p门事件">
-                <div class="hong cu">杨幂3p门事件</div>
-                <span>2021杨幂最新3p门事件下载</span></a>
-            <a href="http://1024x1.com/" target="_blank" rel="external nofollow noopener" title="最新精品大站">
-                <div class="fen cu">最新精品大站</div>
-                <span>每天更新2021最新国产大片</span></a>
-            <a href="http://55a6.cc" target="_blank" rel="external nofollow noopener" title="学生萝莉破处">
-                <div class="hong cu">学生萝莉破处</div>
-                <span>学生萝莉破处</span></a>
-            <a href="http://dztj666.tech" target="_blank" rel="external nofollow noopener" title="高清萝莉呦呦">
-                <div class="fen cu">高清萝莉呦呦</div>
-                <span>高清萝莉呦呦</span></a>
-            <a href="https://www.tkymaoyi77.com/?id=39871663" target="_blank" rel="external nofollow noopener"
-               title="免费高清无码">
-                <div class="zi cu">免费高清无码</div>
-                <span>免费高清无码</span></a>
-            <a href="http://zuiuuu.com/index.php/user/reg.html?uid=476" target="_blank" rel="external nofollow noopener"
-               title="呦女萝莉人兽">
-                <div class="fen cu">呦女萝莉人兽</div>
-                <span>精品呦呦资源</span></a>
-            <a href="https://www.seguanjian.cc/" target="_blank" rel="external nofollow noopener" title="91小姐楼凤网">
-                <div class="zi cu">91小姐楼凤网</div>
-                <span>91小姐楼凤网</span></a>
-            <a href="/" target="_blank" rel="external nofollow noopener" title="虚位以待">
-                <div class="hei ">虚位以待</div>
-                <span>虚位以待</span></a>
-            <a href="/" target="_blank" rel="external nofollow noopener" title="虚位以待">
-                <div class="hei ">虚位以待</div>
-                <span>虚位以待</span></a>
-            <div class="clear"></div>
-        </div>
-    </div>
-</div>
-
-<!--appweb-->
-
-
-{% if friend_links %}
-    {% for cate in friend_links %}
-        {% if cate!="TOP" and cate!="推荐" %}
-            <div id="{{ cate }}" class="web">
-                <div class="web_class">
-                    <div class="web_class_title">
-                        <h2>{{ cate }}</h2>
-                        <div></div>
-                    </div>
-                </div>
-                <ul class="web_list">
-                    {% for link in friend_links[cate] %}
-                        <li>
-                            <div style="background-color: rgb(255, 51, 51); display: none;"></div>
-                            <a href="{{ link.url }}" target="_blank"
-                               {% if link.img.url %}style="background-image:url({{ link.img.url }})"{% endif %}
-                               rel="external nofollow">{{ link.name }}</a></li>
+        <div class="change">
+            <ul>
+                {% if friend_links and friend_links.get('TOP') %}
+                    {% for link in friend_links['TOP'] %}
+                        <li><a href="{{ link.url }}" title="{{ link.name }}" target="_blank" rel="external nofollow">
+                            <img alt="{{ link.name }}" src="{{ link.img.url }}"><span>{{ link.name }}</span></a>
+                        </li>
                     {% endfor %}
+                {% endif %}
+            </ul>
+            <div style="clear:both"></div>
+        </div>
+    </div>
 
-                    <div class="clear"></div>
+    <!--wap-->
+    <div class="tjimgwap wap">
+        <div class="changgewap">
+            <ul>
+                {% if friend_links and friend_links.get('TOP') %}
+                    {% for link in friend_links['TOP'] %}
+                        <li><a href="{{ link.url }}" title="{{ link.name }}" target="_blank" rel="external nofollow">
+                            <img alt="{{ link.name }}" src="{{ link.img.url }}"><span>{{ link.name }}</span></a>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <!--导航-->
+    <div class="look">
+        <div class="focus">
+            {% if friend_links and friend_links.get('精品') %}
+                {% for link in friend_links['精品'] %}
+                    <a href="{{ link.url }}" title="{{ link.name }}" target="_blank"
+                       rel="external nofollow">{{ link.name }}</a>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="flash">
+            <a class="flash_bg" href="/" target="_blank" rel="external nofollow"
+               style="background-position:center center; background-image:url({{ static('images/116.jpg',site.theme) }})"></a>
+            <a class="flash_wd" href="/" target="_blank" rel="external nofollow">国产自拍、啪啪视频</a>
+
+        </div>
+        <div class="news">
+            <div class="news_box">
+                <div class="news_title">
+                    <h2>回家的路</h2>
+                    <p></p>
+                </div>
+                <ul class="news_list">
+                    <li><span>1 ：</span>
+                        {% if site.github %}
+                            <a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a>
+                        {% endif %}
+                    </li>
+
                 </ul>
             </div>
-        {% endif %}
-    {% endfor %}
-{% endif %}
-
-<div id="zhanzhang" class="zhanzhang pc">
-    <div class="zhanzhang_title">
-        <h2>站长工具</h2>
-    </div>
-    <ul class="zhanzhang_list">
-        <h5>站长必备</h5>
-        <li>
-            <a href="https://www.coincola.app/mobile/signup?ref=fOT4wRMO&amp;country_code=CN&amp;lang=zh-CN&amp;utm_source=fOT4wRMO&amp;utm_medium=web&amp;utm_campaign=invite4.0&amp;utm_content=link"
-               target="_blank" rel="external nofollow">CoinCola（比特币）</a></li>
-        <li><a href="https://mail.google.com/" target="_blank" rel="external nofollow">Gmail（谷歌邮箱）</a></li>
-        <li><a href="https://www.google.com/chrome/" target="_blank" rel="external nofollow">Chrome（谷歌浏览器）</a></li>
-        <li><a href="https://analytics.google.com/" target="_blank" rel="external nofollow">Analytics（谷歌统计）</a></li>
-        <li><a href="https://www.google.com/drive/" target="_blank" rel="external nofollow">Drive（谷歌云盘）</a></li>
-        <li><a href="https://www.cloudflare.com/" target="_blank" rel="external nofollow">Cloudflare（免费DNS/CDN）</a></li>
-        <li><a href="https://lastpass.com/" target="_blank" rel="external nofollow">LastPass（密码云保存）</a></li>
-        <li><a href="https://www.17ce.com/" target="_blank" rel="external nofollow">17测（网速检测）</a></li>
-        <li><a href="https://www.emoneyspace.com/" target="_blank" rel="external nofollow">eMoneySpace（免费网页）</a></li>
-        <li><a href="http://tool.chinaz.com/Tools/dwz.aspx" target="_blank" rel="external nofollow">短地址生成</a></li>
-        <li><a href="https://www.a5.net/forum-266-1.html" target="_blank" rel="external nofollow">A5交易</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>域名被墙</h5>
-        <li><a href="https://www.11cm.com/" target="_blank" rel="external nofollow">被墙查询</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>视频相关</h5>
-        <li><a href="https://www.jiuyipan.com/" target="_blank" rel="external nofollow">91免费云盘</a></li>
-        <li><a href="https://www.27pan.com/" target="_blank" rel="external nofollow">27盘（免费云盘）</a></li>
-        <li><a href="https://www.35pan.com/" target="_blank" rel="external nofollow">35盘（免费云盘）</a></li>
-        <li><a href="http://www.75pan.com/" target="_blank" rel="external nofollow">75盘（免费云盘）</a></li>
-        <li><a href="http://www.aijianji.com/" target="_blank" rel="external nofollow">爱剪辑（热门软件）</a></li>
-        <li><a href="https://chrome.google.com/webstore/detail/%E7%8C%AB%E6%8A%93/jfedfbgedapdagkghmgibemcoggfppbb"
-               target="_blank" rel="external nofollow">网页视频嗅探</a></li>
-        <li><a href="http://www.smzy.com/smzy/down381798.html" target="_blank" rel="external nofollow">云转码50年授权</a></li>
-        <li><a href="http://www.yunzhuanma.com/" target="_blank" rel="external nofollow">云转码</a></li>
-        <li><a href="http://www.ckplayer.com/" target="_blank" rel="external nofollow">CKplayer</a></li>
-        <li><a href="https://www.jiakaodashi.com/" target="_blank" rel="external nofollow">视频格式转换</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>资源采集</h5>
-        <li><a href="http://www.msnyxs0.com/" target="_blank" rel="external nofollow">待添加</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>检测 、查询</h5>
-        <li><a href="https://www.baidu.com/s?wd=ip" target="_blank" rel="external nofollow">本机IP</a></li>
-        <li><a href="https://www.17ce.com/" target="_blank" rel="external nofollow">17测</a></li>
-        <li><a href="http://ping.chinaz.com/" target="_blank" rel="external nofollow">站长Ping</a></li>
-        <li><a href="http://tool.chinaz.com/speedtest" target="_blank" rel="external nofollow">站长测速</a></li>
-        <li><a href="http://ping.chinaz.com/" target="_blank" rel="external nofollow">Whois查询</a></li>
-        <li><a href="http://ip.chinaz.com/" target="_blank" rel="external nofollow">域名查IP</a></li>
-        <li><a href="https://www.beian88.com/" target="_blank" rel="external nofollow">ICP备案查询</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>程序模板</h5>
-        <li><a href="http://www.maccms.cn/" target="_blank" rel="external nofollow">苹果CMS</a></li>
-        <li><a href="http://www.ctcms.cn/" target="_blank" rel="external nofollow">CTcms</a></li>
-        <li><a href="https://www.9ccms.com/" target="_blank" rel="external nofollow">久草CMS</a></li>
-        <li><a href="http://www.msvod.cc/" target="_blank" rel="external nofollow">Msvod</a></li>
-        <li><a href="http://www.ppvod.com/" target="_blank" rel="external nofollow">PPvod</a></li>
-        <li><a href="http://www.69bbsz.com/" target="_blank" rel="external nofollow">1769模板论坛</a></li>
-        <li><a href="https://www.huzhan.com/" target="_blank" rel="external nofollow">互站网</a></li>
-        <li><a href="http://www.xiaog.cc/" target="_blank" rel="external nofollow">小俊工作室</a></li>
-        <li><a href="https://ckplayerx.com/template/" target="_blank" rel="external nofollow">100模板</a></li>
-        <li><a href="http://www.2zzt.com/" target="_blank" rel="external nofollow">wordpress主题</a></li>
-        <li><a href="http://www.m1938.com/" target="_blank" rel="external nofollow">M1938模板</a></li>
-        <li><a href="http://down.admin5.com/" target="_blank" rel="external nofollow">A5源码</a></li>
-        <li><a href="http://www.0cms.cc/portal.php" target="_blank" rel="external nofollow">模板堂</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>图片相关</h5>
-        <li><a href="http://www.gaitubao.com/" target="_blank" rel="external nofollow">图片尺寸修改</a></li>
-        <li><a href="https://www.yasuotu.com/" target="_blank" rel="external nofollow">图片压缩</a></li>
-        <li><a href="http://www.gaitubao.com/shuiyin/" target="_blank" rel="external nofollow">图片加水印</a></li>
-        <li><a href="http://www.faviconico.org/" target="_blank" rel="external nofollow">Favicon制作</a></li>
-        <li><a href="https://tool.oschina.net/qr" target="_blank" rel="external nofollow">二维码生成</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>聊天工具</h5>
-        <li><a href="http://www.pc6.com/softview/SoftView_282276.html" target="_blank"
-               rel="external nofollow">环聊（谷歌）</a></li>
-        <li><a href="https://www.skype.com/" target="_blank" rel="external nofollow">Skype（微软）</a></li>
-        <li><a href="http://www.live800.com/" target="_blank" rel="external nofollow">Live800（在线客服系统）</a></li>
-        <li><a href="https://telegram.org/" target="_blank" rel="external nofollow">Telegram</a></li>
-        <li><a href="https://www.messenger.com/" target="_blank" rel="external nofollow">Messenger（FaceBook）</a></li>
-        <li><a href="https://www.teamviewer.us/" target="_blank" rel="external nofollow">TeamViewer（桌面协助/控制）</a></li>
-        <li><a href="https://www.whatsapp.com/" target="_blank" rel="external nofollow">WhatsApp</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>服务器 、VPS</h5>
-        <li><a href="https://www.linode.com/" target="_blank" rel="external nofollow">Linode</a></li>
-        <li><a href="https://www.vultr.com/" target="_blank" rel="external nofollow">Vultr</a></li>
-        <li><a href="https://www.digitalocean.com/" target="_blank" rel="external nofollow">Digitalocean</a></li>
-        <li><a href="https://bandwagonhost.com/" target="_blank" rel="external nofollow">搬瓦工</a></li>
-        <li><a href="https://www.ceranetworks.com/en" target="_blank" rel="external nofollow">Ceranetworks</a></li>
-        <li><a href="https://billing.virmach.com/aff.php?aff=9321" target="_blank" rel="external nofollow">virmach</a>
-        </li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>域名</h5>
-        <li><a href="https://sg.godaddy.com/zh" target="_blank" rel="external nofollow">Godaddy</a></li>
-        <li><a href="https://www.namesilo.com/" target="_blank" rel="external nofollow">Namesilo</a></li>
-        <li><a href="https://www.namecheap.com/" target="_blank" rel="external nofollow">Namecheap</a></li>
-        <li><a href="http://www.domainsite.com/" target="_blank" rel="external nofollow">Domainsite</a></li>
-        <li><a href="https://www.register.com/" target="_blank" rel="external nofollow">Register</a></li>
-        <li><a href="http://www.resellerclub.com/" target="_blank" rel="external nofollow">Resellerclub</a></li>
-        <li><a href="http://www.webnic.cc/" target="_blank" rel="external nofollow">Webnic</a></li>
-        <li><a href="https://www.name.com/zh-cn/" target="_blank" rel="external nofollow">Name</a></li>
-        <li><a href="https://www.enom.com/" target="_blank" rel="external nofollow">Enom</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>代码程序</h5>
-        <li><a href="https://www.bt.cn/" target="_blank" rel="external nofollow">宝塔面板</a></li>
-        <li><a href="https://www.wdlinux.cn/" target="_blank" rel="external nofollow">WDCP面板</a></li>
-        <li><a href="http://www.downza.cn/soft/235505.html" target="_blank" rel="external nofollow">Xshell</a></li>
-        <li><a href="http://phpstudy.php.cn/" target="_blank" rel="external nofollow">PHPstudy</a></li>
-        <li><a href="https://www.sojson.com/encrypt/" target="_blank" rel="external nofollow">JS加密</a></li>
-        <li><a href="http://www.51xuediannao.com/" target="_blank" rel="external nofollow">Jquery特效</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>网站统计</h5>
-        <li><a href="https://analytics.google.com/" target="_blank" rel="external nofollow">Analytics（谷歌统计）</a></li>
-        <li><a href="https://web.umeng.com/" target="_blank" rel="external nofollow">CNZZ</a></li>
-        <li><a href="http://www.51.la/" target="_blank" rel="external nofollow">51.La</a></li>
-        <li><a href="https://tongji.baidu.com/" target="_blank" rel="external nofollow">百度统计</a></li>
-        <li><a href="http://count.51yes.com/reg-1.htm" target="_blank" rel="external nofollow">51yes</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>邮箱</h5>
-        <li><a href="http://tool.chinaz.com/Tools/dwz.aspx" target="_blank" rel="external nofollow">Gmail（谷歌邮箱）</a></li>
-        <li><a href="https://protonmail.com/" target="_blank" rel="external nofollow">Protonmail</a></li>
-        <li><a href="https://outlook.live.com/" target="_blank" rel="external nofollow">Outlook</a></li>
-        <li><a href="https://outlook.live.com/" target="_blank" rel="external nofollow">hotmiail</a></li>
-        <li><a href="https://www.zoho.com/mail" target="_blank" rel="external nofollow">ZOHO</a></li>
-        <li><a href="https://www.mail.com/int/" target="_blank" rel="external nofollow">mail</a></li>
-        <div class="clear"></div>
-    </ul>
-    <ul class="zhanzhang_list">
-        <h5>广告联盟</h5>
-        <li><a href="https://adxxx.com/" target="_blank" rel="external nofollow">AdXXX（全球H广告平台）</a></li>
-        <li><a href="https://www.adxad.com/" target="_blank" rel="external nofollow">ADXAD</a></li>
-        <div class="clear"></div>
-    </ul>
-    <div class="zhanzhang_addweb pc">
-        欢迎站长朋友分享好用工具，本站将放置于此，分享工具请发邮箱（cangjigedh@gmail.com）
-
-
-    </div>
-</div>
-
-<div class="clear"></div>
-
-
-<div class="r_nav">
-    <a href="#top" class="tuijian" rel="external nofollow"></a>
-    <a href="about.html" class="comment" target="_blank"></a>
-</div>
-<div class="r_nav">
-    <a href="#top" class="tuijian" rel="external nofollow"></a>
-    <a href="about.html" class="comment" target="_blank"></a>
-</div>
-<style>
-    @media screen and (max-width: 800px) {
-        .bottom_fixed {
-            display: none;
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
-            z-index: 9999999;
-        }
-
-        .bottom_fixed div {
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            background: #CCC;
-            right: 0;
-            top: -30px;
-            position: absolute;
-            cursor: pointer;
-        }
-
-        .bottom_fixed div:hover {
-            background: #F66;
-            color: #FFF
-        }
-
-        .bottom_fixed a img {
-            height: 75px;
-            width: 100%;
-        }
-
-        .lb_ad, .rb_ad, #show_ad {
-            display: none;
-        }
-    }
-
-    @media screen and (min-width: 800px) {
-        .bottom_fixed {
-            display: none;
-            position: fixed;
-            bottom: 0px;
-            left: 50%;
-            margin-left: -475px;
-            z-index: 9999;
-        }
-
-        .bottom_fixed div {
-            width: 24px;
-            height: 24px;
-            text-align: center;
-            line-height: 24px;
-            background: #CCC;
-            right: 0;
-            top: -24px;
-            position: absolute;
-            cursor: pointer
-        }
-
-        .bottom_fixed div:hover {
-            background: #F66;
-            color: #FFF
-        }
-
-        .bottom_fixed a img {
-            height: 75px;
-            width: 950px;
-        }
-
-        #show_ad {
-            cursor: pointer;
-            position: fixed;
-            width: 44px;
-            height: 44px;
-            line-height: 44px;
-            color: #4bb9f8;
-            text-align: center;
-            right: 0;
-            top: 0;
-            background: #1a90d4;
-            border-left: 1px solid #4bb9f8;
-            z-index: 9999;
-        }
-
-        #show_ad:hover {
-            color: #FFF;
-        }
-
-        .show_adbg {
-            background: #F90 !important;
-            color: #FFF !important;
-        }
-
-        .adbg {
-            background: #333 !important;
-        }
-
-        .adbg, .adbg div, .adbg span {
-            color: #FFF !important;
-        }
-
-        .lb_ad, .rb_ad {
-            display: none
-        }
-
-        .lb_ad, .rb_ad {
-            width: 190px;
-            height: 214px;
-            position: fixed;
-        }
-
-        .lb_ad {
-            left: 0px;
-            bottom: 0
-        }
-
-        .rb_ad {
-            right: 0px;
-            bottom: 0
-        }
-
-        .b_close {
-            width: 190px;
-            height: 24px;
-        }
-
-        .b_close a {
-            display: block;
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
-            background: #FFF;
-            float: right;
-            text-align: center;
-        }
-
-        .b_close a:hover {
-            background: #F66;
-            color: #FFF
-        }
-
-        .lb_ad .b_close a:active .lb_ad {
-            display: none
-        }
-
-        .adimg, .adimg img {
-            height: 190px;
-            width: 190px;
-        }
-    }
-</style>
-
-<div class="tanchu">
-    <div class="tanchu-box">
-        <div class="tanchu-close r"><span class="hei">藏姬阁导航导航 -- 福利导航第一品牌，其他相似站点皆为山寨！</span>
-            <p>X</p></div>
-        <div class="tanchu-c">
-            <a href="{{ site.github }}"
-               target="_blank">{{ site.github }}</a><br><span>（ 永久域名，请收藏到书签 ）</span>
+            <a class="news_url open" href="{{ site.github }}" target="_blank" rel="external nofollow">
+                <div>永久地址发布页</div>
+                <span class="fs17 border hong">点击进入</span>
+            </a>
         </div>
     </div>
-</div>
-<div id="show_ad">AD</div>
+    <div class="clear"></div>
+    <div class="collect">
+        <font class="hei wap">欢迎回家！ 请 <span>收藏</span> 本站地址发布页，开车永不迷路</font>
+        <font class="pc">欢迎回家！ 请 <span>收藏</span> 本站地址发布页，开车永不迷路，一直被模仿，从未被超越</font>
+    </div>
+    <div class="collect wap">
+        <a class="lan cu" href="/cjg.apk" target="_blank">安装本站安卓客户端</a> <font class="hei wap">丨</font> <a
+            class="hong cu"
+            href="https://t.me/icjgdh"
+            target="_blank">加入官方电报频道</a>
+    </div>
+    <!-- 公告 -->
+    <div class="show_zhanzhang pc">
+
+        <font class="hong">本站明确包含成人内容，请遵守当地法律访问，未满18周岁严格禁止访问！</font>
+
+    </div>
 
 
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 
-<!--------弹出-------->
-<script>
-    $(document).ready(function () {
-        $(".open").click(function () {
-            $(".tanchu").fadeIn(200)
-        })
-        $(".tanchu-close p").click(function () {
-            $(".tanchu").fadeOut(200)
-        })
-    });
-</script>
-<script language="javascript">
-    if (top.location != self.location) top.location = self.location;
-</script>
+    {% if friend_links %}
+        {% for cate in friend_links %}
+            {% if cate!="TOP" and cate!="推荐" %}
+                <div id="{{ cate }}" class="web">
+                    <div class="web_class">
+                        <div class="web_class_title">
+                            <h2>{{ cate }}</h2>
+                            <div></div>
+                        </div>
+                    </div>
+                    <ul class="web_list">
+                        {% for link in friend_links[cate] %}
+                            <li>
+                                <div style="background-color: rgb(255, 51, 51); display: none;"></div>
+                                <a href="{{ link.url }}" target="_blank"
+                                   {% if link.img.url %}style="background-image:url({{ link.img.url }})"{% endif %}
+                                   rel="external nofollow">{{ link.name }}</a></li>
+                        {% endfor %}
 
-<div class="tanchu">
-    <div class="tanchu-box">
-        <div class="tanchu-close r"><span>藏姬阁导航 - 最好的福利导航</span>
-            <p>X</p></div>
-        <div class="tanchu-c">
-            <a href="{{ site.github }}" target="_blank">点击进入</a><br><span>（ 永久地址发布页，请务必收藏到书签 ）</span>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <div id="zhanzhang" class="zhanzhang pc">
+        <div class="zhanzhang_title">
+            <h2>站长工具</h2>
+        </div>
+        <ul class="zhanzhang_list">
+            <h5>站长必备</h5>
+            <li>
+                <a href="https://www.coincola.app/mobile/signup?ref=fOT4wRMO&amp;country_code=CN&amp;lang=zh-CN&amp;utm_source=fOT4wRMO&amp;utm_medium=web&amp;utm_campaign=invite4.0&amp;utm_content=link"
+                   target="_blank" rel="external nofollow">CoinCola（比特币）</a></li>
+            <li><a href="https://mail.google.com/" target="_blank" rel="external nofollow">Gmail（谷歌邮箱）</a></li>
+            <li><a href="https://www.google.com/chrome/" target="_blank" rel="external nofollow">Chrome（谷歌浏览器）</a></li>
+            <li><a href="https://analytics.google.com/" target="_blank" rel="external nofollow">Analytics（谷歌统计）</a></li>
+            <li><a href="https://www.google.com/drive/" target="_blank" rel="external nofollow">Drive（谷歌云盘）</a></li>
+            <li><a href="https://www.cloudflare.com/" target="_blank" rel="external nofollow">Cloudflare（免费DNS/CDN）</a>
+            </li>
+            <li><a href="https://lastpass.com/" target="_blank" rel="external nofollow">LastPass（密码云保存）</a></li>
+            <li><a href="https://www.17ce.com/" target="_blank" rel="external nofollow">17测（网速检测）</a></li>
+            <li><a href="https://www.emoneyspace.com/" target="_blank" rel="external nofollow">eMoneySpace（免费网页）</a>
+            </li>
+            <li><a href="http://tool.chinaz.com/Tools/dwz.aspx" target="_blank" rel="external nofollow">短地址生成</a></li>
+            <li><a href="https://www.a5.net/forum-266-1.html" target="_blank" rel="external nofollow">A5交易</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>域名被墙</h5>
+            <li><a href="https://www.11cm.com/" target="_blank" rel="external nofollow">被墙查询</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>视频相关</h5>
+            <li><a href="https://www.jiuyipan.com/" target="_blank" rel="external nofollow">91免费云盘</a></li>
+            <li><a href="https://www.27pan.com/" target="_blank" rel="external nofollow">27盘（免费云盘）</a></li>
+            <li><a href="https://www.35pan.com/" target="_blank" rel="external nofollow">35盘（免费云盘）</a></li>
+            <li><a href="http://www.75pan.com/" target="_blank" rel="external nofollow">75盘（免费云盘）</a></li>
+            <li><a href="http://www.aijianji.com/" target="_blank" rel="external nofollow">爱剪辑（热门软件）</a></li>
+            <li><a href="https://chrome.google.com/webstore/detail/%E7%8C%AB%E6%8A%93/jfedfbgedapdagkghmgibemcoggfppbb"
+                   target="_blank" rel="external nofollow">网页视频嗅探</a></li>
+            <li><a href="http://www.smzy.com/smzy/down381798.html" target="_blank" rel="external nofollow">云转码50年授权</a>
+            </li>
+            <li><a href="http://www.yunzhuanma.com/" target="_blank" rel="external nofollow">云转码</a></li>
+            <li><a href="http://www.ckplayer.com/" target="_blank" rel="external nofollow">CKplayer</a></li>
+            <li><a href="https://www.jiakaodashi.com/" target="_blank" rel="external nofollow">视频格式转换</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>资源采集</h5>
+            <li><a href="http://www.msnyxs0.com/" target="_blank" rel="external nofollow">待添加</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>检测 、查询</h5>
+            <li><a href="https://www.baidu.com/s?wd=ip" target="_blank" rel="external nofollow">本机IP</a></li>
+            <li><a href="https://www.17ce.com/" target="_blank" rel="external nofollow">17测</a></li>
+            <li><a href="http://ping.chinaz.com/" target="_blank" rel="external nofollow">站长Ping</a></li>
+            <li><a href="http://tool.chinaz.com/speedtest" target="_blank" rel="external nofollow">站长测速</a></li>
+            <li><a href="http://ping.chinaz.com/" target="_blank" rel="external nofollow">Whois查询</a></li>
+            <li><a href="http://ip.chinaz.com/" target="_blank" rel="external nofollow">域名查IP</a></li>
+            <li><a href="https://www.beian88.com/" target="_blank" rel="external nofollow">ICP备案查询</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>程序模板</h5>
+            <li><a href="http://www.maccms.cn/" target="_blank" rel="external nofollow">苹果CMS</a></li>
+            <li><a href="http://www.ctcms.cn/" target="_blank" rel="external nofollow">CTcms</a></li>
+            <li><a href="https://www.9ccms.com/" target="_blank" rel="external nofollow">久草CMS</a></li>
+            <li><a href="http://www.msvod.cc/" target="_blank" rel="external nofollow">Msvod</a></li>
+            <li><a href="http://www.ppvod.com/" target="_blank" rel="external nofollow">PPvod</a></li>
+            <li><a href="http://www.69bbsz.com/" target="_blank" rel="external nofollow">1769模板论坛</a></li>
+            <li><a href="https://www.huzhan.com/" target="_blank" rel="external nofollow">互站网</a></li>
+            <li><a href="http://www.xiaog.cc/" target="_blank" rel="external nofollow">小俊工作室</a></li>
+            <li><a href="https://ckplayerx.com/template/" target="_blank" rel="external nofollow">100模板</a></li>
+            <li><a href="http://www.2zzt.com/" target="_blank" rel="external nofollow">wordpress主题</a></li>
+            <li><a href="http://www.m1938.com/" target="_blank" rel="external nofollow">M1938模板</a></li>
+            <li><a href="http://down.admin5.com/" target="_blank" rel="external nofollow">A5源码</a></li>
+            <li><a href="http://www.0cms.cc/portal.php" target="_blank" rel="external nofollow">模板堂</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>图片相关</h5>
+            <li><a href="http://www.gaitubao.com/" target="_blank" rel="external nofollow">图片尺寸修改</a></li>
+            <li><a href="https://www.yasuotu.com/" target="_blank" rel="external nofollow">图片压缩</a></li>
+            <li><a href="http://www.gaitubao.com/shuiyin/" target="_blank" rel="external nofollow">图片加水印</a></li>
+            <li><a href="http://www.faviconico.org/" target="_blank" rel="external nofollow">Favicon制作</a></li>
+            <li><a href="https://tool.oschina.net/qr" target="_blank" rel="external nofollow">二维码生成</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>聊天工具</h5>
+            <li><a href="http://www.pc6.com/softview/SoftView_282276.html" target="_blank"
+                   rel="external nofollow">环聊（谷歌）</a></li>
+            <li><a href="https://www.skype.com/" target="_blank" rel="external nofollow">Skype（微软）</a></li>
+            <li><a href="http://www.live800.com/" target="_blank" rel="external nofollow">Live800（在线客服系统）</a></li>
+            <li><a href="https://telegram.org/" target="_blank" rel="external nofollow">Telegram</a></li>
+            <li><a href="https://www.messenger.com/" target="_blank" rel="external nofollow">Messenger（FaceBook）</a>
+            </li>
+            <li><a href="https://www.teamviewer.us/" target="_blank" rel="external nofollow">TeamViewer（桌面协助/控制）</a>
+            </li>
+            <li><a href="https://www.whatsapp.com/" target="_blank" rel="external nofollow">WhatsApp</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>服务器 、VPS</h5>
+            <li><a href="https://www.linode.com/" target="_blank" rel="external nofollow">Linode</a></li>
+            <li><a href="https://www.vultr.com/" target="_blank" rel="external nofollow">Vultr</a></li>
+            <li><a href="https://www.digitalocean.com/" target="_blank" rel="external nofollow">Digitalocean</a></li>
+            <li><a href="https://bandwagonhost.com/" target="_blank" rel="external nofollow">搬瓦工</a></li>
+            <li><a href="https://www.ceranetworks.com/en" target="_blank" rel="external nofollow">Ceranetworks</a></li>
+            <li><a href="https://billing.virmach.com/aff.php?aff=9321" target="_blank"
+                   rel="external nofollow">virmach</a>
+            </li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>域名</h5>
+            <li><a href="https://sg.godaddy.com/zh" target="_blank" rel="external nofollow">Godaddy</a></li>
+            <li><a href="https://www.namesilo.com/" target="_blank" rel="external nofollow">Namesilo</a></li>
+            <li><a href="https://www.namecheap.com/" target="_blank" rel="external nofollow">Namecheap</a></li>
+            <li><a href="http://www.domainsite.com/" target="_blank" rel="external nofollow">Domainsite</a></li>
+            <li><a href="https://www.register.com/" target="_blank" rel="external nofollow">Register</a></li>
+            <li><a href="http://www.resellerclub.com/" target="_blank" rel="external nofollow">Resellerclub</a></li>
+            <li><a href="http://www.webnic.cc/" target="_blank" rel="external nofollow">Webnic</a></li>
+            <li><a href="https://www.name.com/zh-cn/" target="_blank" rel="external nofollow">Name</a></li>
+            <li><a href="https://www.enom.com/" target="_blank" rel="external nofollow">Enom</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>代码程序</h5>
+            <li><a href="https://www.bt.cn/" target="_blank" rel="external nofollow">宝塔面板</a></li>
+            <li><a href="https://www.wdlinux.cn/" target="_blank" rel="external nofollow">WDCP面板</a></li>
+            <li><a href="http://www.downza.cn/soft/235505.html" target="_blank" rel="external nofollow">Xshell</a></li>
+            <li><a href="http://phpstudy.php.cn/" target="_blank" rel="external nofollow">PHPstudy</a></li>
+            <li><a href="https://www.sojson.com/encrypt/" target="_blank" rel="external nofollow">JS加密</a></li>
+            <li><a href="http://www.51xuediannao.com/" target="_blank" rel="external nofollow">Jquery特效</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>网站统计</h5>
+            <li><a href="https://analytics.google.com/" target="_blank" rel="external nofollow">Analytics（谷歌统计）</a></li>
+            <li><a href="https://web.umeng.com/" target="_blank" rel="external nofollow">CNZZ</a></li>
+            <li><a href="http://www.51.la/" target="_blank" rel="external nofollow">51.La</a></li>
+            <li><a href="https://tongji.baidu.com/" target="_blank" rel="external nofollow">百度统计</a></li>
+            <li><a href="http://count.51yes.com/reg-1.htm" target="_blank" rel="external nofollow">51yes</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>邮箱</h5>
+            <li><a href="http://tool.chinaz.com/Tools/dwz.aspx" target="_blank" rel="external nofollow">Gmail（谷歌邮箱）</a>
+            </li>
+            <li><a href="https://protonmail.com/" target="_blank" rel="external nofollow">Protonmail</a></li>
+            <li><a href="https://outlook.live.com/" target="_blank" rel="external nofollow">Outlook</a></li>
+            <li><a href="https://outlook.live.com/" target="_blank" rel="external nofollow">hotmiail</a></li>
+            <li><a href="https://www.zoho.com/mail" target="_blank" rel="external nofollow">ZOHO</a></li>
+            <li><a href="https://www.mail.com/int/" target="_blank" rel="external nofollow">mail</a></li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="zhanzhang_list">
+            <h5>广告联盟</h5>
+            <li><a href="https://adxxx.com/" target="_blank" rel="external nofollow">AdXXX（全球H广告平台）</a></li>
+            <li><a href="https://www.adxad.com/" target="_blank" rel="external nofollow">ADXAD</a></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="zhanzhang_addweb pc">
+            欢迎站长朋友分享好用工具，本站将放置于此。
         </div>
     </div>
-</div>
-<div id="footer">
+{% endblock %}
 
-  <span class="copyright">
-		<span class="copyright">以上网站内容均与本站无关,仅供海外华人提供导航服务,未满18岁禁止访问本站</span><br>
-<span class="copyright">本站设在美国佛罗里达州,主机位于美国亚利桑那州,服务全球华人,受美国法律约束和保护</span>
+{% block scripts %}
 
+{% endblock %}
 
-      <!--APP 127 409.png-->
-<div class="downapp-fixed wap" id="appdownload">
-    <div class="downapp">
-        <div class="text">
-<a href="/cjg.apk" target="_blank" rel="external nofollow"> <img src="{{ static('ico/500.png',site.theme) }}"
-                                                                 alt=""> </a>
-            <p style="text-align:left;"><strong>藏姬阁APP<br>一个APP汇集全网福利</strong></p>
-        </div>
-        <div class="btn-group">
-<a class="btn btn-android" href="/cjg.apk" target="_blank"> <span
-        style="color: rgb(255, 255, 255);"><strong>点击下载</strong></span></a>
-            <!--  <a class="btn btn-url" href="HTTP://vip666.tv/?uid=XK000010">IOS下载</a>-->
-        </div>
-    </div>
-	</div>
-      <!--APP-->
-      <!-- tj-->
-      <!-- Default Statcounter code for 藏姬阁导航
-      http://www.cangjige.asia -->
-
-    </span></div>
-
-
-<script type="text/javascript">
-    if ($('body').width() >= 950) {
-        $('.bodyBox').css('border-left', '15px solid #ffffff').css('border-right', '15px solid #ffffff');
-    }
-</script>
-
-</body>
-</html>
+{#{% include("data"|common) %}#}
