@@ -173,7 +173,9 @@
                 }
             {% endif %}
             setTimeout(function () {
-                $('#inline-ad').css("display", "none");
+                var inline_ad = $('#inline-ad');
+                inline_ad.css('position','static');
+                $('.videoContainer').prepend(inline_ad);
             }, 10000);
         });
         {% if preview %}

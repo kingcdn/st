@@ -35,11 +35,8 @@
                     {% endif %}
                 {% endif %}
                 {% if not site.adc.video_inside %}
-                    <div id="inline-ad" style="{% if not video.from_iframe %}bottom: 0px;{% endif %}">
-                        <a href="https://8f166.com/" target="_blank" style="color: white">本片由<span
-                                style="color: #a79e0a;font-weight: bold;">太阳城8f166.com</span>独家赞助播出
-                            <br/>火爆全网 美女直播 棋牌游戏
-                            AG视讯 百家乐 存款送20%</a>
+                    <div id="inline-ad" style="color: white;{% if not video.from_iframe %}bottom: 0px;{% endif %}">
+                    {{ site.sobj.inline_ad_html(site,video)|safe }}
                     </div>
                 {% endif %}
                 <marquee id="danmu"></marquee>
@@ -53,7 +50,9 @@
                         var video = $('video');
                         if (video.length === 0) {
                             setTimeout(function () {
-                                inline_ad.css("display", "none");
+                                {#inline_ad.css("display", "none");#}
+                                inline_ad.css('position','static');
+                                $('.videoContainer').prepend(inline_ad);
                             }, 10000)
                         }
                         setTimeout(function () {
