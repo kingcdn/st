@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   font-size: 14px;
   color: #fff;
-  background: #060612 url("https://g.jujiarobot.com/pjbadh1.club/images/bg.png") no-repeat top center;
+  background: #060612 url("../imgs/bg.png") no-repeat top center;
   background-size: 100%;
   font-family: "-apple-system", "PingFang TC", "Microsoft JhengHei", "Source Sans Pro", Helvetica, sans-serif;
 }
@@ -737,7 +737,7 @@ footer .footer_box .footer_text {
 }
 
 .brand_app {
-  background: url("https://g.jujiarobot.com/pjbadh1.club/images/net_bg.png") no-repeat left;
+  background: url("../imgs/net_bg.png") no-repeat left;
   background-size: 100%;
 }
 
