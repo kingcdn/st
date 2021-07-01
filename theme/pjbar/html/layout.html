@@ -9,21 +9,9 @@
     <meta http-equiv="Expires" content="0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="https://cn.jujiarobot.com/pjbadh1.club/css/main.css?20210618">
-    <script src="https://cn.jujiarobot.com/pjbadh1.club/js/qr.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144333662-5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <link rel="stylesheet" type="text/css" href="{{ static('css/main.css',site.theme) }}">
+    <script src="{{ static('js/qr.js',site.theme) }}"></script>
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-144333662-5');
-    </script>
 </head>
 
 <body>
@@ -69,7 +57,7 @@
         <div class="logo12">
           <div class="logo"> <a onclick="go2('homePage');void(0);"> <img
                   src="{{ site.icon}}"> </a></div>
-          <div class="logo2"><img src="https://g.jujiarobot.com/pjbadh1.club/images/web_add.png?r=6"></div>
+          <div class="logo2"><img src="{{ static('imgs/web_add.png?r=6',site.theme) }}"></div>
         </div>
     </section>
 
@@ -78,7 +66,7 @@
         <span id='hotAppIntro'></span>
         <div class="user_evaluation">
           <p>用户评价（<span id='userCommentsCount'></span>）</p>
-          <p class="evaluation"><img src="https://g.jujiarobot.com/pjbadh1.club/images/store_nine/stars-4.png"
+          <p class="evaluation"><img src="{{ static('imgs/stars-4.png',site.theme) }}">"
                                      align="center"/><span
                   id='userCommentsStar'></span>/5</p>
           <span id='userComments'></span>
@@ -88,7 +76,7 @@
 
     <section class="section_hot_app">
       <div class="area2">
-        <img src="https://g.jujiarobot.com/pjbadh1.club/images/store_title_11.png">
+        <img src="{{ static('imgs/store_title_11.png',site.theme) }}">
       </div>
       <section class="section_link">
         <span id='goodRecommendations'></span>
@@ -97,21 +85,21 @@
 
     <section class="section_hot_app">
       <div class="area2">
-        <img src="https://g.jujiarobot.com/pjbadh1.club/images/store_title_22.png">
+        <img src="{{ static('imgs/store_title_22.png',site.theme) }}">
       </div>
       <span id='guessYouLikes'></span>
     </section>
 
     <section class="section_hot_app">
       <div class="area3">
-        <img src="https://g.jujiarobot.com/pjbadh1.club/images/title_recomand.png">
+        <img src="{{ static('imgs/title_recomand.png',site.theme) }}">
       </div>
       <ul id='recommendLinks2' class="ul_link"></ul>
     </section>
 
     <section class="section_hot_app">
       <div class="area4">
-        <img src="https://g.jujiarobot.com/pjbadh1.club/images/digital_title_33.png">
+        <img src="{{ static('imgs/digital_title_33.png',site.theme) }}">
       </div>
       <ul id='guideLinks2' class="ul_link"></ul>
     </section>
@@ -121,12 +109,12 @@
 <footer>
 
     <div id="arrow-circle">
-        <a href=#><img src="https://g.jujiarobot.com/pjbadh1.club/images/arrow-circle.png">
+        <a href=#><img src="{{ static('imgs/arrow-circle.png',site.theme) }}">
     </div>
     </a>
 
     <div class="area footer_box">
-        <div class="footer_img"><img src="https://g.jujiarobot.com/pjbadh1.club/images/store_nine/img_profile2222.png">
+        <div class="footer_img"><img src="{{ static('imgs/store_nine/img_profile2222.png',site.theme) }}">
         </div>
 
         <div class="footer_text">
@@ -134,9 +122,9 @@
         </div>
 
         <div id="fixImg" class="fixImg" style="display: none;">
-            <img id="floatAD" class="jsFixImg" width="360" src="https://g.jujiarobot.com/pjbadh1.club/images/aad.png">
+            <img id="floatAD" class="jsFixImg" width="360" src="{{ static('imgs/aad.png',site.theme) }}">
             <div class="closeBtn">
-                <img src="https://g.jujiarobot.com/pjbadh1.club/images/close-icon.png" onclick="closeFixImg()">
+                <img src="{{ static('imgs/close-icon.png" onclick="closeFixImg()',site.theme) }}">
             </div>
         </div>
 

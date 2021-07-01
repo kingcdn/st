@@ -1,0 +1,1196 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+  background: #060612 url("https://g.jujiarobot.com/pjbadh1.club/images/bg.png") no-repeat top center;
+  background-size: 100%;
+  font-family: "-apple-system", "PingFang TC", "Microsoft JhengHei", "Source Sans Pro", Helvetica, sans-serif;
+}
+
+p {
+  line-height: 1.8rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/*-------------跳轉頁-------------*/
+
+.jump_page {
+  width: 200px;
+  height: 290px;
+  background: black;
+  border: solid 2px;
+  margin: 0 auto;
+  margin-top: 100px;
+  object-fit: contain;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 3px;
+  border-image-source: linear-gradient(to bottom, #37f0f2, #0192f7);
+  border-image-slice: 1;
+  background-image: linear-gradient(to top, #000000, #25303b), linear-gradient(to bottom, #37f0f2, #0192f7);
+}
+
+.jump_page p {
+  text-align: center;
+  float: 20px;
+}
+
+.jump_page_1 {
+  font-size: 50px;
+  color: white;
+  padding-top: 50px;
+}
+
+.jump_page_name {
+  font-size: 25px;
+  color: white;
+  padding-top: 40px;
+}
+
+.jump_page_web {
+  font-size: 14px;
+  color: white;
+  padding-top: 10px;
+}
+
+.jump_page_lost {
+  font-size: 12px;
+  color: #FFE300;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+.jump_text {
+  width: 150px;
+  height: 30px;
+  background: white;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.jump_text p {
+  color: black;
+  padding-top: 5px;
+}
+
+/*-------------new-------------*/
+
+.brand_intro .all_top_info {
+  /*text-align: center;*/
+  margin: 0 auto;
+  max-width: 76%;
+  /*padding-left: 10px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topBar p {
+  font-size: 20px;
+  color: yellow;
+}
+
+.logo {
+  width: 60%;
+  height: 60%;
+  float: left;
+}
+
+.logo2 {
+  width: 59%;
+  height: 100%;
+  float: right;
+  text-align: right;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logo2::after {
+  content: '';
+  clear: both;
+  /* height: ; */
+}
+
+.logo2 p {
+  text-align: right;
+}
+
+.logo2 img {
+  clear: both;
+  text-align: right;
+  padding-top: 30px;
+}
+
+.toplogo {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.toplogo2 {
+  margin-left: 15px;
+  display: inline-block;
+}
+
+.toplogo2 p {
+  color: #19BCF5;
+}
+
+/*-------------最上面的logo+網址呈現-------------*/
+
+.area .logo12 {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+}
+
+.area .logo12 .logo2 p {
+  padding-top: 50px;
+}
+
+.toplogo p {
+  font-size: 12px;
+  color: #19BCF5;
+}
+
+.card_12 {
+  max-width: 720px;
+  width: 97%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tl {
+  text-align: left;
+}
+
+.store_logo {
+  border: 1px solid #FFFF66;
+  border-radius: 5px;
+  width: 85px;
+  margin-bottom: 0px;
+  margin-right: -10px;
+}
+
+.topBar .logo {
+  width: 40%;
+}
+
+.topBar .marquee {
+  display: inline-block;
+  vertical-align: top;
+  width: 70%;
+  padding-top: 1.2rem;
+}
+
+.clear-both {
+  clear: both;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+.section_banner .banner {
+  position: relative;
+}
+
+.section_banner .banner img {
+  border: 4px solid #19BCF5;
+  border-radius: 3px;
+}
+
+.section_banner .banner_title {
+  position: absolute;
+  bottom: -4px;
+  z-index: 2;
+}
+
+.section_banner .section_banner_img {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+}
+
+.title_bg {
+  position: relative;
+  background: url("https://g.jujiarobot.com/pjbadh1.club/images/title_bg_blue.png") no-repeat left;
+  width: 165px;
+  height: 48px;
+}
+
+.title_bg span {
+  color: #fff;
+  font-size: 1.2rem;
+  display: block;
+  padding-left: 4rem;
+  padding-top: .9rem;
+}
+
+.title_bg_center {
+  margin: 0 auto;
+  margin-bottom: 1.6rem;
+}
+
+.title_bg_link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -2rem;
+}
+
+.area {
+  max-width: 750px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.area2 img {
+  max-width: 100%;
+  width: 320px;
+}
+
+.area2 {
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 24px;
+}
+
+.area3 img {
+  max-width: 100%;
+  width: 250px;
+}
+
+.area3 {
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 15px;
+}
+
+.col-md-4 {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  padding: .5rem;
+  margin-bottom: 1.2rem;
+}
+
+/*精品應用卡片間的間距*/
+
+.col-md-3 {
+  display: inline-block;
+  width: 24%;
+  vertical-align: top;
+  padding: .3rem;
+  margin-bottom: .4rem;
+}
+
+.hot_app_box {
+  position: relative;
+  border-radius: .3rem;
+  padding: 1rem;
+  padding-bottom: .5rem;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 95%, #e1e5e8 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 95%, #e1e5e8 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 95%, #e1e5e8 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e5e8', GradientType=0);
+  /* IE6-9 */
+  text-align: center;
+}
+
+.hot_app_box .hot_app_box_no {
+  position: absolute;
+  left: 0;
+  top: -.8rem;
+}
+
+/* --------調整福利應用card-------*/
+
+.hot_app_box .hot_app_box_img {
+  margin-top: .5rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
+}
+
+.hot_app_box .hot_app_box_img img {
+  border-radius: .8rem;
+  -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.24);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.24);
+}
+
+.hot_app_box .hot_app_box_img_circle {
+  display: inline-block;
+  margin-bottom: .5rem;
+  width: 30%;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.hot_app_box .hot_app_box_img_circle img {
+  max-width: 55px;
+  -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.24);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.24);
+  border-radius: 50px;
+}
+
+.hot_app_box .hot_app_box_text {
+  display: inline-block;
+  width: 65%;
+  vertical-align: top;
+  padding: 1.7rem 0 0 1rem;
+}
+
+.hot_app_box h2, .hot_app_box p {
+  text-align: center;
+}
+
+.flex_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75rem;
+}
+
+.flex_box .hot_app_box_img_circle {
+  margin-bottom: 0;
+  padding: 0;
+  margin-right: 15px;
+}
+
+.flex_box .hot_app_box_text {
+  padding: 0;
+}
+
+h2 {
+  color: #2F2A30;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+p {
+  color: #6D7278;
+  margin: 0;
+}
+
+.section_hot_app {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section_link {
+  position: relative;
+  margin-top: 0rem;
+  /*background: #051249 url("https://g.jujiarobot.com/pjbadh1.club/images/bg_blue_left.jpg") no-repeat left bottom;*/
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+.section_link .section_link_img {
+  position: absolute;
+  top: -3.1rem;
+  left: 2rem;
+}
+
+.ul_link {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ul_link li {
+  display: inline-block;
+  width: 19%;
+  margin-bottom: 15px;
+}
+
+.ul_link li a {
+  display: block;
+  color: #fff;
+  border: 1px solid #19BCF5;
+  padding: 8px;
+  text-align: center;
+  margin: 5px;
+}
+
+.ul_link li img {
+  margin-right: 2px;
+}
+
+.ul_link li.yellow a {
+  border-color: #FFFF66;
+}
+
+footer {
+  margin: 3rem;
+}
+
+footer .footer_box {
+  border-bottom: 1px solid #19BCF5;
+  padding-bottom: 1rem;
+}
+
+footer .footer_box .footer_img {
+  display: inline-block;
+  width: 15%;
+}
+
+footer .footer_box .footer_img img {
+  max-width: 100%;
+}
+
+footer .footer_box .footer_text {
+  vertical-align: top;
+  padding-top: 1.5%;
+  line-height: 1.6rem;
+  color: #BDBEBE;
+  font-size: .9rem;
+  display: inline-block;
+  width: 84%;
+}
+
+.app_download {
+  width: 270px;
+  height: 63px;
+  display: inline-block;
+  margin: 0 auto;
+  /*background: url("https://g.jujiarobot.com/pjbadh1.club/images/button_download.png") no-repeat;*/
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+.button_copy {
+  width: 94px;
+  height: 22px;
+  display: none;
+  margin: 0 auto;
+  /*background: url("https://g.jujiarobot.com/pjbadh1.club/images/copy_btn.png") no-repeat center center;*/
+  color: #080609;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.button_copy_input {
+  border: none;
+  background: transparent;
+  color: #091D8E;
+}
+
+.button_copy_input:focus {
+  outline: none;
+}
+
+.button_copy_input {
+  display: none;
+}
+
+.brand_intro {
+  text-align: center;
+  position: relative;
+  border-bottom: 0px solid #19BCF5;
+}
+
+.brand_intro h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  margin: .2rem 0 .2rem 0;
+}
+
+.brand_intro ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin: 1rem;
+}
+
+.brand_intro ul li {
+  display: inline-block;
+  color: white;
+  margin-right: .5rem;
+}
+
+.brand_intro ul li:nth-child(3) {
+  /*background: url("https://g.jujiarobot.com/pjbadh1.club/images/store_nine/icon-line.png") no-repeat left center;*/
+  background-size: 70%;
+  padding-left: 20px;
+}
+
+.brand_app {
+  padding-top: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.brand_app .brand_app_line {
+  position: absolute;
+  content: '';
+  bottom: 5px;
+  background: #6475C9;
+  width: 100%;
+  height: 0px;
+}
+
+.brand_app p {
+  color: #fff;
+  text-align: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.user_evaluation {
+  margin-top: 2rem;
+}
+
+.user_evaluation p {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.user_evaluation .evaluation {
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+  color: #FFFF66;
+  line-height: 1.4rem;
+}
+
+.user_evaluation .evaluation img {
+  margin-right: 10px;
+}
+
+.user_comment {
+  background: #1F282E;
+  color: #fff;
+  border-radius: 3px;
+  padding: 10px 8px;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.user_comment div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user_comment .user_comment_img {
+  width: 10%;
+}
+
+.user_comment .user_comment_img img {
+  max-width: 45px;
+  border-radius: 50%;
+}
+
+.user_comment .user_comment_name {
+  width: 15%;
+}
+
+.user_comment .user_comment_txt {
+  width: 60%;
+  text-align: left;
+}
+
+.user_comment .user_comment_recommend {
+  width: 13%;
+  color: #FFFF66;
+}
+
+#1F282E .user_comment .user_comment_recommend img {
+  margin-right: 5px;
+}
+
+.hot_app_button {
+  background: #FFE300;
+  border: 1px solid #AC9011;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  padding: 4px;
+  font-weight: bold;
+  text-align: center;
+  color: #080609;
+}
+
+.col-md-3 .hot_app_box .hot_app_box_img_circle {
+  width: 20%;
+  padding: 5px 5px 5px 0;
+}
+
+.col-md-3 .hot_app_box .hot_app_box_img_circle img {
+  width: 35px;
+}
+
+/*  精品應用卡片文字與文字之間距*/
+
+.col-md-3 .hot_app_box {
+  padding: .4rem;
+}
+
+.col-md-3 .hot_app_box .hot_app_box_text {
+  padding: .6rem;
+}
+
+.section_recommend {
+  margin-top: 2rem;
+  background: url("https://g.jujiarobot.com/pjbadh1.club/images/store_nine/icon_circlex3.png") no-repeat 10% 60%;
+}
+
+.hot_app_box_more {
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.hot_app_box_more .more_button {
+  position: absolute;
+  z-index: 2;
+  bottom: -5px;
+  right: 0;
+}
+
+.hot_app_box_more .hot_app_box_img img {
+  max-width: 66px;
+}
+
+.hot_app_box_more h2, .hot_app_box_more p {
+  text-align: center;
+}
+
+.brand_app_img_3 .brand_app_img_3_s {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 40%;
+}
+
+/*
+.brand_app_img_3  {
+  text-align: center;
+ margin:0 auto;}
+*/
+
+.brand_app_img_3 ul {
+  list-style: none;
+  width: 100%;
+  /* max-width: 500px;*/
+  text-align: center;
+  /*margin:0 auto;*/
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.brand_app_img_3 ul li {
+  display: inline-block;
+}
+
+.brand_app_img_3 ul li img {
+  border-radius: 12px;
+  -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.24);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.24);
+}
+
+.brand_app_img_3 ul li:nth-child(1) {
+  width: 45%;
+  vertical-align: bottom;
+}
+
+.brand_app_img_3 ul li:nth-child(2) {
+  width: 45%;
+}
+
+.brand_app_img_3 ul li:nth-child(2) img {
+  margin-bottom: 0rem;
+}
+
+.brand_app {
+  background: url("https://g.jujiarobot.com/pjbadh1.club/images/net_bg.png") no-repeat left;
+  background-size: 100%;
+}
+
+.popup_bg {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+}
+
+.popup_bg p {
+  border: solid 2px;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.popup {
+  z-index: 4;
+  margin: 0 auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+  position: fixed;
+  font-size: 1.2rem;
+  line-height: 22px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 25px 35px;
+}
+
+.popup_code {
+  top: 30%;
+}
+
+.popup_copy {
+  top: 40%;
+}
+
+#arrow-circle {
+  text-align: center;
+  padding-top: 0px;
+}
+
+#arrow-circle img {
+  max-width: 100%;
+}
+
+.section_description p {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.button-contact {
+  float: right;
+  display: block;
+  margin-top: 65px;
+  width: 170px;
+  height: 45px;
+  background: url("https://g.jujiarobot.com/pjbadh1.club/images/contact.png")no-repeat;
+  background-size: 100% 100%
+}
+
+.button-link {
+  float: right;
+  display: block;
+  margin-top: 65px;
+  width: 170px;
+  height: 45px;
+  background: url("https://g.jujiarobot.com/pjbadh1.club/images/web_add.png")no-repeat;
+  background-size: 100% 100%
+}
+
+.button-forever {
+  float: right;
+  display: block;
+  /* width:170px; */
+  width: 12.14rem;
+  /* margin-top:65px; */
+  margin-top: 4.64rem;
+  /* height:45px; */
+  height: 3.21rem;
+  background: url("https://g.jujiarobot.com/pjbadh1.club/images/pjb_forever_page.png")no-repeat;
+  background-size: 100% 100%;
+}
+
+.section_description h1 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.section_description p b {
+  color: #FFFF66;
+  font-weight: normal;
+}
+
+.section_form {
+  padding-bottom: 60px;
+  padding-top: 20px;
+}
+
+.section_form input, .section_form select {
+  border: 1px solid rgba(50, 197, 255, .3);
+  color: #fff;
+  font-size: 1.2rem;
+  background: #111;
+  padding: 8px 10px;
+  width: 100%;
+  border-radius: .1em;
+}
+
+.section_form input::placeholder {
+  color: rgba(50, 197, 255, .6);
+}
+
+.section_form select {
+  background: url("https://g.jujiarobot.com/pjbadh1.club/images/arrow.svg")no-repeat;
+  background-position: right .7em top 50%;
+  background-size: .65em auto;
+  color: rgba(50, 197, 255, .6);
+}
+
+.select-css {
+  display: block;
+  font-size: 16px;
+  color: rgba(50, 197, 255, .6);
+  background-color: #111;
+  line-height: 1.3;
+  padding: .6em 1.4em .5em .8em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+  border-radius: .1em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.select-css::-ms-expand {
+  display: none;
+}
+
+.select-css:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #fff;
+  outline: none;
+  background-color: #111;
+}
+
+.select-css option {
+  font-weight: normal;
+}
+
+.section_form h3 {
+  font-weight: normal
+}
+
+.section_form h3 b {
+  font-weight: normal;
+  color: #32C5FF;
+  font-size: 13px;
+  margin-left: 3px;
+}
+
+.btn-send-form {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.btn-send-form button {
+  margin-top: 20px;
+  background: url("https://g.jujiarobot.com/pjbadh1.club/images/btn-send-form.png")no-repeat;
+  width: 250px;
+  height: 49px;
+  outline: 0;
+  border: 0;
+}
+
+.section_form {
+  background: rgba(0, 0, 0, 0.5)
+}
+
+/*// Qrcode */
+
+#qrcode_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s, visibility .5s;
+  width: 150px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, .8);
+  border-radius: 15px;
+  box-shadow: 0 0 10px 3px rgba(0, 183, 255, .7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#qrcode {
+  margin-bottom: 1rem;
+}
+
+#qrcode_container p {
+  color: #32c5ff;
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media (max-width: 1280px) {
+  .section_hot_app {
+    background-size: 20%;
+  }
+  .section_recommend {
+    background-size: 5%;
+  }
+  .section_link .section_link_img {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .ul_link li {
+    width: 24%;
+  }
+  .section_banner_img {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: 10px;
+  }
+  .button-link, .button-contact, .button-forever {
+    margin-top: 7.5vw;
+    width: 19.53vw;
+    height: 4.88vw;
+  }
+  .brand_intro ul {
+    margin-top: 0rem;
+  }
+  .section_hot_app {
+    background: url("");
+  }
+  .ul_link li {
+    width: 32%;
+  }
+  .ul_link li a {
+    padding: 5px;
+  }
+  .title_bg {
+    background-size: 100%;
+    width: 122px;
+    height: 35px;
+  }
+  .title_bg span {
+    /* padding-left: 3.3rem; */
+    padding-top: .6rem;
+  }
+  .button_copy {
+    display: inline-block;
+  }
+  .button_copy_input {
+    display: block;
+  }
+  .logo2 img {
+    padding-top: 0px;
+  }
+}
+
+@media (max-width: 640px) {
+  .button-contact, .button-forever {
+    width: 20vw;
+    height: 5.5vw;
+    margin-top: 7.5vw;
+  }
+  .user_comment {
+    padding: 5px 4px;
+  }
+  .user_comment .user_comment_img {
+    width: 15%;
+  }
+  .user_comment .user_comment_img img {
+    max-width: 30px;
+  }
+  .user_comment .user_comment_name {
+    width: 15%;
+  }
+  .user_comment .user_comment_txt {
+    width: 48%;
+  }
+  .user_comment .user_comment_recommend {
+    width: 18%;
+  }
+  .topBar .logo {
+    width: 40%;
+    display: block;
+  }
+  .topBar .marquee {
+    width: 100%;
+    display: block;
+    padding-top: 0rem;
+  }
+  section {
+    margin-top: 1rem;
+  }
+  .hot_app_box .hot_app_box_no {
+    width: 70px;
+    top: -.65rem;
+  }
+  h2 {
+    font-size: 1rem;
+    ;
+  }
+  p {
+    line-height: 1.6rem;
+    font-size: .9rem;
+  }
+  .hot_app_box .hot_app_box_text h2 {
+    line-height: 1.5rem;
+    text-align: left;
+    padding-left: 4px;
+  }
+  .hot_app_box {
+    padding: .5rem;
+  }
+  .hot_app_box .hot_app_box_img_circle img {
+    max-width: 30px;
+  }
+  .section_new .hot_app_box {
+    padding: .4rem;
+  }
+  .col-md-4 {
+    padding: .2rem;
+  }
+  .hot_app_box p {
+    height: 2rem;
+  }
+  .hot_app_box .hot_app_box_text {
+    width: 65%;
+    padding: .3rem 0px 0px .1rem;
+  }
+  .hot_app_box .hot_app_box_img_circle {
+    padding: 0;
+    margin: 0;
+  }
+  .hot_app_box .hot_app_box_img_circle img {
+    margin-top: .5rem;
+  }
+  .ul_link li {
+    margin-bottom: 5px;
+  }
+  footer .footer_box .footer_text {
+    width: 80%;
+    padding-left: 5px;
+  }
+  .hot_app_box_more {
+    padding: .3rem;
+    padding-bottom: 17px;
+  }
+  .hot_app_box_more .more_button {
+    width: 50px;
+    bottom: -4.3px;
+  }
+  .recomand_stars {
+    width: 80%;
+  }
+  .col-md-3 {
+    width: 24%;
+  }
+  .col-md-3 .hot_app_box .hot_app_box_text {
+    padding-top: 1.3rem;
+  }
+  .app_download img {
+    width: 80%;
+    height: 70%;
+  }
+  .brand_intro h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .button-contact, .button-forever {
+    width: 23.07vw;
+    height: 5.7vw;
+    margin-top: 7.7vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .section_banner .section_banner_img {
+    bottom: 3rem;
+  }
+  /*  .brand_app_img_3 ul li:nth-child(1) {
+    width: 15%; }*/
+  .brand_app_img_3 .brand_app_img_3_s {
+    width: 30%;
+  }
+  .brand_app .brand_app_line {
+    bottom: 2px;
+  }
+  .user_evaluation {
+    margin-top: .5rem;
+  }
+  footer {}
+  .footer_box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  h2 {
+    font-size: 1.1rem;
+  }
+  .hot_app_box .hot_app_box_img_circle img {
+    width: 25px;
+  }
+}
+
+@media (max-width: 320px) {
+  .button-contact, .button-forever {
+    width: 25vw;
+    height: 7vw;
+    margin-top: 7vw;
+  }
+  .hot_app_box .hot_app_box_text {
+    width: 100%;
+    padding: 0rem;
+    padding-top: .5rem;
+  }
+  .hot_app_box .hot_app_box_text h2 {
+    text-align: center;
+  }
+  .ul_link li {
+    width: 49%;
+  }
+  .brand_intro ul {
+    margin: 1rem 0rem;
+  }
+  .section_banner .section_banner_img {
+    bottom: 7rem;
+    right: 1rem;
+  }
+}
