@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>【破解吧】官方网站</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="https://cn.jujiarobot.com/pjbadh1.club/css/main.css?20210618">
+    <script src="https://cn.jujiarobot.com/pjbadh1.club/js/qr.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144333662-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-144333662-5');
+    </script>
+</head>
+
+<body>
+<div id='homePage'>
+    <section class="topBar">
+      <div class="area">
+        <div class="logo12">
+          <div class="logo"> <a href="/"><img src="{{ site.icon}}"
+                                              alt="【破解吧】官方网站"> </a></div>
+
+          <div class="logo2">
+            <!-- <a href="https://pjbdhf1.xyz" target="_blank" class="button-forever"></a> -->
+            <a href="shoulu.html" class="button-contact"></a>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
+    {% block content %}
+{% endblock %}
+</div>
+
+
+<span id='introPage' style="display: none;">
+    <div style="display: none" class="popup popup_copy" id="popup_copy">
+      链接已复制<br>快快分享给好友吧！
+    </div>
+    <div style="display: none" class="popup popup_copy" id="download_err">
+      你点错下载装置啦！
+    </div>
+    <div class="popup_bg" style="display: none" id="popup_qecode">
+      <div class="popup popup_code">
+        扫码下载<br><br>
+        <img id="qrCode"><br>
+        <button type="button" onclick="closeQecode()">关闭视窗</button>
+      </div>
+    </div>
+
+    <section class="topBar">
+      <div class="area">
+        <div class="logo12">
+          <div class="logo"> <a onclick="go2('homePage');void(0);"> <img
+                  src="{{ site.icon}}"> </a></div>
+          <div class="logo2"><img src="https://g.jujiarobot.com/pjbadh1.club/images/web_add.png?r=6"></div>
+        </div>
+    </section>
+
+    <section class="section_banner">
+      <div class="area">
+        <span id='hotAppIntro'></span>
+        <div class="user_evaluation">
+          <p>用户评价（<span id='userCommentsCount'></span>）</p>
+          <p class="evaluation"><img src="https://g.jujiarobot.com/pjbadh1.club/images/store_nine/stars-4.png"
+                                     align="center"/><span
+                  id='userCommentsStar'></span>/5</p>
+          <span id='userComments'></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section_hot_app">
+      <div class="area2">
+        <img src="https://g.jujiarobot.com/pjbadh1.club/images/store_title_11.png">
+      </div>
+      <section class="section_link">
+        <span id='goodRecommendations'></span>
+      </section>
+    </section>
+
+    <section class="section_hot_app">
+      <div class="area2">
+        <img src="https://g.jujiarobot.com/pjbadh1.club/images/store_title_22.png">
+      </div>
+      <span id='guessYouLikes'></span>
+    </section>
+
+    <section class="section_hot_app">
+      <div class="area3">
+        <img src="https://g.jujiarobot.com/pjbadh1.club/images/title_recomand.png">
+      </div>
+      <ul id='recommendLinks2' class="ul_link"></ul>
+    </section>
+
+    <section class="section_hot_app">
+      <div class="area4">
+        <img src="https://g.jujiarobot.com/pjbadh1.club/images/digital_title_33.png">
+      </div>
+      <ul id='guideLinks2' class="ul_link"></ul>
+    </section>
+  </span>
+
+<!-- --------------回到頂部+footer-------------- -->
+<footer>
+
+    <div id="arrow-circle">
+        <a href=#><img src="https://g.jujiarobot.com/pjbadh1.club/images/arrow-circle.png">
+    </div>
+    </a>
+
+    <div class="area footer_box">
+        <div class="footer_img"><img src="https://g.jujiarobot.com/pjbadh1.club/images/store_nine/img_profile2222.png">
+        </div>
+
+        <div class="footer_text">
+            本站资源均为软件或程序作者提供和网友推荐收集整理而来，本网站可能提供第三方网站的链接， 我们不负责维护这些网站，亦不对这些网站的内容负责任。期待持续向用户提供更优质的服务， 谢谢大家的支持。
+        </div>
+
+        <div id="fixImg" class="fixImg" style="display: none;">
+            <img id="floatAD" class="jsFixImg" width="360" src="https://g.jujiarobot.com/pjbadh1.club/images/aad.png">
+            <div class="closeBtn">
+                <img src="https://g.jujiarobot.com/pjbadh1.club/images/close-icon.png" onclick="closeFixImg()">
+            </div>
+        </div>
+
+    </div>
+</footer>
+</div>
+
+<style type="text/css">
+    @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+        select,
+        textarea,
+        input {
+            font-size: 16px;
+        }
+    }
+</style>
+
+
+<style type="text/css">
+    .footer_box .fixImg {
+        width: 360px;
+        height: 90px;
+        position: fixed;
+        bottom: 0px;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .footer_box .fixImg .closeBtn {
+        width: 27px;
+        height: 27px;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 100%;
+        top: 6px;
+        right: 6px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .footer_box .fixImg .closeBtn img {
+        width: 14px;
+        height: 14px;
+    }
+</style>
+<script type="text/javascript">
+    function closeFixImg() {
+        document.getElementById("fixImg").style.display = "none";
+        window.event ? window.event.cancelBubble = true : event.stopPropagation();
+    }
+</script>
+
+<!-- 追蹤碼 -->
+<!-- <div class='cnzz' style="text-align: center;font-size: 10px;">
+  <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1279632491&web_id=1279632491"></script>
+</div> -->
+
+
+<!--start of springClicks-->
+<style>
+    .springClicksBox {
+        z-index: 100;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .springClicksBox div {
+        margin: auto;
+    }
+
+    .springClicksBox .springClicks {
+        z-index: 101;
+        margin: auto;
+        /* left: 0; */
+    }
+
+    .springClicksBox .springClicks .closeBtn {
+        z-index: 102;
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 100%;
+        margin: 6px 1000px;
+    }
+
+    @media (max-width: 1024px) {
+        .springClicksBox {
+            width: 100%;
+            bottom: 0;
+        }
+
+        .springClicksBox .springClicks {
+            margin: auto;
+            max-width: 320px;
+        }
+
+        .springClicksBox .springClicks .closeBtn {
+            margin: 6px 300px;
+        }
+    }
+</style>
+<script>
+    function springClicksClose() {
+        document.getElementById("springClicksBox").style.display = "none";
+    }
+</script>
+<!--end of springClicks-->
+
+</body>
+
+</html>

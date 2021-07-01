@@ -1,0 +1,103 @@
+{% extends site.theme|layout %}
+
+{% block content %}
+
+    <!-- --------------導航名站標題-------------- -->
+
+    <section class="section_hot_app">
+        <div class="area3">
+            <img src="https://g.jujiarobot.com/pjbadh1.club/images/title_recomand.png">
+        </div>
+        <ul id='recommendLinks' class="ul_link">
+            {% if friend_links %}
+                {% for cate in friend_links %}
+                    {% if cate=='精品' %}
+                        {% for link in friend_links[cate] %}
+                            <li class="yellow"><a href="{{ link.url }}">🔥 {{ link.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+        </ul>
+
+
+    </section>
+
+    <!-- --------------導航名站標題-------------- -->
+
+    <section class="section_hot_app">
+        <div class="area3">
+            <img src="https://g.jujiarobot.com/pjbadh1.club/images/digital_title_33.png">
+        </div>
+        <ul id='guideLinks' class="ul_link">
+            {% if friend_links %}
+                {% for cate in friend_links %}
+                    {% if cate=='导航' %}
+                        {% for link in friend_links[cate] %}
+                            <li class="yellow"><a href="{{ link.url }}">🔥 {{ link.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </section>
+
+    <!-- --------------視頻電影標題-------------- -->
+
+    <section class="section_hot_app">
+        <div class="area3">
+            <img src="https://g.jujiarobot.com/pjbadh1.club/images/digital_title_44.png">
+        </div>
+        <ul id='movieLinks' class="ul_link">
+            {% if friend_links %}
+                {% for cate in friend_links %}
+                    {% if cate=='视频' %}
+                        {% for link in friend_links[cate] %}
+                            <li class="yellow"><a href="{{ link.url }}">🔥 {{ link.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </section>
+
+    <!-- --------------小說動漫標題-------------- -->
+
+    <section class="section_hot_app">
+        <div class="area3">
+            <img src="https://g.jujiarobot.com/pjbadh1.club/images/digital_title_55.png">
+        </div>
+        <ul id='novelLinks' class="ul_link">
+            {% if friend_links %}
+                {% for cate in friend_links %}
+                    {% if cate=='小说' %}
+                        {% for link in friend_links[cate] %}
+                            <li class="yellow"><a href="{{ link.url }}">🔥 {{ link.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </section>
+
+    <!-- --------------美女寫真標題-------------- -->
+
+    <section class="section_hot_app">
+        <div class="area3">
+            <img src="https://g.jujiarobot.com/pjbadh1.club/images/digital_title_66.png">
+        </div>
+        <ul id='photoalbumLinks' class="ul_link">
+            {% if friend_links %}
+                {% for cate in friend_links %}
+                    {% if cate=='美图' %}
+                        {% for link in friend_links[cate] %}
+                            <li class="yellow"><a href="{{ link.url }}">🔥 {{ link.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </section>
+
+{% endblock %}
