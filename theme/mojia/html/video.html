@@ -7,7 +7,7 @@
     <div class="mo-cols-case mo-java-waps" data-mob="0" data-wap="/">
         {% if not video.display %}
             <div class="mo-cols-lays mo-back-white mo-part-round mo-cols-rows mo-part-over">
-                <p>无法观看</p>
+                <p>看不了了，请返回<a href="/index.html">首页</a></p>
             </div>
         {% else %}
             {% if video.m3u8_list|length>0 and site.part_show_pos=="above" %}
