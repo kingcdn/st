@@ -1,0 +1,596 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html>
+<head>
+    <title>{{ site.name }}</title>
+    <meta name="keywords" content="{{ site.name }}-看你想看的这都有"/>
+    <meta name="description" content="{{ site.name }}-看你想看的这都有"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta http-equiv="Cache-Control" content="max-age=300"/>
+    <meta name="referrer" content="always">
+    <meta name="referer" content="always">
+    <link rel="shortcut icon" href="{{ site.icon }}">
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+        }
+
+        body {
+
+
+            background-color: #444;
+            color: #efefef;
+            background: url(/static/theme/vip1/images/site_bg.jpg) repeat #000
+
+        }
+
+        body::-webkit-scrollbar { /*滚动条整体样式*/
+            width: 7px; /*高宽分别对应横竖滚动条的尺寸*/
+            height: 1px;
+        }
+
+        body::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            background: #535353;
+        }
+
+        body::-webkit-scrollbar-track { /*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 0px;
+            background: #041618;
+        }
+
+        header {
+            width: 60%;
+            padding: 5px 20% 11px 20%;
+            background: rgba(1, 15, 23, .58);
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-style: italic;
+            line-height: 2.4rem;
+            display: inline-block;
+            width: 50%;
+        }
+
+        header h1 img {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        header .buttons {
+            text-align: right;
+            display: inline-block;
+            width: 49.5%;
+            vertical-align: top;
+            margin-top: 12px;
+        }
+
+        header .buttons button {
+            cursor: pointer;
+            padding: 5px 15px;
+            border-radius: 5px;
+            background-color: #222;
+            color: #eee;
+            border-bottom: 1px solid #222;
+            border-top: 1px solid rgb(81, 83, 86);
+            border-left: 1px solid #222;
+            border-right: 1px solid rgb(81, 83, 86);
+            box-shadow: 2px 2px 4px #000;
+            -moz-box-shadow: 2px 2px 4px #000;
+            -webkit-box-shadow: 2px 2px 4px #000;
+        }
+
+        .main {
+            width: 60%;
+            padding: 0 20%;
+        }
+
+        .cat {
+            margin: 20px 0 0 0;
+            border: 1px solid #323438;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px #000;
+        }
+
+        .cat-title {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border-sizing: border-box;
+            padding: 10px 0 10px 10px;
+            border-radius: 5px 5px 0 0;
+            font-size: 1.2rem;
+            width: 100%;
+            background-color: #222;
+            font-weight: bold;
+            color: #eee;
+            border-bottom: 1px solid #222;
+        }
+
+        .items {
+            border-radius: 0 0 5px 5px;
+            background-color: #373b3e;
+            border-top: 1px solid rgb(81, 83, 86);
+        }
+
+        .notitle {
+            border-radius: 5px 5px 5px 5px !important;
+        }
+
+        .first-items {
+            float: left;
+            width: 62.5%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .first-items .item, .first-items .item:nth-child(8n+0) {
+            border-bottom: 1px solid #222;
+            border-top: 1px solid rgb(81, 83, 86);
+            border-left: 1px solid #222;
+            border-right: 1px solid rgb(81, 83, 86);
+        }
+
+        .layui-carousel {
+            float: left;
+            width: 37.5% !important;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .layui-carousel img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .first-items .item {
+            width: 25%;
+        }
+
+        .item a {
+            background-color: #323538;
+            font-size: 0.9rem;
+            color: #eee;
+            text-decoration: none;
+            padding: 8px 4px;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            vertical-align: middle;
+            height: 19px;
+        }
+
+        .item a.nohref {
+            color: #999;
+        }
+
+        .item {
+            background-color: #323538;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border-sizing: border-box;
+            float: left;
+            border-bottom: 1px solid #222;
+            border-top: 1px solid rgb(81, 83, 86);
+            border-left: 1px solid #222;
+            border-right: 1px solid rgb(81, 83, 86);
+            display: inline-block;
+            overflow: hidden;
+            width: 12.5%;
+            -webkit-transition: all 0.2s linear 0s;
+            transition: all 0.2s linear 0s;
+            border-radius: 5px;
+        }
+
+        .item:before {
+            content: "\f0fb";
+            font-family: FontAwesome;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            position: absolute;
+            height: 35px;
+            width: 30px;
+            background-color: #323538;
+            border-radius: 0 50% 50% 0;
+            -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+            -webkit-transform-origin: left center;
+            transform-origin: left center;
+            -webkit-transition: all 0.2s linear 0s;
+            transition: all 0.2s linear 0s;
+        }
+
+        .item:hover {
+            text-indent: 15px;
+        }
+
+        .item:hover a {
+            text-align: left !important;
+            background-color: #000 !important;
+        }
+
+        .item:hover:before {
+            -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+            text-indent: 0;
+        }
+
+        .item a:hover {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        a.withImg {
+            background-image: none !important;
+            height: 90px !important;
+            text-align: center;
+
+        }
+
+        a.withImg img {
+            display: block;
+            margin: 5px auto 7px auto !important;
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 10px;
+            border: 2px solid rgba(200, 200, 200, 0.2);
+        }
+
+        .withDesc {
+            -webkit-box-sizing: border-box !important;
+            -moz-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+            width: 50% !important;
+        }
+
+        .dhtitle {
+            -webkit-box-sizing: border-box !important;
+            -moz-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+            width: 30% !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: right;
+            vertical-align: middle;
+            border-right: 1px solid #666;
+            padding-right: 10px;
+        }
+
+        .dhdesc {
+            -webkit-box-sizing: border-box !important;
+            -moz-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+            width: 68% !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 12px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            color: #bbb !important;
+            padding-left: 5px;
+        }
+
+        .red a {
+            background-color: red !important;
+            color: #fff !important;
+        }
+
+        .blue a {
+            background-color: blue !important;
+            color: #fff !important;
+        }
+
+        .green a {
+            background-color: green !important;
+            color: #fff !important;
+        }
+
+        .orange a {
+            background-color: orange !important;
+            color: #fff !important;
+        }
+
+        .pink a {
+            background-color: pink !important;
+            color: #999 !important;
+        }
+
+        .yellow a {
+            background-color: yellow !important;
+            color: #999 !important;
+        }
+
+        .bottom {
+            margin-top: 30px;
+            width: 60%;
+            padding: 15px 20%;
+            background: rgba(1, 15, 23, .58);
+        }
+
+        .bottom div {
+            width: 100%;
+            text-align: center;
+            line-height: 180%;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .clear:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        #nav {
+            position: fixed;
+            top: 20px;
+            left: calc(20% - 124px);;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #nav a {
+            display: block;
+            position: relative;
+            width: 98px;
+            padding: 8px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #373b3e;
+            color: #ddd;
+            border-left: 2px solid transparent;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #222;
+            border-top: 1px solid rgb(81, 83, 86);
+            border-left: 2px solid #222;
+            border-right: 1px solid rgb(81, 83, 86);
+        }
+
+        #nav a:hover {
+            width: 98px;
+            border-left: 2px solid #db6464;
+        }
+
+        #nav a p {
+            position: relative;
+            z-index: 3;
+        }
+
+        #nav a.active {
+            background-color: #db6464;
+            color: #fff;
+        }
+
+        .asd {
+            width: 100%;
+        }
+
+        .asd img {
+            width: 100%;
+        }
+
+        .fa {
+            color: #57A957;
+        }
+
+        .email, .notice {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            width: 50%;
+            left: 25%;
+            top: 150px;
+            background-color: #222222;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            border: 1px solid #ccc;
+        }
+
+        .email a {
+            text-decoration: none;
+            color: #efefef;
+            font-size: 1.5rem;
+            color: red;
+        }
+
+        .email .close-btn, .notice .close-btn {
+            text-decoration: none;
+            color: #efefef;
+            font-size: 1.1rem;
+            color: #eee;
+            background-color: orange;
+            border-radius: 7px;
+            cursor: pointer;
+            padding: 8px 15px;
+        }
+
+        .shoulu {
+            font-size: 1.2rem;
+        }
+
+        .shoulu input, .shoulu select {
+            height: 1.8rem;
+            width: 40%;
+            border-radius: 5px;
+            padding-left: 5px;
+            border: 0;
+            font-size: 1.1rem;
+        }
+
+        .shoulu input:focus, .shoulu select:focus {
+            outline: none;
+            border: 0 !important;
+        }
+
+        .shoulu .smt-btn {
+            text-decoration: none;
+            color: #efefef;
+            font-size: 1.1rem;
+            color: #eee;
+            background-color: green;
+            border-radius: 7px;
+            cursor: pointer;
+            padding: 8px 15px;
+        }
+
+        .title-wap {
+            display: none;
+        }
+
+        @media (max-width: 766px) {
+            .title-wap {
+                display: block;
+                padding: 10px 0 10px 10px;
+                border-radius: 5px 5px 0 0;
+                font-size: 1.2rem;
+                background-color: #222;
+                text-align: center;
+            }
+
+            #nav {
+                display: none;
+            }
+
+            header, .bottom, .main {
+                width: 98% !important;
+                padding-left: 1% !important;
+                padding-right: 1% !important;
+            }
+
+            .first-items .item, .item {
+                width: 33.3%;
+            }
+
+            .layui-carousel {
+                width: 100% !important;
+                margin-top: 5px;
+            }
+
+            .first-items {
+                width: 100%;
+            }
+
+            .cat {
+                margin-top: 10px !important;
+            }
+
+            .buttons {
+                width: 40% !important;
+            }
+
+            .email, .shoulu {
+                width: 90%;
+                left: 5%;
+                top: 150px;
+                font-size: 1.1rem;
+            }
+
+            .shoulu input, .shoulu select {
+                width: 60%;
+            }
+
+            .withDesc {
+                -webkit-box-sizing: border-box !important;
+                -moz-box-sizing: border-box !important;
+                box-sizing: border-box !important;
+                width: 100% !important;
+            }
+        }
+
+        .title {
+            padding: 10px 0 10px 10px;
+            border-radius: 5px 5px 0 0;
+            font-size: 1.2rem;
+            background-color: #222;
+            text-align: center;
+        }
+
+    </style>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ static('static/plugins/xmanager-icon/iconfont.css',site.theme) }}">
+    <link href="{{ static('static/plugins/layui/css/layui.css" rel="stylesheet" media="all',site.theme) }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ static('static/theme/vip1/css/font-awesome.min.css',site.theme) }}">
+</head>
+<body>
+<div class="title-wap">
+    {{ site.name }}
+</div>
+<div class="main">
+    {% if friend_links %}
+        {% for cate in friend_links %}
+            <div class="cat" id="{{ cate }}">
+                <div class="asd">
+                    <div style='width: 100%;'></div>
+                </div>
+
+                <div class="cat-title">
+                    <span class="iconfont icon-img-re2" style="margin-right: 6px;"></span>
+                    {{ cate }}
+                </div>
+
+                <div class="items ">
+                    {% for link in friend_links[cate] %}
+                        <div class="item">
+                            <a href="{{ link.url }}" target="_blank" style="font-weight:bold;" bgcolor="#eb0ee3">
+                                <font style="font-weight:bold; color:#fff;" size=2>
+                                    {{ link.name }}
+                                </font>
+                            </a>
+                        </div>
+                    {% endfor %}
+                    <div class="clear"></div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</div>
+<div class="bottom">
+    <div>
+    </div>
+</div>
+<div id="nav">
+    <div class="title">
+        {{ site.name }}
+    </div>
+    {% for cate in friend_links %}
+        <a href="#{{ cate }}">{{ cate }}</a>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>

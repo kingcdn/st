@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{site.name}}-福利导航网第一品牌</title>
+    <meta name="keywords"
+          content="">
+    <link rel="shortcut icon" href="{{ site.icon }}">
+    <meta name="description" content="">
+    <script>if (navigator.userAgent.toLocaleLowerCase().indexOf('baidu') ==
+          -1) {document.title = '{{site.name}}-福利导航网第一品牌';}</script>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width:640px)" href="{{ static('static/css/wapcss.css',site.theme) }}">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:640px)" href="{{ static('static/css/pccss.css',site.theme) }}">
+    <script type="text/javascript" language="javascript" src="{{ static('static/js/jquery.js',site.theme) }}"></script>
+    <script type="text/javascript" language="javascript" src="{{ static('static/js/js.js',site.theme) }}"></script>
+</head>
+<body data-spy="scroll" data-target="#nav-plane" data-offset="49" ondragstart="window.event.returnValue=true"
+      oncontextmenu="window.event.returnValue=true" onselectstart="event.returnValue=true">
+<!--------顶部导航-------->
+<div class="head">
+    <div class="head_main">
+        <a href="" class="logo" style="background-image:url({{ static('static/image/logo.png',site.theme) }}"><h1>{{site.name}}</h1></a>
+        <span class="pc_introduce">{{site.name}} - 福利导航</span>
+        <span class="wap_introduce">{{site.name}} - 手机版</span>
+        <div class="head_more">
+            <a href="javascript:;" class="open" rel="nofollow">永久地址 <span>{{site.domain}}</span></a>
+        </div>
+    </div>
+</div>
+<div id="top"></div>
+
+<!--------侧边导航-------->
+<div id="nav-plane" style="overflow:hidden">
+    <ul>
+        {% for cate in friend_links %}
+            <li><a href="#{{ cate }}">{{ cate }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<!--------PC 横幅  950 *60-------->
+<div class="banner">
+</div>
+
+{% for cate in friend_links %}
+    <div id="{{ cate }}" class="web">
+        <div class="web_class">
+            <div class="web_class_title">
+                <h2>{{ cate }}</h2>
+            </div>
+        </div>
+        <ul class="web_list">
+            {% for link in friend_links[cate] %}
+                <li>
+                    <div></div>
+                    <a href="{{ link.url }}" target="_blank" rel="external nofollow">{{ link.name }}</a>
+                </li>
+            {% endfor %}
+            <div class="clear"></div>
+        </ul>
+    </div>
+{% endfor %}
+
+<div id="footer">
+<span class="copyright">
+本站日访问量10.7万！本站已安全运行了:
+<script>
+var BirthDay = new Date('octo 16,2018');//修改成你网站创建时间today=new Date();
+var today = new Date();
+var timeold = (today.getTime() - BirthDay.getTime());
+var sectimeold = timeold / 1000;
+var secondsold = Math.floor(sectimeold);
+var msPerDay = 24 * 60 * 60 * 1000;
+var e_daysold = timeold / msPerDay;
+var daysold = Math.floor(e_daysold);
+document.write('' + daysold + '天');
+</script>
+<br>全面准确且只收录优质站点的福利导航,欢迎来到{{site.name}}.未满18岁禁止访问本站
+<br>本站设在美国佛罗里达州,主机位于美国亚利桑那州,服务全球华人,受美国法律约束和保护
+ <br>                                                      站长邮箱：daohangxyz ✉︎ gmail.com
+</span>
+</div>
+
+
+
+<script>
+  $(document).ready(function() {
+    $('.open').click(function() {
+      $('.tanchu').fadeIn(200);
+    });
+    $('.tanchu-close p').click(function() {
+      $('.tanchu').fadeOut(200);
+    });
+  });
+</script>
+<div class="tanchu">
+    <div class="tanchu-box">
+        <div class="tanchu-close r"><span>{{site.name}}-福利导航网第一品牌！</span>
+            <p>X</p></div>
+        <div class="tanchu-c">
+            <a href="" target="_blank">{{site.domain}}</a><br><span>（ 永久域名 ）</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

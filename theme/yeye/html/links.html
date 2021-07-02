@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{ site.name }}_视频大全导航_高清在线观看,尽在{{ site.domain }}</title>
+    <meta name="keywords" content="{{ site.name }}视频_视频大全导航_高清在线观看"/>
+    <meta name="description" content="{{ site.name }}_视频大全导航_高清在线观看_最全最快的在线网站"/>
+    <meta name="referrer" content="always">
+    <link rel="shortcut icon" href="{{ site.icon }}">
+</head>
+
+
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        /*overflow-x: hidde n;*/
+        display: grid;
+    }
+
+    html {
+        margin: 0;
+        padding: 0;
+        /*overflow-x: hidden;*/
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .tittle {
+        width: 720px;
+        margin: 0 auto;
+        height: 69px;
+    }
+
+    .fixed {
+        position: fixed;
+        top: 0;
+    }
+
+    .head {
+        width: 676px;
+        height: 69px;
+        font-size: 36px;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #ff8a1c;
+        padding: 22px 22px 0px 22px;
+    }
+
+    .nav {
+        width: 720px;
+        height: 51px;
+        margin: 0 auto;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        background: #ff8a1c;
+    }
+
+    .nav table tr td {
+        width: 120px;
+        color: #ffcd62;
+    }
+
+    .nav table tr td a {
+
+        color: black;
+    }
+
+    .main {
+        width: 720px;
+        margin: 0 auto;
+        background-color: #ff8a1c;
+        display: grid;
+    }
+
+    .main-a {
+        background-image: url("{{ static('static/images/tsp.png',site.theme) }}");
+        height: 208px;
+        background-repeat: no-repeat;
+    }
+
+    .main-b {
+        height: 100px;
+        background-image: url("{{ static('static/images/tsp3.gif',site.theme) }}");
+        background-repeat: no-repeat;
+        line-height: 100px;
+        text-align: center;
+        padding-top: 5px;
+        font-size: 23px;
+        color: black;
+        font-weight: normal;
+    }
+
+    .main-b-a table {
+        margin-left: 10px;
+        width: 680px;
+    }
+
+    .main-b-a-td-a {
+        height: 28px;
+        width: 64px;
+        background-image: url("{{ static('static/images/12.png',site.theme) }}");
+        background-repeat: no-repeat;
+        color: white;
+        font-weight: bold;
+        padding-top: 4px;
+        padding-left: 70px;
+    }
+
+    .main-b-a-td-b {
+        height: 28px;
+        width: 64px;
+        background-image: url("{{ static('static/images/13.png',site.theme) }}");
+        background-repeat: no-repeat;
+        color: white;
+        font-weight: bold;
+        padding-top: 2px;
+        padding-left: 70px;
+    }
+
+    .main-b-a a {
+        color: white;
+    }
+
+    .main-c {
+        background-color: black;
+    }
+
+    .main-c-a {
+        background-image: url("{{ static('static/images/tsp4.png',site.theme) }}");
+        background-repeat: no-repeat;
+        height: 29px;
+        width: 720px;
+    }
+
+    .main-c-b p {
+        margin-left: 140px;
+        color: white;
+    }
+
+    .main-c-b a {
+        color: red;
+    }
+
+    .main-c-b-div {
+        margin-left: 60px;
+    }
+
+    .main-c-b-div-a {
+        height: 110px;
+        width: 80px;
+        background-color: white;
+        float: left;
+        border-radius: 10px;
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .main-c-b-div-b {
+        height: 110px;
+        width: 80px;
+        background-color: white;
+        float: left;
+        border-radius: 10px;
+        margin-left: 20px;
+        text-align: center;
+    }
+
+    .reload {
+        border-radius: 10px;
+        margin-left: 80px;
+        background-color: #ffd16e;
+        width: 57px;
+        height: 24px;
+        display: block;
+        float: right;
+        text-align: center;
+        margin-right: 115px;
+    }
+
+    .main-d table {
+        width: 680px;
+        margin-left: 20px;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .main-d table td {
+        border: 1px solid #363aaf;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        font-weight: bold;
+    }
+
+    .main-e {
+        margin-top: 20px;
+        height: 79px;
+        background-image: url("{{ static('static/images/tsp5.png',site.theme) }}");
+        background-repeat: no-repeat;
+    }
+
+    .main-e-table table {
+        width: 680px;
+        margin-left: 20px;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .main-e-table table td {
+        border: 1px solid #d49a2b;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        font-weight: bold;
+    }
+
+    .main-f {
+        margin-top: 20px;
+        height: 79px;
+        background-image: url("{{ static('static/images/tsp5.png',site.theme) }}");
+        background-repeat: no-repeat;
+    }
+
+    .main-f-table table {
+        width: 680px;
+        margin-left: 20px;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .main-f-table table td {
+        border: 1px solid #0bffd1;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        font-weight: bold;
+    }
+
+    .main-g {
+        margin-top: 20px;
+        background-color: #752121;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .main-g-table table {
+        width: 680px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .main-g-table table tr td div {
+        border-radius: 10px;
+    }
+
+    .black-div {
+        margin-top: 8px;
+        background-color: #b2e9ff;
+        width: 166px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+    }
+
+    .black-div a {
+        color: black;
+    }
+
+    .yello-div {
+        margin-top: 8px;
+        background-color: #ffffff;
+        width: 166px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+    }
+
+    .yello-div a {
+        color: #d64373;
+    }
+
+    .main-h {
+        margin-top: 40px;
+        background-image: url("{{ static('static/images/11.png"',site.theme) }}");
+        width: 720px;
+        height: 867px;
+    }
+
+    .main-h-a {
+        margin-top: 20px;
+        margin-left: 130px;
+    }
+
+    .main-h-a span {
+        display: block;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        float: left;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .footer {
+        width: 720px;
+        margin: 0px auto;
+        background-color: #fd5392;
+        color: white;
+        height: 216px;
+        font-size: 14px;
+    }
+
+    :hover.nav-a {
+        background-color: white;
+        color: black;
+        display: block;
+        border-radius: 5px;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .xuanfu {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    .footer {
+        height: 420px;
+    !important
+    }
+
+</style>
+<body style="    background-color: #ff8a1c;">
+<div class="tittle">
+    <div class="fixed">
+        <div class="head">
+            {{ site.name }} 导航大全
+        </div>
+    </div>
+</div>
+<div class="main">
+
+    {% for cate in friend_links %}
+        <div class="main-b">{{ cate }}</div>
+        <div class="main-g-table">
+            <table style=" border-collapse:separate; border-spacing:0px;" border="0" cellspacing="0" cellpadding="0">
+
+
+                {% for link in friend_links[cate] %}
+                    {% if(loop.index0%4==0) %}
+                        <tr>
+                    {% endif %}
+                <td align=center>
+                    <div class="black-div"><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></div>
+                </td>
+                {% if(loop.index0%4==3) %}
+                    </tr>
+                {% endif %}
+
+                {% endfor %}
+
+                <tr>
+            </table>
+        </div>
+    {% endfor %}
+    </td>
+</div>
+
+<div class="footer" style="width: 720px;height:149px; ">
+    <div style="margin-left:20px;margin-right:20px;">
+        <p>
+            警告︰本網站只這合十八歲或以上人士觀看。內容可能令人反感；不可將本網站的內容派發、傳閱、出售、出租、交給或借予年齡未滿18歲的人士或將本網站內容向該人士出示、
+            播放或放映。</p>
+        <p>站点申明：我们立足于美利坚合众国，受北美法律保护,未满18岁或被误导来到这里，请立即离开！</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>{{site.name}}_专注福利网站收录，面向全球收集知名福利网站和APP - 每周更新信息 - 永久域名{{site.domain}}</title>
+    <meta name="Keywords" content="{{site.name}}大全，不良在线导航，不良免费导航，{{site.name}}址导航，不良视频导航,呦呦萝莉,萝莉呦呦,萝莉导航">
+    <meta name="description" content="{{site.name}} - 专注福利网站收录，面向全球收集知名福利网站和APP - 每日更新信息 - 永久域名{{site.domain}}">
+    <link rel="shortcut icon" href="{{ site.icon }}">
+    <link rel="stylesheet" rev="stylesheet" href="{{ static('zb_users/theme/SiteNav/style/main.css',site.theme) }}" type="text/css"><!--  -->
+    <link rel="stylesheet" href="{{ static('zb_users/theme/SiteNav/font-css/font-awesome.min.css',site.theme) }}" type="text/css">
+    <script src="{{ static('zb_system/script/jquery-2.2.4.min.js',site.theme) }}" type="text/javascript"></script>
+    <script src="{{ static('zb_system/script/zblogphp.js',site.theme) }}" type="text/javascript"></script>
+    <script src="{{ static('zb_system/script/c_html_js_add.php',site.theme) }}" type="text/javascript"></script>
+    <style type="text/css">
+        body {
+            background: #ebebeb
+        }
+
+        .ascbg, #top-box .serch-box .btns button.ascbg, .fixside > ul > li > a:hover, .pager a:hover, .pager > span {
+            background: #a82a2a;
+        }
+
+        .pager a:hover, .pager > span {
+            border-color: #a82a2a;
+        }
+
+        #top-box:after {
+        }
+
+        #top-box:before, #footer, .list-box .item li.cu a, .fixside li a {
+            background: #000000
+        }
+
+        .list-box .item li.cu div {
+            border-color: #000000;
+        }
+
+        .list-box .item li, .relist-box li {
+            width: 12.5%;
+        }
+
+        .logo > a {
+            font-size: 40px;
+            color: #e2b83cd9;
+            text-decoration: none;
+        }
+
+
+        /* 隐藏主导航 */
+        /* .main-nav{display:none;} */
+        /* 隐藏手机端通栏广告 */
+        /* @media only screen and (max-width:480px){.wvshow{display:none;}} */
+    </style>
+</head>
+<body style="background-attachment: fixed;">
+<div id="top-box">
+    <div class="header wrap clearfix">
+        <div class="logo"><a href="/" title="{{site.name}}">{{ site.name }}</a></div>
+        <div class="header_rt">
+            <div class="rtdiy"></div>
+            <div class="ftip"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="index-content wrap">
+    {% if friend_links %}
+        {% for cate in friend_links %}
+            <div class="list-box list-index">
+                <div class="hat">
+                    <h3 class="ti ascbg"><i class="fa fa-bars"></i>{{ cate }}</h3>
+                </div>
+                <div class="item">
+                    <ul class="clearfix">
+
+                        {% for link in friend_links[cate] %}
+{#                            <li class="yellow"><a href="{{ link.url }}">🔥 {{ link.name }}</a></li>#}
+                            <li class="linken">
+                                <a href="{{ link.url }}" target="_blank">
+                                    <img src="{{ static('zb_users/upload/2020/03/202003171584434871307999.jpg',site.theme) }}" height="16px">
+                                    {{ link.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+<div id="footer">
+    <div class="foot-wrap wrap">
+        <p><a href="index.html">{{site.name}}</a> &copy;<script>document.write(new Date().getFullYear());</script>
+            <b>
+                {{site.name}}-专注精品福利网站收录 <br/> 永久域名：{{ site.domain }}
+            </b>
+        </p>
+    </div>
+</div>
+</body>
+</html>

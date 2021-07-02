@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{site.name}},福利网址导航,成人电影网址导航</title>
+    <link rel="shortcut icon" href="{{ site.icon }}">
+    <meta name="description"
+          content="{{site.name}},福利导航,导航大全,导航手机,福利网站,福利所,第一导航福利,福利导航,导航大全,导航手机,福利网站,福利所,第一导航福利,500导航,蓝导航,大香蕉,26uuu"/>
+    <meta name="keywords"
+          content="{{site.name}},福利导航,导航大全,导航手机,福利网站,福利所,第一导航福利,福利导航,导航大全,导航手机,福利网站,福利所,第一导航福利,500导航,蓝导航,大香蕉,26uuu"/>
+
+    <link rel="stylesheet" href="{{ static('template/tudou(pc)/css/page.css',site.theme) }}">
+    <script src="{{ static('template/tudou(pc)//js/jquery.min.js',site.theme) }}"></script>
+    <script src="{{ static('template/tudou(pc)//js/common.js',site.theme) }}"></script>
+    <script src="{{ static('template/tudou(pc)//js/layer.js',site.theme) }}"></script>
+
+    <style>
+        .theme-text {
+            color: #0a161d !important;
+        }
+
+        .theme-hover-text:hover {
+
+            color: #0a161d !important;
+            background: #FFF !important;
+        }
+
+
+        .theme-bg {
+            background: #ff5252 !important;
+        }
+
+        .theme-hover-bg:hover {
+            background: #0a161d !important;
+            opacity: .6;
+            color: #FFF !important;
+            box-shadow: 0 2px 3px #ccc
+        }
+
+    </style>
+
+</head>
+
+<body>
+<link rel="stylesheet" href="{{ static('template/tudou(pc)/iconfont/iconfont.css',site.theme) }}">
+
+<!-- 顶部导航 -->
+<div class="header-wrap">
+    <span class="iconfont icon-list sidebar-toggle"></span>
+    <span>{{site.name}}</span>
+</div>
+<!-- 侧边导航 -->
+<div class="sidebar-mark hide-sidebar">
+</div>
+<div class="aside-wrap">
+    <div class="logo-wrap ">
+        <img src="{{ static('template/tudou(pc)/images/bee.png',site.theme) }}" alt="" class="img-logo">
+        <h1 class="site-name">{{site.name}}</h1>
+    </div>
+    <div class="nav-wrap">
+        {% for cate in friend_links %}
+            <a href="#{{ cate }}" title="品质" class="item">
+                <span>{{ cate }}</span>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+<div class="main-wrap page-home">
+
+    <div class="main-inner">
+        <div class="warn-inner">
+            <span class="label">【公告】</span>
+            本站将尽力为狼友提供最新最全的在线视频导航福利,请大家Ctrl+D保存收藏,最新地址：{{site.domain}}
+        </div>
+        <ul>
+            {% for cate in friend_links %}
+                <div class="module module-b wrap-margin" id="{{ cate }}">
+
+                    <div class="theme-text title-wrap title-a">
+                        <div class="title">
+                            {{ cate }}
+                        </div>
+
+                        <div class="tips"></div>
+                    </div>
+                    <div class="list-wrap">
+                        {% for link in friend_links[cate] %}
+                            <a href="{{ link.url }}" title="{{ link.name }}" class="item  tj" target="_blank"
+                               style="">
+                                <img src="{{ static('template/tudou(pc)/images/level3.png',site.theme) }}"/>
+                                {{ link.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </ul>
+        <div class="footer-wrap">
+            <div>
+                本站仅提供网址收录，以上网站内容均与本站无关，本站只为海外华人提供导航服务，非法律允许地区以及18岁以上用户禁止访问！
+            </div>
+            <div>
+                Copyright @ 2020 {{site.name}}导航 Inc. All Rights Reserved
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+<!-- 右侧浮动 -->
+<div class="slide-right" title="返回顶部">
+
+    <a href="javascript:void(0)">
+        <img src="{{ static('template/tudou(pc)/images/to-top.png',site.theme) }}" class="to_top"/>
+    </a>
+</div>
+
+<script type="text/javascript">
+
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod');
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+      if (userAgentInfo.indexOf(Agents[v]) > 0) {
+        flag = false;
+        break;
+      }
+    }
+    return flag;
+  }
+
+  $(document).ready(function(e) {
+
+    // 侧边导航
+    var btnObj = $('.sidebar-toggle');
+    var sidebarMarkObj = $('.sidebar-mark');
+    var sidebarObj = $('.aside-wrap');
+    var hideBarObj = $('.hide-sidebar');
+
+    btnObj.click(function() {
+      sidebarMarkObj.css({'display': 'block'});
+      sidebarObj.css({'transform': 'translateX(250px)'});
+    });
+
+    hideBarObj.click(function() {
+      sidebarMarkObj.css({'display': 'none'});
+      sidebarObj.css({'transform': 'translateX(-250px)'});
+
+    });
+
+    $('.nav-wrap .item').click(function() {
+      $('.nav-wrap .item').removeClass('active');
+      $(this).addClass('active');
+    });
+    // ** hover 效果 ************
+    hoverBtn($('.module-a .list-wrap .item'));
+    hoverBtnBt($('.module-c .list-wrap .item,.module-e .list-wrap .item'));
+    hoverBtnBorder($('.module-d .list-wrap .item'));
+
+    var topStatus = false;
+    $(document).scroll(function() {
+
+      var scrollTop = $(document).scrollTop();
+      if (scrollTop >= 300 && !topStatus) {
+        $('.to_top').fadeIn();
+        topStatus = true;
+      } else if (scrollTop < 300 && topStatus) {
+        topStatus = false;
+        $('.to_top').fadeOut();
+      }
+    });
+
+    $('.to_top').click(function() {
+      $(window).scrollTop(0);
+    });
+
+    var width = isPC() ? '700px' : '90%';
+    var height = isPC() ? '680px' : '90%';
+    $('.submit-site').click(function() {
+      layer.open({
+        type: 2,
+        shadeClose: true,
+        title: '合作/收录',
+        area: [width, height],
+        content: '/index.php?m=gbook-show.html',
+      });
+    });
+
+  });
+</script>
+
+</body>
+</html>

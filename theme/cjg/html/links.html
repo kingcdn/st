@@ -5,8 +5,8 @@
     <div class="tjimg pc">
         <div class="change">
             <ul>
-                {% if friend_links and friend_links.get('TOP') %}
-                    {% for link in friend_links['TOP'] %}
+                {% if friend_links and friend_links.get('名站') %}
+                    {% for link in friend_links['名站'] %}
                         <li><a href="{{ link.url }}" title="{{ link.name }}" target="_blank" rel="external nofollow">
                             <img alt="{{ link.name }}" src="{{ link.img.url }}"><span>{{ link.name }}</span></a>
                         </li>
@@ -21,8 +21,8 @@
     <div class="tjimgwap wap">
         <div class="changgewap">
             <ul>
-                {% if friend_links and friend_links.get('TOP') %}
-                    {% for link in friend_links['TOP'] %}
+                {% if friend_links and friend_links.get('名站') %}
+                    {% for link in friend_links['名站'] %}
                         <li><a href="{{ link.url }}" title="{{ link.name }}" target="_blank" rel="external nofollow">
                             <img alt="{{ link.name }}" src="{{ link.img.url }}"><span>{{ link.name }}</span></a>
                         </li>
@@ -78,12 +78,6 @@
     <div class="collect">
         <font class="hei wap">欢迎回家！ 请 <span>收藏</span> 本站地址发布页，开车永不迷路</font>
         <font class="pc">欢迎回家！ 请 <span>收藏</span> 本站地址发布页，开车永不迷路，一直被模仿，从未被超越</font>
-    </div>
-    <div class="collect wap">
-        <a class="lan cu" href="/cjg.apk" target="_blank">安装本站安卓客户端</a> <font class="hei wap">丨</font> <a
-            class="hong cu"
-            href="https://t.me/icjgdh"
-            target="_blank">加入官方电报频道</a>
     </div>
     <!-- 公告 -->
     <div class="show_zhanzhang pc">
