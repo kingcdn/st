@@ -25,8 +25,10 @@
             </div>
             <div class="state-{% if preview %}preview{% elif video.is_vip %}pay{% endif %}"
                  style="{% if preview and not site.preview %}display: none;{% endif %}">
-                {% if(video.from_iframe) %}
+                {% if(video.m3u8_type=="iframe") %}
                     {% include("html/video_player_iframe"|common) %}
+                {% elif(video.m3u8_type=="pan") %}
+                    {% include("html/video_pan"|common) %}
                 {% else %}
                     {% if(video_ad.if_video_inside_ads_full) %}
                         {% include("html/video_ads_full"|common) %}
@@ -35,7 +37,7 @@
                     {% endif %}
                 {% endif %}
                 {% if not site.adc.video_inside %}
-                    <div id="inline-ad" style="color: white;{% if not video.from_iframe %}bottom: 0px;{% endif %}">
+                    <div id="inline-ad" style="color: white;{% if video.m3u8_type!="link" %}bottom: 0px;{% endif %}">
                     {{ site.sobj.inline_ad_html(site,video)|safe }}
                     </div>
                 {% endif %}
