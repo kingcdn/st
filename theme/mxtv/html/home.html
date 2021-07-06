@@ -18,6 +18,17 @@
             </div>
         </div>
     {% endif %}
+    <div class="nav_type">
+        <div class="listdx">
+            {% for cate in site.cates %}
+                <div class="item-box ">
+                    <a href="{{ link(site,source_now,None,order_now,1,cate) }}">
+                        <div class="item {% if(cate_now==cate) %}active{% endif %}">{{ cate }}</div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
     <div class="">
         <form action="/search">
             <div class="search">
@@ -27,12 +38,13 @@
             </div>
         </form>
     </div>
+
     {% for tag_group in tags %}
         <div class="nav_type">
             <div class="listdx">
                 {% for tag in tag_group %}
                     <div class="item-box ">
-                        <a href="{{ link(site,source_now,tag,order_now) }}">
+                        <a href="{{ link(site,source_now,tag,order_now,1,cate_now) }}">
                             <div class="item {% if(tag_now==tag) %}active{% endif %}">{{ tag }}</div>
                         </a>
                     </div>
@@ -40,13 +52,11 @@
             </div>
         </div>
     {% endfor %}
-
-
     <div class="nav_type">
         <div class="listdx">
             {% for order in orders %}
-                <div class="item-box ">
-                    <a href="{{ link(site,source_now,tag_now,order) }}">
+                <div class="item-box">
+                    <a href="{{ link(site,source_now,tag_now,order,1,cate_now) }}">
                         <div class="item {% if(order==order_now) %}active{% endif %}">{{ order }}</div>
                     </a>
                 </div>
@@ -65,13 +75,13 @@
         <div class="page">
             <div class="rowdx">
                 <div>
-                    <a href="{{ link(site,source_now,tag_now,order_now,1) }}">
+                    <a href="{{ link(site,source_now,tag_now,order_now,1,cate_now) }}">
                         <div class="item">首页</div>
                     </a>
                 </div>
                 {% if(page>1) %}
                     <div>
-                        <a href="{{ link(site,source_now,tag_now,order_now,page-1) }}">
+                        <a href="{{ link(site,source_now,tag_now,order_now,page-1,cate_now) }}">
                             <div class="item">上一页</div>
                         </a>
                     </div>
@@ -82,7 +92,7 @@
 
 
                 <div>
-                    <a href="{{ link(site,source_now,tag_now,order_now,page + 1) }}">
+                    <a href="{{ link(site,source_now,tag_now,order_now,page + 1,cate_now) }}">
                         <div class="item">下一页</div>
                     </a>
                 </div>
