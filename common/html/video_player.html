@@ -37,7 +37,7 @@
                     {% endif %}
                 {% endif %}
                 {% if not site.adc.video_inside %}
-                    <div id="inline-ad" style="color: white;{% if video.m3u8_type!="link" %}bottom: 0px;{% endif %}">
+                    <div id="inline-ad" style="color: white;bottom: 0px;">
                     {{ site.sobj.inline_ad_html(site,video)|safe }}
                     </div>
                 {% endif %}
