@@ -34,7 +34,10 @@
         <div class="collection_top">
             <div class="left">
                 <a href="/index.html">
-                    <div class="row-1">{{ site.name }} <span style="font-size: 12px">{{ site.desc }}</span></div>
+                    <div class="row-1">
+                        <img src="{{ site.icon }}" style="height: 60px;margin-right: 4px;"/>
+                        <div style="display: inline-block;padding: 4px 0px 4px;">{{ site.name }} <span style="font-size: 12px">{{ site.desc }}</span></div>
+                    </div>
                 </a>
             </div>
             <div class="right menu-reg">
@@ -54,7 +57,7 @@
 <div style="margin: 0 10px;padding: 10px;background-color: #f5f8fa;border-radius: 5px;font-size: 13px;font-weight: 700;">
     <div>
         {% if site.site_desc %}
-            <p>{{ site.site_desc }}</p>
+            <p>{{ site.site_desc|safe }}</p>
         {% endif %}
         {% if site.github %}
             <p><a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a></p>

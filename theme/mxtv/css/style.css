@@ -47,9 +47,7 @@ body {
 }
 
 .header {
-    height: 55px;
     background-color: #fff;
-    position: relative;
 }
 
 .header > .hidden-md.hidden-lg {
@@ -252,7 +250,6 @@ body {
 
 .collection_top_box {
     margin: auto;
-    position: relative;
 }
 
 .collection_top {
