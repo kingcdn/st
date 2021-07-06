@@ -2,9 +2,9 @@
        controlsList="nodownload" preload="preload"
        language="zh-CN" poster="{{ video.cover }}">
     {% if video.m3u8 %}
-                <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
-{#        <source src="https://upcdn0006.top/cdn/obj/ee63786d-6b6d-40b0-aed2-db43cc16fc6b/ee63786d-6b6d-40b0-aed2-db43cc16fc6b.m3u8"#}
-{#                type="application/x-mpegURL"/>#}
+        <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
+        {#        <source src="https://n1.szjal.cn/20210604/dhrtk6Bs/index.m3u8"#}
+        {#                type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">
