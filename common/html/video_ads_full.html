@@ -3,8 +3,8 @@
        language="zh-CN" poster="{{ video.cover }}">
     {% if video.m3u8 %}
         <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
-        {#        <source src="https://n1.szjal.cn/20210604/dhrtk6Bs/index.m3u8"#}
-        {#                type="application/x-mpegURL"/>#}
+{#                <source src="https://n1.szjal.cn/20210604/dhrtk6Bs/index.m3u8"#}
+{#                        type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">

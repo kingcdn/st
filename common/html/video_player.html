@@ -23,9 +23,11 @@
                     <a class="bofang-btn" href="/login.html?_r={{ video.id }}">立即登录</a>
                 </div>
             </div>
-            <div class="state-{% if preview %}preview{% elif video.is_vip %}pay{% endif %}"
+            <div tt="{{ video.m3u8_type }}" class="state-{% if preview %}preview{% elif video.is_vip %}pay{% endif %}"
                  style="{% if preview and not site.preview %}display: none;{% endif %}">
-                {% if(video.m3u8_type=="iframe") %}
+                {% if(video.m3u8_type=="empty") %}
+                    <p>暂无资源</p>
+                {% elif(video.m3u8_type=="iframe") %}
                     {% include("html/video_player_iframe"|common) %}
                 {% elif(video.m3u8_type=="pan") %}
                     {% include("html/video_pan"|common) %}
@@ -38,7 +40,7 @@
                 {% endif %}
                 {% if not site.adc.video_inside %}
                     <div id="inline-ad" style="color: white;bottom: 0px;">
-                    {{ site.sobj.inline_ad_html(site,video)|safe }}
+                        {{ site.sobj.inline_ad_html(site,video)|safe }}
                     </div>
                 {% endif %}
                 <marquee id="danmu"></marquee>
@@ -53,7 +55,7 @@
                         if (video.length === 0) {
                             setTimeout(function () {
                                 {#inline_ad.css("display", "none");#}
-                                inline_ad.css('position','static');
+                                inline_ad.css('position', 'static');
                                 $('.videoContainer').prepend(inline_ad);
                             }, 10000)
                         }
