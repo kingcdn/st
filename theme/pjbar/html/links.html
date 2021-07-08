@@ -13,7 +13,7 @@
                 {% for cate in friend_links %}
                     {% if cate=='精品' %}
                         {% for link in friend_links[cate] %}
-                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" src="{{ link.img.url }}">{% else %}🔥{% endif %} <br/>{{ link.name }}</a></li>
+                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" data-cover="{{ link.img.url }}"  class="data-cover">{% else %}🔥{% endif %} <br/>{{ link.name }}</a></li>
                         {% endfor %}
                     {% endif %}
                 {% endfor %}
@@ -35,7 +35,7 @@
                 {% for cate in friend_links %}
                     {% if cate=='导航' %}
                         {% for link in friend_links[cate] %}
-                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" src="{{ link.img.url }}">{% else %}🔥{% endif %} {{ link.name }}</a></li>
+                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" data-cover="{{ link.img.url }}"  class="data-cover">{% else %}🔥{% endif %} {{ link.name }}</a></li>
                         {% endfor %}
                     {% endif %}
                 {% endfor %}
@@ -54,7 +54,7 @@
                 {% for cate in friend_links %}
                     {% if cate=='视频' %}
                         {% for link in friend_links[cate] %}
-                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" src="{{ link.img.url }}">{% else %}🔥{% endif %} {{ link.name }}</a></li>
+                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" data-cover="{{ link.img.url }}"  class="data-cover">{% else %}🔥{% endif %} {{ link.name }}</a></li>
                         {% endfor %}
                     {% endif %}
                 {% endfor %}
@@ -73,7 +73,7 @@
                 {% for cate in friend_links %}
                     {% if cate=='小说' %}
                         {% for link in friend_links[cate] %}
-                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" src="{{ link.img.url }}">{% else %}🔥{% endif %} {{ link.name }}</a></li>
+                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" data-cover="{{ link.img.url }}"  class="data-cover">{% else %}🔥{% endif %} {{ link.name }}</a></li>
                         {% endfor %}
                     {% endif %}
                 {% endfor %}
@@ -92,7 +92,7 @@
                 {% for cate in friend_links %}
                     {% if cate=='美图' %}
                         {% for link in friend_links[cate] %}
-                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" src="{{ link.img.url }}">{% else %}🔥{% endif %} {{ link.name }}</a></li>
+                            <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img %}<img alt="{{ link.name }}" data-cover="{{ link.img.url }}"  class="data-cover">{% else %}🔥{% endif %} {{ link.name }}</a></li>
                         {% endfor %}
                     {% endif %}
                 {% endfor %}

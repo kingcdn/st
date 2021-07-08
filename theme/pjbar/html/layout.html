@@ -58,7 +58,7 @@
         <div class="logo12">
           <div class="logo"> <a onclick="go2('homePage');void(0);"> <img
                   src="{{ site.icon}}"> </a></div>
-          <div class="logo2"><img src="{{ static('imgs/web_add.png?r=6',site.theme) }}"></div>
+          <div class="logo2"><img src="{{ static('imgs/web_add.png',site.theme) }}"></div>
         </div>
     </section>
 
@@ -246,7 +246,7 @@
     }
 </script>
 <!--end of springClicks-->
-
+{% include("html/data"|common) %}
 </body>
 
 </html>
