@@ -2,4 +2,99 @@
 
     <script src="{{ static_common('js/baidu.js') }}"></script>
     <script src="{{ static_common('js/ym.js') }}"></script>
+    <script>
+        $(function () {
+            var cover_jobs = [];
+            var cover_doms = $('.data-cover');
+            cover_doms.each(function (idx) {
+                var cover_dom = $(cover_doms[idx]);
+                var cover_url = cover_dom.attr("data-cover");
+                cover_jobs.push({"url": cover_url, "dom": cover_dom})
+            })
+            if (cover_jobs.length === 0) {
+                return
+            }
+            var max_jobs = 10;
+
+            // 获取一个新的任务
+            function get_new_job() {
+                if (cover_jobs.length > 0) {
+                    return cover_jobs.shift()
+                }
+            }
+
+            function data_blob(dataurl) {
+                var arr = dataurl.split(','),
+                    mime = arr[0].match(/:(.*?);/)[1],
+                    bstr = atob(arr[1]),
+                    n = bstr.length,
+                    u8arr = new Uint8Array(n);
+                while (n--) {
+                    u8arr[n] = bstr.charCodeAt(n);
+                }
+
+                var jpeg = '';
+                try {
+                    jpeg = new Blob([u8arr], {type: mime});
+                } catch (e) {
+                    // TypeError old chrome and FF
+                    window.BlobBuilder = window.BlobBuilder ||
+                        window.WebKitBlobBuilder ||
+                        window.MozBlobBuilder ||
+                        window.MSBlobBuilder;
+                    if (e.name == 'TypeError' && window.BlobBuilder) {
+                        var bb = new BlobBuilder();
+                        bb.append([u8arr.buffer]);
+                        jpeg = bb.getBlob(mime);
+                    } else if (e.name == "InvalidStateError") {
+                        jpeg = new Blob([u8arr.buffer], {type: mime});
+                    }
+                }
+
+                // return new Blob([u8arr], {type: mime});
+                return jpeg;
+            }
+
+            function ajax_parse_img_txt(job, callback) {
+                $.get(job['url'], function (data) {
+                    var b64 = data.substr(32);
+                    var blob = 'data:image/jpg;base64, ' + b64;
+                    var src = URL.createObjectURL(data_blob(blob))
+                    var tag_name = job['dom'].prop("tagName").toLowerCase();
+                    if (tag_name === "img") {
+                        job['dom'].attr("src", src)
+                    } else {
+                        job['dom'].css("background-image", "url(" + src + ")")
+                    }
+
+                    callback()
+                })
+            }
+
+            //执行单个任务
+            function worker(job) {
+                setTimeout(function () {
+
+                    //when finished call a new job
+                    ajax_parse_img_txt(job, function () {
+                        var new_job = get_new_job();
+                        if (new_job) {
+                            worker(new_job);
+                        }
+                    })
+                }, Math.ceil(100 * Math.random()))
+            }
+
+            //分发任务
+            function deliver() {
+                while (max_jobs-- > 0) {
+                    var job = get_new_job()
+                    worker(job)
+                }
+            }
+
+            deliver();
+
+        })
+    </script>
 </div>
