@@ -1,5 +1,5 @@
 <meta name="keywords" content="在线观看,在线播放,{% if video %}{{ video.name }}{% endif %}">
-<meta name="description" content="{% if video %}{{ video.desc }}{% endif %}">
+<meta name="description" content="{% if video %}{{ video.desc }}{% else %}{{ site.desc }}{% endif %}">
 <meta itemprop="name" content="{% if video %}{{ video.name }}{% elif tag_now and tag_now!=tag_default %}{{ tag_now }}{% else %}首页{% endif %}- {{ site.name }}"/>
 <meta itemprop="description" content="{% if video %}{{ video.desc }}{% endif %}"/>
 <meta property="og:description" content="{% if video %}{{ video.desc }}{% endif %}"/>
