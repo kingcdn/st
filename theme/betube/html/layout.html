@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ site.icon }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include("html/title"|common) %}
     {% include("html/meta_seo"|common) %}
@@ -83,7 +84,8 @@
                                         <button class="menu-icon" type="button"
                                                 data-toggle="offCanvas-responsive"></button>
                                         <div class="title-bar-title" style="color: black"><img
-                                                src="{{ site.icon }}" alt="logo" style="height: 40px">{{ site.name }}
+                                                data-cover="{{ site.icon_txt }}" class="data-cover"
+                                                style="height: 40px">{{ site.name }}
                                         </div>
                                     </div>
 
@@ -91,9 +93,9 @@
                                         <div class="top-bar-left">
                                             <ul class="menu">
                                                 <li class="menu-text">
-                                                    <a href="/index.html"><img style="height: 40px"
-                                                                     src="{{ site.icon }}"
-                                                                     alt="logo"><span>{{ site.name }}</span></a>
+                                                    <a href="/index.html">
+                                                        <img style="height: 40px" data-cover="{{ site.icon_txt }}"
+                                                             class="data-cover" ><span>{{ site.name }}</span></a>
                                                 </li>
                                             </ul>
                                         </div>

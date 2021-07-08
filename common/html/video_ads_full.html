@@ -1,10 +1,11 @@
+{#<img data-cover="{{ video.cover_txt }}" class="data-cover" style="display: none" id="video_cover"/>#}
 <video id="video" class="play video-js vjs-big-play-centered" controls
        controlsList="nodownload" preload="preload"
        language="zh-CN">
     {% if video.m3u8 %}
         <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
-{#                <source src="https://n1.szjal.cn/20210604/dhrtk6Bs/index.m3u8"#}
-{#                        type="application/x-mpegURL"/>#}
+        {#                <source src="https://n1.szjal.cn/20210604/dhrtk6Bs/index.m3u8"#}
+        {#                        type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">
@@ -41,7 +42,7 @@
             <div class="main">
                 <div class="content">
                     <div class="ad_icon">
-                        <img src="{{ video_ad.link.img.icon }}"/>
+                        <img data-cover="{{ video_ad.link.img.icon }}" class="data-cover"/>
                     </div>
                     <div class="ad_desc">
                         <div class="name">{{ video_ad.link.name }}</div>

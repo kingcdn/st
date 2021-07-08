@@ -1,7 +1,7 @@
 <div class="item large-3 medium-6 columns group-item-grid-default">
     <div class="post thumb-border">
         <div class="post-thumb"  style="background-image: url('{{ video.cover }}');">
-            <img src="{{ video.cover_thum }}" alt="new video">
+            <img alt="new video" data-cover="{{ video.cover_txt }}" class="data-cover">
             <a href="/v/{{ video.id }}.html" class="hover-posts">
                 <span><i class="fa fa-play"></i>立即播放</span>
             </a>

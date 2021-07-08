@@ -1,7 +1,7 @@
 <figure class="timeline">
     <div class="pos">
         <a href="/v/{{ video.id }}.html" target="_blank" title="{{ video.name }}">
-            <img src="{{ video.cover_thum }}" class="lazy" alt="{{ video.name }}" target="_blank">
+            <img data-cover="{{ video.cover_txt }}" class="data-cover lazy" alt="{{ video.name }}" target="_blank">
             <p><span>
                 {% if(keyword) %}
                     {{ keyword }}

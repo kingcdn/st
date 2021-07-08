@@ -1,7 +1,7 @@
 <div class="item block shadow timeline"
      style="animation-delay: 0ms;">
     <a href="/v/{{ video.id }}.html">
-        <div class="palette" style="background-image: url('{{ video.cover_thum }}');">
+        <div class="palette data-cover" style="background-color: grey;" data-cover="{{ video.cover_txt }}">
             <div class="video_tag">
                 {% if keyword %}
                     <a href="/search?keyword={{ keyword }}">#{{ keyword }}</a>

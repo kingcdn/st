@@ -2,9 +2,9 @@
     <a href="{{ ad.link.url }}" target="_blank">
         <div class="item">
             <div class="image">
-                <div style="background-image: url('{{ ad.link.img.poster }}')"></div>
+                <div style="background-color: grey" class="data-cover" data-cover="{{ ad.link.img.poster }}"></div>
                 <span class="prev_num">
-                    <img src="{{ ad.link.img.icon }}" style="width: 30px">
+                    <img data-cover="{{ ad.link.img.icon }}"  class="data-cover" style="width: 30px">
                 </span>
             </div>
             <div class="title">【{{ad.link.name}}】{{ ad.link.desc }}</div>
