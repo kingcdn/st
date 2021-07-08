@@ -66,6 +66,8 @@
                     } else {
                         job['dom'].css("background-image", "url(" + src + ")")
                     }
+                    job['dom'].removeAttr("data-cover").removeClass("data-cover");
+
 
                     callback()
                 })
