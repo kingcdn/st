@@ -16,8 +16,8 @@
                 </div>
             </div>
 
-            <div class="bofang-vip {% if not preview and site.auth and video.is_vip %}state-check-login{% endif %}"
-                 style="background-image: url('{{ video.cover }}');display: none;">
+            <div class="bofang-vip data-cover {% if not preview and site.auth and video.is_vip %}state-check-login{% endif %}"
+                 style="background-color: grey;display: none;" data-cover="{{ video.cover_txt }}">
                 <div class="btns">
                     <a class="bofang-btn" href="/register.html?_r={{ video.id }}">免费注册，精彩视频免费看</a>
                     <a class="bofang-btn" href="/login.html?_r={{ video.id }}">立即登录</a>
