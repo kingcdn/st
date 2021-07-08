@@ -5,8 +5,8 @@
         <div class="videoContainer">
 
 
-            <div class="bofang-vip {% if not preview and site.pay and video.is_vip %}state-check-vip{% endif %}"
-                 style="background-image: url('{{ video.cover }}');display: none;">
+            <div class="data-cover bofang-vip {% if not preview and site.pay and video.is_vip %}state-check-vip{% endif %}"
+                  data-cover="{{ video.cover_txt }}" style="background-color: grey;display: none;">
                 <div class="btns">
                     <a class="bofang-btn" href="/user.html">充值VIP，海量视频任意观看</a>
                     {% if site.nianka_100 %}

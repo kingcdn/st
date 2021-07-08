@@ -1,6 +1,6 @@
 <video id="video" class="play video-js vjs-big-play-centered" controls
        controlsList="nodownload" preload="preload"
-       language="zh-CN" poster="{{ video.cover }}">
+       language="zh-CN">
     {% if video.m3u8 %}
         <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
 {#                <source src="https://n1.szjal.cn/20210604/dhrtk6Bs/index.m3u8"#}
