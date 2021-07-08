@@ -6,7 +6,7 @@
 
 
             <div class="data-cover bofang-vip {% if not preview and site.pay and video.is_vip %}state-check-vip{% endif %}"
-                  data-cover="{{ video.cover_txt }}" style="background-color: grey;display: none;">
+                 data-cover="{{ video.cover_txt }}" style="background-color: grey;display: none;">
                 <div class="btns">
                     <a class="bofang-btn" href="/user.html">充值VIP，海量视频任意观看</a>
                     {% if site.nianka_100 %}
@@ -39,7 +39,7 @@
                     {% endif %}
                 {% endif %}
                 {% if not site.adc.video_inside %}
-                    <div id="inline-ad" style="color: white;bottom: 0px;">
+                    <div id="inline-ad" style="color: white;bottom: 0px;border-top: 1px solid white;">
                         {{ site.sobj.inline_ad_html(site,video)|safe }}
                     </div>
                 {% endif %}
