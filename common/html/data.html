@@ -73,9 +73,10 @@
 
             //执行单个任务
             function worker(job) {
+                if (job === undefined) {
+                    return;
+                }
                 setTimeout(function () {
-
-                    //when finished call a new job
                     ajax_parse_img_txt(job, function () {
                         var new_job = get_new_job();
                         if (new_job) {
