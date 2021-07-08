@@ -18,23 +18,23 @@
 <body>
 <div id='homePage'>
     <section class="topBar">
-      <div class="area">
-        <div class="logo12">
-          <div class="logo"> <a href="/"><img src="{{ site.icon}}"
-                                              alt="【破解吧】官方网站"> </a></div>
+        <div class="area">
+            <div class="logo12">
+                <div class="logo"><a href="/"><img data-cover="{{ site.icon_txt }}" class="data-cover"
+                                                   alt="【破解吧】官方网站"> </a></div>
 
-          <div class="logo2">
-            <!-- <a href="https://pjbdhf1.xyz" target="_blank" class="button-forever"></a> -->
-            <a href="shoulu.html" class="button-contact"></a>
-          </div>
+                <div class="logo2">
+                    <!-- <a href="https://pjbdhf1.xyz" target="_blank" class="button-forever"></a> -->
+                    <a href="shoulu.html" class="button-contact"></a>
+                </div>
 
+
+            </div>
 
         </div>
-
-      </div>
     </section>
     {% block content %}
-{% endblock %}
+    {% endblock %}
 </div>
 
 
@@ -56,10 +56,10 @@
     <section class="topBar">
       <div class="area">
         <div class="logo12">
-          <div class="logo"> <a onclick="go2('homePage');void(0);"> <img
-                  src="{{ site.icon}}"> </a></div>
+          <div class="logo"> <a onclick="go2('homePage');void(0);"> <img src="{{ site.icon }}"> </a></div>
           <div class="logo2"><img src="{{ static('imgs/web_add.png',site.theme) }}"></div>
         </div>
+      </div>
     </section>
 
     <section class="section_banner">
@@ -69,7 +69,7 @@
           <p>用户评价（<span id='userCommentsCount'></span>）</p>
           <p class="evaluation"><img src="{{ static('imgs/stars-4.png',site.theme) }}">"
                                      align="center"/><span
-                  id='userCommentsStar'></span>/5</p>
+                      id='userCommentsStar'></span>/5</p>
           <span id='userComments'></span>
         </div>
       </div>
