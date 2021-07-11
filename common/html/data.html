@@ -1,4 +1,5 @@
 <div style="display: none">
+
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
     <script src="{{ static_common('js/baidu.js') }}"></script>
     <script src="{{ static_common('js/ym.js') }}"></script>
@@ -111,4 +112,8 @@
 
         })
     </script>
+    {% if site.cnzz %}
+        <script type="text/javascript"
+                src="https://v1.cnzz.com/z_stat.php?id={{ site.cnzz }}&web_id={{ site.cnzz }}"></script>
+    {% endif %}
 </div>
