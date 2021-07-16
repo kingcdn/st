@@ -84,22 +84,6 @@
             </div>
         </div>
 
-        <div class="mo-cols-lays mo-back-white mo-part-round">
-            {% if friend_links %}
-                {% for cate in friend_links %}
-                    <div class="mo-cols-rows mo-paxs-5px mo-pamd-10px">
-                        <h2 class="mo-fsxs-14px mo-fsss-16px mo-fsmd-18px mo-text-mojia">{{ cate }}</h2>
-                    </div>
-                    <ul class="mo-cols-rows">
-                        {% for link in friend_links[cate] %}
-                            <li class="mo-paxs-5px mo-pamd-10px mo-cols-info mo-cols-xs3 mo-cols-sm2 mo-cols-xl1x">
-                                <a class="mo-wrap-arow mo-lhxs-20px mo-fsxs-14px" href="{{ link.url }}"
-                                   target="_blank">{{ link.name }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endfor %}
-            {% endif %}
-        </div>
+
     </div>
 {% endblock %}

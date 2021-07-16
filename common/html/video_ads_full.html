@@ -4,8 +4,10 @@
        language="zh-CN">
     {% if video.m3u8 %}
         <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
-        {#                <source src="https://n1.szjal.cn/20210604/dhrtk6Bs/index.m3u8"#}
-        {#                        type="application/x-mpegURL"/>#}
+{#                        <source src="http://localhost:5000/test.m3u8" type="application/x-mpegURL"/>#}
+{#                        <source src="http://localhost:5000/test.m3u8" type="application/vnd.apple.mpegurl"/>#}
+{#                        <source src="http://localhost:5000/index.m3u8" type="application/x-mpegURL"/>#}
+{#                        <source src="https://vod.bunediy.com/20210605/BoPBWY8X/index.m3u8" type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">
