@@ -91,7 +91,8 @@
             myPlayer.src({
                 type: "application/x-mpegURL",
                 src: "{{ video.m3u8|safe }}?d=videos7"
-            })
+            });
+            myPlayer.play();
         })
         {% if site.watermarks|length>0 %}
             {% for wm in site.watermarks %}
