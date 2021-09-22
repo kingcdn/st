@@ -52,9 +52,12 @@
                 <a href="http://www.mole666.xyz/aff.php?aff=1827" target="_blank">
                     <div>极速防封V2Ray</div>
                 </a>
-                <a href="https://www.hxcpp71.com/search?keyword=%E9%BA%BB%E8%B1%86%E4%BC%A0%E5%AA%92&sortType=0&videoType=1&id=31848199&from=ngx" target="_blank">
+                <a href="https://www.hxcpp71.com/search?keyword=%E9%BA%BB%E8%B1%86%E4%BC%A0%E5%AA%92&sortType=0&videoType=1&id=31848199&from=ngx"
+                   target="_blank">
                     <div>麻豆传媒官方合作平台</div>
                 </a>
+
+
             </div>
         </div>
     </div>
@@ -69,6 +72,11 @@
         {% endif %}
         {% if site.email %}
             <p><a href="mailto:{{ site.email }}">发邮件到 {{ site.email }} 自动回复最新地址</a></p>
+        {% endif %}
+        {% if site.tg_group %}
+            <p>
+                <a href="https://t.me/{{ site.tg_group }}" target="_blank">加入TG官方频道每日领福利</a>
+            </p>
         {% endif %}
     </div>
 </div>
