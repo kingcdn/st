@@ -6,7 +6,7 @@
 {% block content %}
     <div><h3>{{ video.name }}</h3></div>
     {% if video.source=="kuaimao" %}
-        <p style="text-align:left"><a id="switch-source">无法播放？请尝试切换播放源</a></p>
+        <p style="text-align:right"><a id="switch-source" style="cursor: pointer;color: red">无法播放？请点击切换播放源</a></p>
     {% endif %}
     {% if(video.m3u8_type!="pan") %}
         <div>{{ site.sobj.m3u8_desc(video,site)|safe }}</div>
