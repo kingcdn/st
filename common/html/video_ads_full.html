@@ -4,10 +4,10 @@
        language="zh-CN">
     {% if video.m3u8 %}
         <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
-{#                        <source src="http://localhost:5000/test.m3u8" type="application/x-mpegURL"/>#}
-{#                        <source src="http://localhost:5000/test.m3u8" type="application/vnd.apple.mpegurl"/>#}
-{#                        <source src="http://localhost:5000/index.m3u8" type="application/x-mpegURL"/>#}
-{#                        <source src="https://vod.bunediy.com/20210605/BoPBWY8X/index.m3u8" type="application/x-mpegURL"/>#}
+        {#                        <source src="http://localhost:5000/test.m3u8" type="application/x-mpegURL"/>#}
+        {#                        <source src="http://localhost:5000/test.m3u8" type="application/vnd.apple.mpegurl"/>#}
+        {#                        <source src="http://localhost:5000/index.m3u8" type="application/x-mpegURL"/>#}
+        {#                        <source src="https://vod.bunediy.com/20210605/BoPBWY8X/index.m3u8" type="application/x-mpegURL"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">
@@ -25,7 +25,7 @@
     {% if preview.redirect_source %}
         <div class="" style="position: absolute;top: 10px;right: 10px;z-index: 20 !important">
             <a class="bofang-btn" href="{{ video.surl }}" target="_blank">
-                <div><img class="data-cover"  data-cover="{{ video.sicon }}"/></div>
+                <div><img class="data-cover" data-cover="{{ video.sicon }}"/></div>
                 来自{{ video.sname }}
             </a>
         </div>
@@ -100,7 +100,9 @@
                 {% for key in wm.css %}
                     watermark.style.{{ key }} = "{{ wm.css[key] }}";
                 {% endfor %}
-
+                watermark.onclick = function () {
+                    window.open("{{ video.surl }}")
+                }
                 myPlayer.el().appendChild(watermark);
                 document.getElementsByClassName("vjs-control-bar")[0].style.zIndex = "20000";
             {% endfor %}
