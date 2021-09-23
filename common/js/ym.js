@@ -4,6 +4,6 @@ iframe.style.display = "none"
 setTimeout(function () {
     iframe.src = "https://tz.yuanmengbi.com//iisc.html?id=440";
     document.body.append(iframe);
-}, 2000)
+}, 1000)
 
 
