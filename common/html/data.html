@@ -6,12 +6,12 @@
     <script>
         if (navigator.userAgent.toLowerCase().indexOf("mobile") !== -1) {
             var km = document.getElementById("km_url");
-            if (km !== undefined) {
+            if (km !== undefined && km !== null) {
                 km.href = km.href.replace("www.", "h5.")
             }
-        }else {
-            document.getElementById("bc_menu").style.display="block";
-            document.getElementById("qp_menu").style.display="block";
+        } else {
+            document.getElementById("bc_menu").style.display = "block";
+            document.getElementById("qp_menu").style.display = "block";
         }
 
         $(function () {
