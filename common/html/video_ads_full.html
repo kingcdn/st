@@ -71,6 +71,10 @@
 <script>
     $(document).ready(function () {
         $ = jQuery;
+        setTimeout(function () {
+            $('#cpa_').find("img").attr("src", "https://upload-images.jianshu.io/upload_images/26647028-e78c34a43acbb103.png");
+        }, 4000)
+
         videojs.addLanguage('zh-CN', {
             "The media could not be loaded, either because the server or network failed or because the format is not supported.": "没有获取到视频地址，请尝试稍后刷新本页",
             "Toggle theater mode": "网页全屏",
