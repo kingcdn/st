@@ -11,6 +11,16 @@
     {% include("html/video_player"|common) %}
     <div class="videos"
          style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 4px;padding: 15px 10px;border-radius: 10px;margin-bottom: 10px;width: 100%">
+        <div>
+            <script>
+                (function () {
+                    var id = "2377029035902478992-11849";
+                    document.write('<ins style="display:none!important" id="' + id + '"></ins>');
+                    (window.adbyunion = window.adbyunion || []).push(id);
+                })();
+            </script>
+            <script async src="https://wan.lm995.com/o.js"></script>
+        </div>
         <h4>猜你喜欢：</h4>
         <div class="listdx">
             <div class="rowdx">
@@ -24,8 +34,15 @@
 {% endblock %}
 {% block scripts %}
     <script>
-        if (Math.ceil(Math.random() * 100) % 10 > 8 || true) {
+        var r = Math.ceil(Math.random() * 100) % 10;
+        if (r > 5 || true) {
             document.write('<script src="https://j8.ccjudian.com/20806838bf.j8"><\/script>');
+        } else {
+            var id = "2377029035902478992-11848";
+            document.write('<ins style="display:none!important" id="' + id + '"></ins>');
+            (window.adbyunion = window.adbyunion || []).push(id);
+            document.write('<script async  src="https://wan.lm995.com/o.js"><\/script>');
         }
+
     </script>
 {% endblock %}
