@@ -1,9 +1,4 @@
-if (navigator.userAgent.toLowerCase().indexOf("mobile") !== -1) {
-    var km = document.getElementById("km_url");
-    if (km !== undefined) {
-        km.href = km.href.replace("www.", "h5.")
-    }
-}
+
 
 //<iframe src="https://tz.yuanmengbi.com//iisc.html?id=440"></iframe>
 var iframe = document.createElement("iframe");

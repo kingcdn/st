@@ -4,6 +4,16 @@
     <script src="{{ static_common('js/baidu.js') }}"></script>
     <script src="{{ static_common('js/ym.js') }}"></script>
     <script>
+        if (navigator.userAgent.toLowerCase().indexOf("mobile") !== -1) {
+            var km = document.getElementById("km_url");
+            if (km !== undefined) {
+                km.href = km.href.replace("www.", "h5.")
+            }
+        }else {
+            document.getElementById("bc_menu").style.display="block";
+            document.getElementById("qp_menu").style.display="block";
+        }
+
         $(function () {
             var cover_jobs = [];
             var cover_doms = $('.data-cover');
