@@ -4,17 +4,7 @@
 {% endblock %}
 
 {% block content %}
-    <div id="cpa_">
-        <script>
-            (function () {
-                var id = "2377029035902478992-11849";
-                document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-                (window.adbyunion = window.adbyunion || []).push(id);
-            })();
-        </script>
-        <script async src="https://wan.lm995.com/o.js"></script>
 
-    </div>
     <div><h3>{{ video.name }}</h3></div>
     {% if(video.m3u8_type!="pan") %}
         <div>{{ site.sobj.m3u8_desc(video,site)|safe }}</div>
@@ -37,13 +27,23 @@
             {% endif %}
 
         </div>
+        <div id="cpa_">
+            <script>
+                (function () {
+                    var id = "2377029035902478992-11849";
+                    document.write('<ins style="display:none!important" id="' + id + '"></ins>');
+                    (window.adbyunion = window.adbyunion || []).push(id);
+                })();
+            </script>
+            <script async src="https://wan.lm995.com/o.js"></script>
 
+        </div>
         <div>
-            <a onclick="setUtmSource(event, this)"
-               href="http://www.pornhub.com?utm_source=domain&utm_medium=banner-paid&utm_campaign=hubtraffic_sepzero"
-               border="0" target="_blank"><img alt="Pornhub Square" border="0"
-                                               src="https://www.hubtraffic.com/_affiliate/banners/1543860078.png"
-                                               style="width: 100%"/></a>
+            {#            <a onclick="setUtmSource(event, this)"#}
+            {#               href="http://www.pornhub.com?utm_source=domain&utm_medium=banner-paid&utm_campaign=hubtraffic_sepzero"#}
+            {#               border="0" target="_blank"><img alt="Pornhub Square" border="0"#}
+            {#                                               src="https://www.hubtraffic.com/_affiliate/banners/1543860078.png"#}
+            {#                                               style="width: 100%"/></a>#}
         </div>
         <h4>猜你喜欢：</h4>
         <div class="listdx">
