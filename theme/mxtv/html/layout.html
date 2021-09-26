@@ -3,8 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="hubtraffic-domain-validation" content="afb29f3d99bb4500"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="{{ site.icon }}">
+    {% if site.icon %}
+        <link rel="shortcut icon" href="{{ site.icon }}">
+    {% endif %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ static('css/style.css',site.theme) }}"/>
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
@@ -35,8 +38,10 @@
             <div class="left">
                 <a href="/index.html">
                     <div class="row-1">
-                        <img data-cover="{{ site.icon_txt }}" class="data-cover"
-                             style="height: 60px;margin-right: 4px;"/>
+                        {% if site.icon %}
+                            <img data-cover="{{ site.icon_txt }}" class="data-cover"
+                                 style="height: 60px;margin-right: 4px;"/>
+                        {% endif %}
                         <div style="display: inline-block;padding: 4px 0px 4px;">{{ site.name }} <span
                                 style="font-size: 12px">{{ site.desc }}</span></div>
                     </div>
