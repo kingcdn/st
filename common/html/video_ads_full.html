@@ -205,9 +205,9 @@
                 seconds = seconds - mins * 60
                 var todo = "结束预览"
                 {% if preview.redirect_source %}
-                    todo = "前往“{{ video.so.name }}”观看完整视频"
+                    todo = "<br/>前往“{{ video.so.name }}”观看完整视频"
                 {% endif %}
-                elePreview.find("a").text("" + mins + "分" + seconds + "秒后" + todo);
+                elePreview.find("a").html("" + mins + "分" + seconds + "秒后" + todo);
                 if (myPlayer.currentTime() >= mins_all - 1 || elePreview.hasClass("finished")) {
                     myPlayer.pause();
                     var finished_text = "预览结束，升级VIP无限制播放"
