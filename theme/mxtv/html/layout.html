@@ -106,21 +106,7 @@
 
     {% include("html/friend_links"|common) %}
 </div>
-
-<script>
-    var r = Math.ceil(Math.random() * 100) % 2;
-    if (r === 0) {
-        {#金爸#}
-        document.write('<script src="https://j8.ccjudian.com/20806838bf.j8"><\/script>');
-    } else if (r === 1) {
-        {#神舟#}
-        var id = "2377029035902478992-11848";
-        document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-        (window.adbyunion = window.adbyunion || []).push(id);
-        document.write('<script async  src="https://wan.lm995.com/o.js"><\/script>');
-    }
-
-</script>
+{% include("html/ads/lianmeng"|common) %}
 {% block scripts %}
 
 {% endblock %}
