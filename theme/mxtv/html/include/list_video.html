@@ -1,3 +1,10 @@
+{% if is_mobile %}
+    {% if video.idx==1 %}
+        <div class="col-xs-12 col-sm-12 col-md-12 timeline">
+            {% include("html/ads/bar_ad"|common) %}
+        </div>
+    {% endif %}
+{% endif %}
 <div class="col-xs-6 col-sm-2 col-md-2 timeline">
     <a href="/v/{{ video.id }}.html">
         <div class="item">
@@ -12,20 +19,9 @@
     </a>
 </div>
 {% if is_mobile %}
-    {% if video.idx==6 %}
+    {% if video.idx%6==0 %}
         <div class="col-xs-12 col-sm-12 col-md-12 timeline">
-            <a target="_blank" href="http://acgchina.cc/?aff=198502">
-                <img data-cover="https://cdn.jsdelivr.net/gh/kingcdn/sp/imgs/acg2jpg.txt" class="data-cover"
-                     style="width: 100%;border-radius: 6px;padding-right: 5px;"/>
-            </a>
-
-        </div>
-    {% elif video.idx==12 %}
-        <div class="col-xs-12 col-sm-12 col-md-12 timeline">
-            <a target="_blank" href="https://mm2ee.xyz">
-                <img data-cover="https://cdn.jsdelivr.net/gh/kingcdn/sp/imgs/zhibohgif.txt" class="data-cover"
-                     style="width: 100%;border-radius: 6px;padding-right: 5px;"/>
-            </a>
+            {% include("html/ads/bar_ad"|common) %}
         </div>
     {% endif %}
 {% endif %}

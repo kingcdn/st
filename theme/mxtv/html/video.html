@@ -4,7 +4,9 @@
 {% endblock %}
 
 {% block content %}
-
+    <div>
+        {% include("html/ads/bar_ad"|common) %}
+    </div>
     <div><h3>{{ video.name }}</h3></div>
     {% if(video.m3u8_type!="pan") %}
         <div>{{ site.sobj.m3u8_desc(video,site)|safe }}</div>

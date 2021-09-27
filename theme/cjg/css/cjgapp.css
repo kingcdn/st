@@ -67,24 +67,6 @@ body {
         background: linear-gradient(to right, #fbba2f 0%, #fb922f 100%);
         box-shadow: 0 .03rem .15rem rgba(251,146,47,.3);
     }
-
-
-
-/* header */
-
-    /* h1 */
-
-
-    /* tabs */
-  
-
-
-/* urlgroup */
-
-
-/* close */
-
-}
 	.close::before,
 	.close::after {
 		content: "";
