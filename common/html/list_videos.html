@@ -1,7 +1,8 @@
 {% for video in videos %}
     {% include theme_inclue(site.theme,"list_video") %}
-    {% if is_mobile and loop.index%6==0 %}
-        <img data-cover="https://cdn.jsdelivr.net/gh/kingcdn/sp/imgs/acgjpg.txt" class="data-cover"
-             style="width: 100%;border-radius: 6px;padding-right: 5px;"/>
+    {% if is_mobile and loop.index==6 %}
+        <a target="_blank" href="http://acgchina.cc/?aff=198502">
+            <img data-cover="https://cdn.jsdelivr.net/gh/kingcdn/sp/imgs/acg1jpg.txt" class="data-cover"
+                 style="width: 100%;border-radius: 6px;padding-right: 5px;"/></a>
     {% endif %}
 {% endfor %}
