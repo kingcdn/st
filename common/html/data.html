@@ -10,8 +10,14 @@
                 km.href = km.href.replace("www.", "h5.")
             }
         } else {
-            document.getElementById("bc_menu").style.display = "block";
-            document.getElementById("qp_menu").style.display = "block";
+            var bc = document.getElementById("bc_menu");
+            if (bc !== null) {
+                bc.style.display = "block";
+            }
+            var qp = document.getElementById("qp_menu");
+            if (qp !== null) {
+                qp.style.display = "block";
+            }
         }
 
         $(function () {
