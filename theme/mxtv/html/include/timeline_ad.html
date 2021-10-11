@@ -4,10 +4,16 @@
             <div class="image">
                 <div style="background-color: grey;" class="data-cover" data-cover="{{ ad.link.img.poster }}"></div>
                 <span class="prev_num">
-                    <img data-cover="{{ ad.link.img.icon }}"  class="data-cover" style="width: 30px">
+                    {% if ad.link.tag %}
+                        <div class="title">
+                            <span
+                                    style="background-color: red;color: white;border-radius: 4px;padding: 1px 4px;font-size: 10px;margin-right: 2px;">{{ ad.link.tag }}</span>
+                        </div>
+
+                    {% endif %}
                 </span>
             </div>
-            <div class="title">【{{ ad.link.name }}】{{ ad.link.desc }}</div>
+            <div class="title">【{{ ad.link.desc }}】{{ ad.link.name }}</div>
         </div>
     </a>
 </div>
