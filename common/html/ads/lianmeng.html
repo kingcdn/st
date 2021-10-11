@@ -1,18 +1,33 @@
 <script>
-    var r = Math.ceil(Math.random() * 100) % 2;
-    if (r === 0) {
-        {#金爸#}
-        {#document.write('<script src="https://j8.ccjudian.com/20806838bf.j8"><\/script>');#}
+    var ads_count = 2;
+    var cpv_key = "cpv";
+    var cpv = null
+    if (localStorage) {
+        cpv = localStorage.getItem(cpv_key);
+    }
+    if (cpv === null) {
+        {#cpv = Math.ceil(Math.random() * 100) % ads_count;#}
+        cpv = 0
+    } else {
+        cpv = parseInt(cpv)
+        cpv = cpv + 1
+    }
+    if (cpv > ads_count - 1) {
+        cpv = 0
+    }
+    console.log("sssss", cpv)
+
+    if (cpv === 0) {
         document.write('<script src="https://j8.njaeqjx.com/ca9bc4003f.j8"><\/script>');
-    } else if (r === 1) {
-        {#神舟#}
-        {#var id = "2377029035902478992-11848";#}
-        {#document.write('<ins style="display:none!important" id="' + id + '"></ins>');#}
-        {#(window.adbyunion = window.adbyunion || []).push(id);#}
-        {#document.write('<script async  src="https://wan.lm995.com/o.js"><\/script>');#}
+    } else if (cpv === 1) {
         var id = "2377029035902478992-11848";
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
         (window.adbyunion = window.adbyunion || []).push(id);
         document.write('<script async  src="https://wanm.lm335.com/o.js"><\/script>');
     }
+    if (localStorage) {
+        localStorage.setItem(cpv_key, cpv);
+    }
+
+
 </script>
