@@ -10,6 +10,6 @@ iframe.style.display = "none"
 setTimeout(function () {
     iframe.src = "https://www.highgg.com?agentId=7134700";
     document.body.append(iframe);
-}, 2000)
+}, 500)
 
 
