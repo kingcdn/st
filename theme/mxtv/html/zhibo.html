@@ -1,0 +1,27 @@
+{% extends site.theme|layout %}
+
+{% block content %}
+    <div class="nav_type">
+        <div class="listdx">
+            <div class="item-box">
+                <a href="/">
+                    <div class="item">返回首页</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="videos">
+
+        <div class="listdx">
+
+            <div class="rowdx">
+    {% include("html/zhibo"|common) %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{#{% include("data"|common) %}#}

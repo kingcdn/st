@@ -1,0 +1,5 @@
+{% for ad in site.ads['zhibo'] %}
+    {% if ad.link.img.poster %}
+        {% include theme_inclue(site.theme,"timeline_ad") %}
+    {% endif %}
+{% endfor %}
