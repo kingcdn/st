@@ -5,6 +5,7 @@
 
 {% block content %}
     <div class="tit"><h1>正在播放：{{ video.name }}</h1></div>
+    {% include("html/ads/lianmeng_cpc"|common) %}
     <div style="margin-bottom: 4px;">
         {% include("html/top_ads"|common) %}
     </div>

@@ -1,0 +1,21 @@
+{% extends site.theme|layout %}
+{% block selector %}
+    <span>{{ tag_now }}</span>
+    <img alt="{{ site.name }} Palettes Dropdown Icon"
+         src="{{ static('img/color-hunt-palettes-icon_dropdown.png',site.theme) }}"/>
+    <div id="sort_menu" class="shadow block dropdown">
+        {% for tag_group in tags %}
+            {% for tag in tag_group %}
+                <a href="{{ link(site,source_now,tag,order_now) }}">{{ tag }}</a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block content %}
+    <div style="padding: 0px 10px">
+        {% include("html/top_ads"|common) %}
+    </div>
+    {% include("html/manhua"|common) %}
+
+
+{% endblock %}

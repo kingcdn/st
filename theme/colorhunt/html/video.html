@@ -13,6 +13,7 @@
             {% endif %}
             {{ video.name }}
         </div>
+        {% include("html/ads/lianmeng_cpc"|common) %}
         {% if(video.m3u8_type!="pan") %}
             <div>{{ site.sobj.m3u8_desc(video,site)|safe }}</div>
         {% endif %}
@@ -36,7 +37,7 @@
                 <a href="/search?keyword={{ keyword }}">#{{ keyword }}</a>
             {% endfor %}
         </div>
-        {% include("html/ads/lianmeng_cpc"|common) %}
+
         <div>
             {% include("html/videos_related"|common) %}
         </div>
