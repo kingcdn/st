@@ -50,20 +50,11 @@
                 <div class="tabs-content" data-tabs-content="popularVideos">
                     <div class="tabs-panel is-active" id="popular-all">
                         <div class="row list-group">
-                            {% include("html/list_videos"|common) %}
+                            {% include("html/zhibo"|common) %}
                         </div>
                     </div>
                 </div>
-                <div class="text-center row-btn">
 
-                    {% if(page>1) %}
-                        <a class="button radius" href="{{ link(site,source_now,tag_now,order_now,1) }}">首页</a>
-                        <a class="button radius"
-                           href="{{ link(site,source_now,tag_now,order_now,page-1) }}">上一页</a>
-                    {% endif %}
-                    <a class="button radius"
-                       href="{{ link(site,source_now,tag_now,order_now,page + 1) }}">下一页</a>
-                </div>
             </div>
         </div>
     </section><!-- End main content -->

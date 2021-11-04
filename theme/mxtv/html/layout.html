@@ -57,15 +57,17 @@
                 {#                <a href="http://www.mole666.xyz/aff.php?aff=1827" target="_blank">#}
                 {#                    <div>极速防封V2Ray</div>#}
                 {#                </a>#}
-                <a href="https://tyda8.com/" target="_blank" id="bc_menu" style="display: none">
-                    <div>官方博彩App</div>
-                </a>
-                <a href="https://892q1.com" target="_blank" id="qp_menu" style="display: none">
-                    <div>官方棋牌App</div>
-                </a>
-                <a href="https://mm2ee.xyz/" target="_blank">
-                    <div>官方直播App</div>
-                </a>
+                {% if site.site_type=="视频" %}
+                    <a href="https://tyda8.com/" target="_blank" id="bc_menu" style="display: none">
+                        <div>官方博彩App</div>
+                    </a>
+                    <a href="https://892q1.com" target="_blank" id="qp_menu" style="display: none">
+                        <div>官方棋牌App</div>
+                    </a>
+                    <a href="https://mm2ee.xyz/" target="_blank">
+                        <div>官方直播App</div>
+                    </a>
+                {% endif %}
                 {#                <a href="https://www.hxcpp71.com/search?keyword=%E9%BA%BB%E8%B1%86%E4%BC%A0%E5%AA%92&sortType=0&videoType=1&id=31848199&from=ngx"#}
                 {#                   target="_blank">#}
                 {#                    <div>麻豆传媒官方合作平台</div>#}
@@ -107,7 +109,9 @@
 
     {% include("html/friend_links"|common) %}
 </div>
+{% if site.site_type=="视频" %}
 {% include("html/ads/lianmeng"|common) %}
+{% endif %}
 {% block scripts %}
 
 {% endblock %}

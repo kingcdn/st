@@ -35,6 +35,11 @@
                 <li class="has-submenu">
                     <a href="#"><i class="fa fa-home"></i>首页</a>
                 </li>
+                <li>
+                    <a href="/manhua.html"><i class="fa"></i>漫画</a>
+                    <a href="/zhibo.html"><i class="fa"></i>直播</a>
+                    <a href="/shangdian.html"><i class="fa"></i>商店</a>
+                </li>
                 {% for tag_group in tags %}
                     {% for tag in tag_group %}
                         <li>
@@ -95,7 +100,7 @@
                                                 <li class="menu-text">
                                                     <a href="/index.html">
                                                         <img style="height: 40px" data-cover="{{ site.icon_txt }}"
-                                                             class="data-cover" ><span>{{ site.name }}</span></a>
+                                                             class="data-cover"><span>{{ site.name }}</span></a>
                                                 </li>
                                             </ul>
                                         </div>

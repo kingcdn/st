@@ -4,9 +4,11 @@
 {% endblock %}
 
 {% block content %}
-    <div>
-        {% include("html/ads/bar_ad"|common) %}
-    </div>
+    {% if site.site_type=="视频" %}
+        <div>
+            {% include("html/ads/bar_ad"|common) %}
+        </div>
+    {% endif %}
     <div><h3>{{ video.name }}</h3></div>
     {% if(video.m3u8_type!="pan") %}
         <div>{{ site.sobj.m3u8_desc(video,site)|safe }}</div>
@@ -15,21 +17,25 @@
     {% include("html/video_player"|common) %}
     <div class="videos"
          style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 4px;padding: 15px 10px;border-radius: 10px;margin-bottom: 10px;width: 100%">
-        <div style="text-align: center;margin-bottom: 12px;">
-            <a href="https://tyda8.com/" target="_blank"
-               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
-                官方博彩App</a>
-            <a href="https://892q1.com" target="_blank"
-               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
-                官方棋牌App</a>
-            {% if nid %}
-                <a href="/v/{{ nid }}.html"
+        {% if site.site_type=="视频" %}
+            <div style="text-align: center;margin-bottom: 12px;">
+                <a href="https://tyda8.com/" target="_blank"
                    style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
-                    下一个视频</a>
-            {% endif %}
+                    官方博彩App</a>
+                <a href="https://892q1.com" target="_blank"
+                   style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+                    官方棋牌App</a>
+                {% if nid %}
+                    <a href="/v/{{ nid }}.html"
+                       style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+                        下一个视频</a>
+                {% endif %}
 
-        </div>
-        {% include("html/ads/lianmeng_cpc"|common) %}
+            </div>
+        {% endif %}
+        {% if site.site_type=="视频" %}
+            {% include("html/ads/lianmeng_cpc"|common) %}
+        {% endif %}
         <div>
             {#            <a onclick="setUtmSource(event, this)"#}
             {#               href="http://www.pornhub.com?utm_source=domain&utm_medium=banner-paid&utm_campaign=hubtraffic_sepzero"#}
@@ -43,6 +49,11 @@
                 {% include("html/videos_related"|common) %}
                 {% include("html/ads/timeline_end"|common) %}
             </div>
+            {% if site.site_type=="视频" %}
+                <div>
+                    {% include("html/ads/bar_ad_all"|common) %}
+                </div>
+            {% endif %}
         </div>
         {% include("html/comments"|common) %}
 

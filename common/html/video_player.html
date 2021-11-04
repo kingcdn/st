@@ -106,8 +106,10 @@
             </div>
         {% endif %}
     </div>
-    <a href="https://tyda8.com/" target="_blank" style="margin-top: 10px;">
-        <img style="width:100%;" class="data-cover"
-             data-cover="https://cdn.jsdelivr.net/gh/kingcdn/sp/imgs/taiyangchenggif.txt"/>
-    </a>
+    {% if site.site_type=="视频" %}
+        <a href="https://tyda8.com/" target="_blank" style="margin-top: 10px;">
+            <img style="width:100%;" class="data-cover"
+                 data-cover="https://cdn.jsdelivr.net/gh/kingcdn/sp/imgs/taiyangchenggif.txt"/>
+        </a>
+    {% endif %}
 </div>
