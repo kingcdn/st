@@ -128,9 +128,15 @@
         <div class="swiper-button-next swiper-button-white"></div>
         <div class="swiper-button-prev swiper-button-white"></div>
     </div>
+    <div>
+        {% include("html/ads/lianmeng_cpc"|common) %}
+    </div>
     <div class="hend">
         <ul>
             <li><a href="/index.html">首页</a></li>
+            <li style="background-color: #540d0d"><a style="color: white" href="/zhibo.html">直播</a></li>
+            <li style="background-color: #540d0d"><a style="color: white" href="/manhua.html">污漫</a></li>
+            <li style="background-color: #540d0d"><a style="color: white" href="/shangpin.html">成人用品</a></li>
             {% for tag_group in tags %}
                 {% for tag in tag_group %}
                     <li><a href="{{ link(site,source_now,tag,order_now) }}">{{ tag }}</a></li>
@@ -188,7 +194,6 @@
     </div>
 
 </footer>
-{% include("html/ads/lianmeng"|common) %}
 <script>
     window.onload = function () {
         var swiper = new Swiper('.swiper-container', {

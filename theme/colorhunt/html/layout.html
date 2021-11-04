@@ -90,6 +90,9 @@
     </div>
 </div>
 <div id="container" class="wrap">
+    <div>
+        {% include("html/ads/lianmeng_cpc"|common) %}
+    </div>
     <div id="feed" {% if not site.tc.side %}style="margin-right: 0px;"{% endif %}>
         {% block content %}
 
