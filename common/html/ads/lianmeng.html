@@ -21,7 +21,11 @@
     } else if (cpv === 2) {
         document.write('<script src="https://heart8236.cL-xny.cn:8080/cv@10263&33"><\/script>');
     } else {
-        var id = "2377029035902478992-11848";
+        {% if site.key=="madou" %}
+            var id = "2377029035902478992-11848";
+        {% else %}
+            var id = "2377029035902478992-12986";
+        {% endif %}
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
         (window.adbyunion = window.adbyunion || []).push(id);
         document.write('<script async  src="https://lsp.lm881.com/o.js"><\/script>');
