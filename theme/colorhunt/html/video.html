@@ -13,9 +13,8 @@
             {% endif %}
             {{ video.name }}
         </div>
-        <div>
-            <script src="https://new.invuakj.cn/afe6c2ed5a.double8"></script>
-        </div>
+
+    {% include("html/ads/lianmeng_cpc_top"|common) %}
         {% include("html/ads/lianmeng_cpc"|common) %}
         {% if(video.m3u8_type!="pan") %}
             <div>{{ site.sobj.m3u8_desc(video,site)|safe }}</div>
