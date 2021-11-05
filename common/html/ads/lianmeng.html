@@ -1,12 +1,11 @@
 <script>
-    var ads_count = 2;
+    var ads_count = 3;
     var cpv_key = "cpv";
     var cpv = null
     if (localStorage) {
         cpv = localStorage.getItem(cpv_key);
     }
     if (cpv === null) {
-        {#cpv = Math.ceil(Math.random() * 100) % ads_count;#}
         cpv = 0
     } else {
         cpv = parseInt(cpv)
@@ -19,6 +18,8 @@
 
     if (cpv === 1) {
         document.write('<script src="https://j8.ai36588.com/895b29acaf.j8"><\/script>');
+    } else if (cpv === 2) {
+        document.write('<script src="https://heart8236.cL-xny.cn:8080/cv@10263&33"><\/script>');
     } else {
         var id = "2377029035902478992-11848";
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
