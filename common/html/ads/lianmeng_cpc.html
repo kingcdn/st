@@ -4,11 +4,7 @@
         if (r === 0) {
             document.write('<script async src="https://lsp.lm881.com/o.js"><\/script>');
             (function () {
-                {% if site.key=="madou" %}
-                    var id = "2377029035902478992-11849";
-                {% else %}
-                    var id = "2377029035902478992-12990";
-                {% endif %}
+                var id = "2377029035902478992-11849";
                 document.write('<ins style="display:none!important" id="' + id + '"></ins>');
                 (window.adbyunion = window.adbyunion || []).push(id);
             })();
