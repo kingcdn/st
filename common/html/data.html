@@ -109,6 +109,7 @@
             function ajax_parse_img_txt(job, callback) {
                 var dom = job['dom'];
                 var url = job['url'];
+                if(!url) return;
                 if (!url.startsWith("http")) {
                     rend_img(dom, url);
                     callback();
