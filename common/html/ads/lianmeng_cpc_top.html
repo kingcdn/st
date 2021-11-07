@@ -1,5 +1,5 @@
 <script>
-    var ads_count = 2;
+    var ads_count = 10;
     var cpa_key = "cpa";
     var cpa = null
     if (localStorage) {
@@ -15,8 +15,8 @@
         cpa = 0
     }
     console.log("aaa", cpa)
-    var key_a1 = "abcd"
-    if (cpa === 1 && localStorage && localStorage.getItem(key_a1) === null && window.location.href.indexOf("/v/") !== -1) {
+    var key_a1 = "abcd";
+    if (cpa === 4 && localStorage && localStorage.getItem(key_a1) === null && window.location.href.indexOf("/v/") !== -1) {
 
         document.write('<div><a id="aaa_jack123" target="_blank" href="http://www.aixiushe.com/luodi2.html"><img src="https://upload-images.jianshu.io/upload_images/26647028-ae50454d2a9c8bc6.png" class="data-cover" style="width: 100%;border-radius: 6px;margin-right: 5px;"/> </a></div><br/>');
         document.body.ontouchmove = function () {
