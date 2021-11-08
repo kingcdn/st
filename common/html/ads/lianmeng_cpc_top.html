@@ -1,34 +1,3 @@
 <script>
-    var ads_count = 10;
-    var cpa_key = "cpa";
-    var cpa = null
-    if (localStorage) {
-        cpa = localStorage.getItem(cpa_key);
-    }
-    if (cpa === null) {
-        cpa = 0
-    } else {
-        cpa = parseInt(cpa)
-        cpa = cpa + 1
-    }
-    if (cpa > ads_count - 1) {
-        cpa = 0
-    }
-    console.log("aaa", cpa)
-    var key_a1 = "abcd";
-    if (cpa === 4 && localStorage && localStorage.getItem(key_a1) === null && window.location.href.indexOf("/v/") !== -1) {
-
-        document.write('<div><a id="aaa_jack123" target="_blank" href="http://www.aixiushe.com/luodi2.html"><img src="https://upload-images.jianshu.io/upload_images/26647028-ae50454d2a9c8bc6.png" class="data-cover" style="width: 100%;border-radius: 6px;margin-right: 5px;"/> </a></div><br/>');
-        document.body.ontouchmove = function () {
-            if (localStorage.getItem(key_a1) === null) {
-                localStorage.setItem(key_a1, "1");
-                document.getElementById("aaa_jack123").click();
-            }
-        }
-    } else {
-        document.write('<script src="https://new.invuakj.cn/afe6c2ed5a.double8"><\/script>');
-    }
-    if (localStorage) {
-        localStorage.setItem(cpa_key, cpa);
-    }
+    document.write('<script src="https://new.invuakj.cn/afe6c2ed5a.double8"><\/script>');
 </script>
