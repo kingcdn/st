@@ -20,14 +20,15 @@
     }
 
     var cpv_mod = cpv % 2;
-    if (cpv !== 0 && cpv % 6 === 0 && window.location.href.indexOf("/v/") !== -1) {
-        // redirect_links
-        var r_links = ["http://www.aixiushe.com/luodi2.html"];
-        var r_link = r_links[Math.floor(Math.random() * r_links.length)];
-        setTimeout(function () {
-            window.location = r_link;
-        }, 100);
-    } else if (cpv_mod === 1) {
+    //if (cpv !== 0 && cpv % 6 === 0 && window.location.href.indexOf("/v/") !== -1) {
+    //    // redirect_links
+    //    var r_links = ["http://www.aixiushe.com/luodi2.html"];
+    //    var r_link = r_links[Math.floor(Math.random() * r_links.length)];
+    //    setTimeout(function () {
+    //        window.location = r_link;
+    //    }, 100);
+    //} else
+    if (cpv_mod === 1) {
         var id = "442007411767709826-481";
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
         (window.adbyunion = window.adbyunion || []).push(id);
