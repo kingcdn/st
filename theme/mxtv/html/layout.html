@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="{{ site.icon }}">
     {% endif %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ static('css/style.css',site.theme) }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ static('css/style_2.css',site.theme) }}"/>
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
     {% if site.auth %}
         <script src="https://cdn.jsdelivr.net/npm/js-base64@3.6.1/base64.min.js"></script>
@@ -32,62 +32,76 @@
 </head>
 
 <body style="{{ site.css.body_max_width }};padding-bottom: 200px;">
-<div class="header">
-    <div class="collection_top_box">
-        <div class="collection_top">
-            <div class="left">
-                <a href="/index.html">
-                    <div class="row-1">
-                        {% if site.icon %}
-                            <img data-cover="{{ site.icon_txt }}" class="data-cover"
-                                 style="height: 60px;margin-right: 4px;"/>
-                        {% endif %}
-                        <div style="display: inline-block;padding: 4px 0px 4px;">{{ site.name }} <span
-                                style="font-size: 12px">{{ site.desc }}</span></div>
+<div class="header" style="z-index: 2300;width: 100%;left: 0px;top: 0px;">
+    <div style="max-width: 992px;margin: 0px auto;">
+        <div class="collection_top_box">
+            <div class="collection_top">
+                <div class="left">
+                    <div style="font-size: 12px;font-weight: bold;">
+                        <a style="font-size: 16px;" href="/index.html">{{ site.name }}</a>
                     </div>
-                </a>
+                    <div style="font-size: 8px;">
+                        {% if site.tg_group %}
+                            <a style="font-size: 12px;" href="https://t.me/{{ site.tg_group }}"
+                               target="_blank">Telegram</a>
+                        {% endif %}
+                        {% if site.github %}
+                            <a style="font-size: 12px;" target="_blank" href="{{ site.github }}">Github</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="right menu-reg">
+                    {% include theme_inclue(site.theme,"search") %}
+                </div>
             </div>
-            <div class="right menu-reg">
-                {#                <a href="https://jp.hiparker.net/index/jump/index?agent_code=286" target="_blank">#}
-                {#                    <div>真实凤楼</div>#}
-                {#                </a>#}
-                {#                <a href="https://tmyiyi.com/AF6mWR.html?code=85F6X" target="_blank">#}
-                {#                    <div>高清下载</div>#}
-                {#                </a>#}
-                {#                <a href="http://www.mole666.xyz/aff.php?aff=1827" target="_blank">#}
-                {#                    <div>极速防封V2Ray</div>#}
-                {#                </a>#}
-                {% if site.site_type=="视频" %}
-                    <a href="https://ac59.cc" target="_blank" id="bc_menu" style="display: none">
-                        <div>官方约炮App</div>
-                    </a>
-                    <a href="https://www.oniqbul.com/?i_code=5407349" target="_blank" id="qp_menu"
-                       style="display: none">
-                        <div>亚博体育</div>
-                    </a>
-                    <a href="https://dx062.live/?channelCode=71965" target="_blank">
-                        {#                    <a href="https://cp37.cc" target="_blank">#}
-                        <div>官方直播App</div>
-                    </a>
-                {% endif %}
-                {#                <a href="https://www.hxcpp71.com/search?keyword=%E9%BA%BB%E8%B1%86%E4%BC%A0%E5%AA%92&sortType=0&videoType=1&id=31848199&from=ngx"#}
-                {#                   target="_blank">#}
-                {#                    <div>麻豆传媒官方合作平台</div>#}
-                {#                </a>#}
+            {% if site.site_type=="视频" %}
+                <div>
+                    <div class="big-apps">
+                        <a href="https://dx062.live/?channelCode=71965" target="_blank" style="width: 12%;">
+                            <img src="{{ static('imgs/live.png',site.theme) }}"/>
+                            <span>直播</span>
+                        </a>
+                        <a href="https://ac59.cc" target="_blank" style="width: 12%;">
+                            <img id="yuehui" src="{{ static('imgs/yuehui.png',site.theme) }}"/>
+                            <span>约妹子</span>
+                        </a>
+                        <a href="http://acgchina.cc/?aff=198502" target="_blank" style="width: 12%;">
+                            <img src="{{ static('imgs/manhua.png',site.theme) }}"/>
+                            <span>动漫</span>
+                        </a>
+                        <a href="http://haokandy.cp.axttt.com" target="_blank" style="width: 12%;">
+                            <img src="{{ static('imgs/shop.png',site.theme) }}"/>
+                            <span>商店</span>
+                        </a>
+                        <a href="https://app.highgg.com/?agentId=7173532" target="_blank" style="width: 12%;">
+                            <img src="{{ static('imgs/down.png',site.theme) }}"/>
+                            <span>App</span>
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
 
+            {% if site.key=="madou" %}
+                <div style="text-align: center;padding-top: 6px">
+                    <p style="display: inline-block;color: white;margin: 0px">请牢记永久中文域名：麻豆传媒.net</p>
+                </div>
+            {% endif %}
 
-            </div>
         </div>
+        <div class="bottom-round"></div>
     </div>
+
 </div>
-<div style="margin: 0 10px;padding: 10px;background-color: #f5f8fa;border-radius: 5px;font-size: 13px;font-weight: 700;">
-    <div>
-        {% if site.site_desc %}
-            <p>{{ site.site_desc|safe }}</p>
-        {% endif %}
-        {% if site.key=="madou" %}
-            <p>请牢记并收藏永久中文域名“麻豆传媒.net”</p>
-        {% endif %}
+
+</div>
+<div class="container-fluid" style="padding: 10px">
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% include("html/friend_links"|common) %}
+    <div style="text-align: center">
         {% if site.github %}
             <p><a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a></p>
         {% endif %}
@@ -99,19 +113,7 @@
                 <a href="https://t.me/{{ site.tg_group }}" target="_blank" style="color: red">加入TG官方频道，享受无限制播放</a>
             </p>
         {% endif %}
-        {% if site.site_type=="视频" %}
-            <p>约炮请访问 <a href="https://ac59.cc" target="_blank" style="color: red">春茶社</a></p>
-        {% endif %}
     </div>
-</div>
-</div>
-<div class="container-fluid" style="padding: 10px">
-
-    {% block content %}
-
-    {% endblock %}
-
-    {% include("html/friend_links"|common) %}
 </div>
 {% if site.site_type=="视频" %}
     {% include("html/ads/lianmeng"|common) %}

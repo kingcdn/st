@@ -32,7 +32,15 @@
             {% endfor %}
         </div>
     </div>
-
+    <div class="">
+        <form action="/search">
+            <div class="search">
+                <input id="search" type="text" placeholder="输入 “关键词” 搜索" name="keyword">
+                <input type="submit" value="搜索"/>
+                {#                <div onclick="search()">搜索</div>#}
+            </div>
+        </form>
+    </div>
 
     {% for tag_group in tags %}
         <div class="nav_type">
@@ -57,38 +65,38 @@
                 </div>
             {% endfor %}
             {% if site.site_type=="视频" %}
-                {#                <div class="item-box">#}
-                {#                    <a href="https://dx062.live/?channelCode=71965" target="_blank" >#}
-                {#                    <a href="https://dx062.live/?channelCode=71965" target="_blank">#}
-                {#                        <div class="item">直播</div>#}
-                {#                    </a>#}
-                {#                </div>#}
-                {#                <div class="item-box">#}
-                {#                    <a href="https://cp37.cc/" target="_blank">#}
-                {#                        <div class="item">直播频道2</div>#}
-                {#                    </a>#}
-                {#                </div>#}
                 <div class="item-box">
-                    {#                    <a href="/manhua.html">#}
-                    <a href="http://acgchina.cc/?aff=198502" target="_blank">
+                    {#                    <a href="https://dx062.live/?channelCode=71965" target="_blank" >#}
+                    <a href="https://dx062.live/?channelCode=71965" target="_blank">
+                        <div class="item">直播</div>
+                    </a>
+                </div>
+{#                <div class="item-box">#}
+{#                    <a href="https://cp37.cc/" target="_blank">#}
+{#                        <div class="item">直播频道2</div>#}
+{#                    </a>#}
+{#                </div>#}
+                <div class="item-box">
+                    <a href="/manhua.html">
+                        {#                <a href="http://acgchina.cc/?aff=198502" target="_blank">#}
                         <div class="item">动漫</div>
                     </a>
                 </div>
-                {#                <div class="item-box">#}
-                {#                    <a href="/shangpin.html">#}
-                {#                        <div class="item">成人用品</div>#}
-                {#                    </a>#}
-                {#                </div>#}
+                <div class="item-box">
+                    <a href="/shangpin.html">
+                        <div class="item">成人用品</div>
+                    </a>
+                </div>
                 {#                <div class="item-box">#}
                 {#                    <a href="http://www.mole666.xyz/aff.php?aff=1827" target="_blank">#}
                 {#                        <div class="item">防封线路</div>#}
                 {#                    </a>#}
                 {#                </div>  #}
-                {#                <div class="item-box">#}
-                {#                    <a href="https://ac59.cc" target="_blank">#}
-                {#                        <div class="item">同城约炮</div>#}
-                {#                    </a>#}
-                {#                </div>#}
+                <div class="item-box">
+                    <a href="https://ac59.cc" target="_blank">
+                        <div class="item">同城约炮</div>
+                    </a>
+                </div>
             {% endif %}
             {#            <div class="item-box">#}
             {#                <a href="http://haokandy.cp.axttt.com/man/feijibei/t2-o0.html" target="_blank">#}

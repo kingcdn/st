@@ -50,6 +50,13 @@ body {
     background-color: #fff;
 }
 
+@media only screen and (max-width: 900px) {
+    .header {
+        /*position: fixed;*/
+    }
+}
+
+
 .header > .hidden-md.hidden-lg {
     display: flex;
     align-items: center;
@@ -223,42 +230,94 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #ffc200;
+    border: 1px solid white;
     margin: 10px 0;
     /*border-radius: 6px;*/
+}
+
+.big-apps {
+    text-align: center;
+}
+
+@media only screen and (min-width: 900px) {
+    .big-apps {
+        padding-bottom: 10px;
+    }
+}
+
+.big-apps > a {
+    display: inline-block;
+    text-align: center;
+    margin: 0px 10px;
+}
+
+.big-apps > a > img {
+    display: block;
+    width: 80%;
+    display: inline-block;
+    max-width: 40px;
+}
+#yuehui{
+    animation: hot-icon 1s infinite;
+}
+@keyframes hot-icon{
+  from {width: 10px}
+  to {width: 80%;max-width: 40px;}
+}
+.big-apps > a > span {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+}
+
+.bottom-round {
+    height: 100px;
+    background-color: #ffc200;
+    border-radius: 200px;
+    margin-top: -91px;
+    width: 112%;
+    margin-left: -24px;
+}
+
+@media only screen and (min-width: 900px) {
+    .bottom-round {
+        display: none;
+    }
 }
 
 .search > input {
     border: 0;
     /*border-radius: 5px;*/
-    line-height: 28px;
+    line-height: 30px;
     flex: 5;
     padding: 0 5px;
+
 }
 
 .search > input[type=submit] {
     flex: 1;
     text-align: center;
-    background-color: #ffc200;
+    background-color: white;
     line-height: 30px;
     font-weight: 700;
     color: #333;
     border-left: none;
     /*border-radius: 0px 5px 5px 0px;*/
     max-width: 90px;
+    margin-left: 1px;
 }
 
 .collection_top_box {
     margin: auto;
+    background-color: #ffc200;
 }
 
 .collection_top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 10px;
+    padding: 10px 10px 0px;
     width: 100%;
-    background-color: #fff;
 }
 
 .collection_top .left .row-1 {
@@ -277,9 +336,7 @@ body {
 }
 
 .collection_top .right div {
-    padding: 3px 10px;
     margin-left: 7px;
-    background-color: #fff131;
     border-radius: 5px;
     font-weight: 700;
 }

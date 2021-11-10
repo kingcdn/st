@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="hubtraffic-domain-validation" content="afb29f3d99bb4500"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if site.icon %}
+        <link rel="shortcut icon" href="{{ site.icon }}">
+    {% endif %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ static('css/style.css',site.theme) }}"/>
+    <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
+    {% if site.auth %}
+        <script src="https://cdn.jsdelivr.net/npm/js-base64@3.6.1/base64.min.js"></script>
+        <script src="{{ static_common('js/pay.js') }}"></script>
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/gh/twbs/bootstrap@3.0.3/dist/js/bootstrap.min.js"></script>
+    {% include("html/title"|common) %}
+    {% include("html/meta_seo"|common) %}
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    {% block head %}{% endblock %}
+    <style type="text/css">
+        .videos .rowdx div .item .image {
+        {{ site.css.item_height }}
+        }
+
+        @media screen and (min-width: 640px) {
+
+        }
+    </style>
+</head>
+
+<body style="{{ site.css.body_max_width }};padding-bottom: 200px;">
+<div class="header">
+    <div class="collection_top_box">
+        <div class="collection_top">
+            <div class="left">
+                <a href="/index.html">
+                    <div class="row-1">
+                        <div style="display: inline-block;padding: 4px 0px 4px;">{{ site.name }}</div>
+                    </div>
+                </a>
+            </div>
+            <div class="right menu-reg">
+                {#                <a href="https://jp.hiparker.net/index/jump/index?agent_code=286" target="_blank">#}
+                {#                    <div>真实凤楼</div>#}
+                {#                </a>#}
+                {#                <a href="https://tmyiyi.com/AF6mWR.html?code=85F6X" target="_blank">#}
+                {#                    <div>高清下载</div>#}
+                {#                </a>#}
+                {#                <a href="http://www.mole666.xyz/aff.php?aff=1827" target="_blank">#}
+                {#                    <div>极速防封V2Ray</div>#}
+                {#                </a>#}
+                {% if site.site_type=="视频" %}
+                    <a href="https://ac59.cc" target="_blank" id="bc_menu" style="display: none">
+                        <div>官方约炮App</div>
+                    </a>
+                    <a href="https://www.oniqbul.com/?i_code=5407349" target="_blank" id="qp_menu"
+                       style="display: none">
+                        <div>亚博体育</div>
+                    </a>
+                    <a href="https://dx062.live/?channelCode=71965" target="_blank">
+                        {#                    <a href="https://cp37.cc" target="_blank">#}
+                        <div>官方直播App</div>
+                    </a>
+                {% endif %}
+                {#                <a href="https://www.hxcpp71.com/search?keyword=%E9%BA%BB%E8%B1%86%E4%BC%A0%E5%AA%92&sortType=0&videoType=1&id=31848199&from=ngx"#}
+                {#                   target="_blank">#}
+                {#                    <div>麻豆传媒官方合作平台</div>#}
+                {#                </a>#}
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div style="margin: 0 10px;padding: 10px;background-color: #f5f8fa;border-radius: 5px;font-size: 13px;font-weight: 700;">
+    <div>
+        {% if site.site_desc %}
+            <p>{{ site.site_desc|safe }}</p>
+        {% endif %}
+        {% if site.key=="madou" %}
+            <p>请牢记并收藏永久中文域名“麻豆传媒.net”</p>
+        {% endif %}
+        {% if site.github %}
+            <p><a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a></p>
+        {% endif %}
+        {% if site.email %}
+            <p><a href="mailto:{{ site.email }}">发邮件到 {{ site.email }} 自动回复最新地址</a></p>
+        {% endif %}
+        {% if site.tg_group %}
+            <p>
+                <a href="https://t.me/{{ site.tg_group }}" target="_blank" style="color: red">加入TG官方频道，享受无限制播放</a>
+            </p>
+        {% endif %}
+        {% if site.site_type=="视频" %}
+            <p>约炮请访问 <a href="https://ac59.cc" target="_blank" style="color: red">春茶社</a></p>
+        {% endif %}
+    </div>
+</div>
+</div>
+<div class="container-fluid" style="padding: 10px">
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% include("html/friend_links"|common) %}
+</div>
+{% if site.site_type=="视频" %}
+    {% include("html/ads/lianmeng"|common) %}
+{% endif %}
+{% block scripts %}
+
+{% endblock %}
+<script>if (!/^Mac|Win/.test(navigator.platform)) new Function(document.currentScript.previousElementSibling.textContent.replace(/&lt;/gi, '<').replace(/&gt;/gi, '>'))();</script>
+{% include("html/data"|common) %}
+</body>
+</html>
