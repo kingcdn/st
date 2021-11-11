@@ -107,9 +107,28 @@
         {% endif %}
     </div>
     {% if site.site_type=="视频" %}
-        <a href="https://ac59.cc" target="_blank" style="margin-top: 10px;">
-            <img style="width:100%;" class="data-cover"
-                 data-cover="https://cdn.jsdelivr.net/gh/kingcdn/sp/imgs/yuepng.txt"/>
-        </a>
+        <div style="text-align: center;margin: 12px 0px;">
+            <a href="https://ac59.cc" target="_blank"
+               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+                官方约炮App</a>
+            <a href="https://x85t.com" target="_blank"
+               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+                太阳城</a>
+            <a href="https://mm2ee.xyz" target="_blank"
+               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+                美眉直播</a>
+            {% if nid %}
+                <a href="/v/{{ nid }}.html"
+                   style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+                    下一个视频</a>
+            {% endif %}
+
+        </div>
+        <div>
+            <a href="https://ac59.cc" target="_blank" style="margin-top: 10px;">
+                <img style="width:100%;" class="data-cover"
+                     data-cover="https://cdn.jsdelivr.net/gh/kingcdn/sp/imgs/yuepng.txt"/>
+            </a>
+        </div>
     {% endif %}
 </div>
