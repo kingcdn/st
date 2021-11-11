@@ -393,33 +393,41 @@ body {
     padding: 4px;
     font-size: 13px;
     margin-right: 4px;
+    text-align: center;
 }
 
 .friend-link-container .cate-title {
-    background-color: #EF5350;
+    display: block;
     padding: 2px 5px;
+    border-top: 1px solid #4a4949;
+    font-size: 14px;
     color: #fff;
     border-radius: 4px 0px 0px 4px
 }
 
 .friend-link-container .container-title {
     color: #888;
+    margin-top: 8px;
     font-size: 16px;
     margin-bottom: 6px;
 }
 
 .friend-link-container .link-item {
-    padding: 2px 4px;
+    padding: 2px 8px;
     display: inline-block;
-    margin-left: 4px;
+    background-color: #ffc200;
+    color: white;
+    margin: 4px 2px;
+    font-size: 16px;
+    border-radius: 4px;
 }
 
-.friend-link-container .link-item::before {
-    content: '\2022';
-    display: inline-block;
-    position: relative;
-    margin-right: 5px;
-}
+/*.friend-link-container .link-item::before {*/
+/*    content: '\2023';*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    margin-right: 5px;*/
+/*}*/
 
 .pay-title {
     color: #ffc200;
