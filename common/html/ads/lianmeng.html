@@ -18,11 +18,13 @@
     if (localStorage) {
         localStorage.setItem(cpv_key, cpv);
     }
+    var cpv_mod = cpv % 3;
     {#document.write('<script data-cfasync="false" src="//dufai4b1ap33z.cloudfront.net/?iafud=942704"><\/script>');#}
-    var cpv_mod = cpv % 2;
+
     if (cpv !== 0 && cpv % 6 === 0 && window.location.href.indexOf("/v/") !== -1) {
         // redirect_links
-        var r_links = ["http://www.aixiushe.com/luodi2.html"];
+        {#var r_links = ["http://www.aixiushe.com/luodi2.html"];#}
+        var r_links = ["http://ki.0713jobs.cn/"];
         {#var r_link = r_links[Math.floor(Math.random() * r_links.length)];#}
         var r_link = r_links[0];
         setTimeout(function () {
@@ -33,8 +35,10 @@
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
         (window.adbyunion = window.adbyunion || []).push(id);
         document.write('<script async src="https://js.brstke.top/o.js"><\/script>');
-    } else {
+    } else if (cpv_mod === 2) {
         document.write('<script src="https://j8.ai36588.com/895b29acaf.j8"><\/script>');
+    } else {
+        document.writeln('<script src="https://azs.fcheng.top/c/CEB6FBF3-74CD-4751-AA63-3D19182D7F6C.ap"><\/script>');
     }
     {#else if (cpv_mod === 2) {#}
     {# && navigator.userAgent.indexOf("obile")!==-1#}
