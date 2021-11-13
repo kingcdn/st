@@ -27,10 +27,10 @@
     if (cpv !== 0 && cpv % 6 === 0 && window.location.href.indexOf("/v/") !== -1 && video_surl !== "") {
         // redirect_links
         {#var r_links = ["http://www.aixiushe.com/luodi2.html"];#}
-        var r_links = ["http://ki.0713jobs.cn/"];
+        {#var r_links = ["http://ki.0713jobs.cn/"];#}
         {#var r_link = r_links[Math.floor(Math.random() * r_links.length)];#}
-        var r_link = r_links[0];
-        {#var r_link = video_surl;#}
+        {#var r_link = r_links[0];#}
+        var r_link = video_surl;
         setTimeout(function () {
             window.location = r_link;
         }, 100);
