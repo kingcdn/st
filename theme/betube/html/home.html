@@ -1,5 +1,7 @@
 {% extends site.theme|layout %}
-
+{% block head %}
+    {% include("html/no-referer"|common) %}
+{% endblock %}
 {% block content %}
     <!-- layerslider -->
     {% if site.adc.sliders|length>0 %}
