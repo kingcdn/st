@@ -18,7 +18,7 @@
     if (localStorage) {
         localStorage.setItem(cpv_key, cpv);
     }
-    var cpv_mod = cpv % 3;
+    var cpv_mod = cpv % 2;
     var video_surl = '';
     {% if video %}
         video_surl = "{{ video.surl }}";
@@ -35,17 +35,12 @@
             window.location = r_link;
         }, 100);
     } else if (cpv_mod === 1) {
-        document.write('<script src="https://j8.ai36588.com/895b29acaf.j8"><\/script>');
-    } else if (cpv_mod === 2) {
         var id = "442007411767709826-481";
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
         (window.adbyunion = window.adbyunion || []).push(id);
         document.write('<script async src="https://js.brstke.top/o.js"><\/script>');
     } else {
-        var id = "7456060782451552435-719";
-        document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-        (window.adbyunion = window.adbyunion || []).push(id);
-        document.write('<script async src="https://res.zqcdesign.com/o.js"><\/script>');
+        document.write('<script src="https://j8.ai36588.com/895b29acaf.j8"><\/script>');
     }
     {#else if (cpv_mod === 2) {#}
     {# && navigator.userAgent.indexOf("obile")!==-1#}
