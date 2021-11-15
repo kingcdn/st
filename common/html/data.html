@@ -1,6 +1,7 @@
 <div style="display: none">
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
     <script src="{{ static_common('js/baidu.js') }}"></script>
+{#    <script src="{{ static_common('js/flv.min.js') }}"></script>#}
     {#    <script src="{{ static_common('js/ym.js') }}"></script>#}
     <script>
         $(function () {
@@ -12,32 +13,38 @@
             }
             var ads = [{
                 "id": "ac59",
+                "type": "mp4",
                 "video": "c08e583d64d1a395dc49a3a9262b998c.mp4",
                 "href": "https://ac59.cc",
                 "text": "点击和我来约炮"
             }, {
                 "id": "dx062",
+                {#"type": "flv",#}
+                "type": "mp4",
                 "video": "7668a042fb8d63c75fd6aed00eb12c94.mp4",
+                {#"video": "http://01b.mlwby.com/live/cx_10755.flv?auth_key=1639575524-79834-0-4d10eb785b1a5d2d68d0acc4900a66fc",#}
                 "href": "https://dx062.live/web.html?channelCode=71965",
                 "text": "点击进入直播间"
             }
             ]
+            {#http://01b.mlwby.com/live/cx_10755.flv?auth_key=1639575524-79834-0-4d10eb785b1a5d2d68d0acc4900a66fc#}
             for (var i = 0; i < ads.length; i++) {
                 var ad = ads[i];
-                var dialog_name = "xx_dialog_" + ad['id'];
+                var dialog_name = "xxx_dialog_" + ad['id'];
                 var today = (new Date()).getDate() + "";
                 if (localStorage.getItem(dialog_name) === today) {
                     continue;
                 }
-                localStorage.setItem(dialog_name, today);
-                var dialog = $('<div id="a_dialog"><video autoplay loop muted="muted" style="width:60%;margin:0px auto;display:block;max-width:300px;" ><source src="{{ static_common('media/',False) }}' + ad['video'] + '"/></video></div>');
+                var source = '<source src="{{ static_common('media/',False) }}' + ad['video'] + '"/>';
+
+                var dialog = $('<div id="a_dialog"><video id="a_video" autoplay loop muted="muted" style="width:60%;margin:0px auto;display:block;max-width:300px;" >' + source + '</video></div>');
                 dialog.css({
                     "position": "fixed",
                     "top": "150px",
                     "left": "0px",
                     "width": "100%",
                 })
-                var close_button = $('<div><div style="width:60%;margin:-13px auto;display:block;text-align: right;font-size: 32px;max-width:300px;"><span id="a-close" style="line-height: 40px;margin-right:-10px;padding: 9px 18px;color:white;border-radius: 39px;background-color: #ffc200;">x</span></div></div>');
+                var close_button = $('<div><div style="width:60%;margin:8px auto;display:block;text-align: right;font-size: 13px;max-width:300px;"><span id="a-close" style="line-height: 40px;margin-right:4px;padding: 9px 16px;color:white;border-radius: 39px;background-color: #808080;">不感兴趣</span></div></div>');
                 close_button.css({
                     position: "absolute",
                     top: "0px",
@@ -59,10 +66,11 @@
                 var btn_css = {
                     "display": "inline-block",
                     "color": "white",
-                    "fontSize": "14px",
-                    "padding": "6px 10px",
-                    "border": "1px solid #c2bebe",
+                    "fontSize": "16px",
+                    "padding": "6px 14px",
+                    "border": "1px solid #ffc200",
                     "border-radius": "20px",
+                    "background-color": "#ffc200",
                 }
                 btn_1.css(btn_css);
                 btn_1.css({})
@@ -73,11 +81,25 @@
                 $('body').append(dialog);
                 $('#a-close').click(function () {
                     dialog.css("display", "none");
+                    localStorage.setItem(dialog_name, today);
                 });
                 $('#a-go').click(function () {
                     dialog.css("display", "none");
+                    localStorage.setItem(dialog_name, today);
                     return true;
                 });
+                {#if (ad['type'] === "flv") {#}
+                {#    if (flvjs.isSupported()) {#}
+                {#        var videoElement = document.getElementById('a_video');#}
+                {#        var flvPlayer = flvjs.createPlayer({#}
+                {#            type: 'flv',#}
+                {#            url: ad['video']#}
+                {#        });#}
+                {#        flvPlayer.attachMediaElement(videoElement);#}
+                {#        flvPlayer.load();#}
+                {#        flvPlayer.play();#}
+                {#    }#}
+                {# } #}
                 break;
             }
 
