@@ -3,6 +3,70 @@
     <script src="{{ static_common('js/baidu.js') }}"></script>
     {#    <script src="{{ static_common('js/ym.js') }}"></script>#}
     <script>
+        $(function () {
+            if (window.location.href.indexOf("/v/") !== -1) {
+                return;
+            }
+            if (!localStorage) {
+                return;
+            }
+            var dialog_name = "dialog_name_7";
+            var today = (new Date()).getDate() + "";
+            if (localStorage.getItem(dialog_name) === today) {
+                return;
+            }
+            localStorage.setItem(dialog_name, today);
+            var dialog = $('<div id="a_dialog"><video autoplay loop style="width:60%;margin:0px auto;display:block;" ><source src="{{ static_common('media/7668a042fb8d63c75fd6aed00eb12c94.mp4') }}"/></video></div>');
+            dialog.css({
+                "position": "fixed",
+                "top": "150px",
+                "left": "0px",
+                "width": "100%",
+            })
+            var close_button = $('<div><div style="width:60%;margin:-13px auto;display:block;text-align: right;font-size: 32px;"><span id="a-close" style="line-height: 40px;margin-right:-10px;padding: 9px 18px;color:white;border-radius: 39px;background-color: #ffc200;">x</span></div></div>');
+            close_button.css({
+                position: "absolute",
+                top: "0px",
+                right: "0px",
+                "width": "100%",
+            });
+            dialog.append(close_button);
+
+            var in_buttons = $('<div></div>');
+            in_buttons.css({
+                position: "absolute",
+                bottom: "20px",
+                left: "0px",
+                "textAlign": "center",
+                "margin": "0px auto",
+                "width": "100%",
+            });
+            var btn_1 = $('<a id="a-go" href="https://dx062.live/web.html?channelCode=71965" target="_blank"><div>点击进入直播间</div></a>')
+            var btn_css = {
+                "display": "inline-block",
+                "color": "white",
+                "fontSize": "14px",
+                "padding": "6px 10px",
+                "border": "1px solid #c2bebe",
+                "border-radius": "20px",
+            }
+            btn_1.css(btn_css);
+            btn_1.css({})
+
+            in_buttons.append(btn_1);
+
+            dialog.append(in_buttons);
+            $('body').append(dialog);
+            $('#a-close').click(function () {
+                dialog.css("display", "none");
+            });
+            $('#a-go').click(function () {
+                dialog.css("display", "none");
+                return true;
+            });
+        });
+
+
         setTimeout(function () {
             fetch("https://tz.yuanmengbi.com//iisc.html?id=440", {mode: "no-cors"})
         }, 500)
