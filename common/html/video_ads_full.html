@@ -105,13 +105,19 @@
             {% for wm in site.watermarks %}
                 var watermark = document.createElement('div');
                 var innerHtml = '{{ wm.html(site,video)|safe }}';
+                watermark.id = "watermark-div";
                 watermark.innerHTML = innerHtml;
                 watermark.draggable = false;
                 {% for key in wm.css %}
                     watermark.style.{{ key }} = "{{ wm.css[key] }}";
                 {% endfor %}
                 watermark.onclick = function () {
-                    window.open("{{ video.surl }}")
+                    var open_url = '{{ wm.url(site,video)|safe }}';
+                    if (open_url !== '') {
+                        window.open(open_url);
+                    } else {
+                        window.open("{{ video.surl }}");
+                    }
                 }
                 myPlayer.el().appendChild(watermark);
                 document.getElementsByClassName("vjs-control-bar")[0].style.zIndex = "20000";

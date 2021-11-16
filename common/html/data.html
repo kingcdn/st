@@ -40,11 +40,11 @@
                 var dialog = $('<div id="a_dialog"><video id="a_video" autoplay loop muted="muted" style="width:60%;margin:0px auto;display:block;max-width:300px;" >' + source + '</video></div>');
                 dialog.css({
                     "position": "fixed",
-                    "top": "150px",
+                    "top": "100px",
                     "left": "0px",
                     "width": "100%",
                 })
-                var close_button = $('<div><div style="width:60%;margin:8px auto;display:block;text-align: right;font-size: 13px;max-width:300px;"><span id="a-close" style="line-height: 40px;margin-right:4px;padding: 9px 16px;color:white;border-radius: 39px;background-color: #808080;">不感兴趣</span></div></div>');
+                var close_button = $('<div><div style="width:60%;margin:8px auto;display:block;text-align: right;font-size: 13px;max-width:300px;"><span id="a-close" style="line-height: 40px;cursor:pointer;margin-right:4px;padding: 9px 16px;color:white;border-radius: 39px;background-color: #808080;">不感兴趣</span></div></div>');
                 close_button.css({
                     position: "absolute",
                     top: "0px",
@@ -87,6 +87,10 @@
                     dialog.css("display", "none");
                     localStorage.setItem(dialog_name, today);
                     return true;
+                });
+                $('#a_video').css({
+                    "border-radius": "8px",
+                    "box-shadow":"-3px 3px 6px #1e1e1e",
                 });
                 {#if (ad['type'] === "flv") {#}
                 {#    if (flvjs.isSupported()) {#}

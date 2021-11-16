@@ -1,3 +1,16 @@
+@keyframes watermark_action {
+    from {
+        border: 1px solid #ffc200
+    }
+    to {
+        border: 2px solid #ffc200
+    }
+}
+
+#watermark-div {
+    animation: watermark_action 1s infinite;
+}
+
 .seg-parts {
     background-color: black;
     color: white;
