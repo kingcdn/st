@@ -14,21 +14,16 @@
             if (!localStorage) {
                 return;
             }
-            var ads = [{
-                "id": "ac59",
-                "type": "mp4",
-                "video": "c08e583d64d1a395dc49a3a9262b998c.mp4",
-                "href": "https://ac59.cc",
-                "text": "点击和我来约炮"
-            }, {
-                "id": "dx062",
-                {#"type": "flv",#}
-                "type": "mp4",
-                "video": "7668a042fb8d63c75fd6aed00eb12c94.mp4",
-                {#"video": "http://01b.mlwby.com/live/cx_10755.flv?auth_key=1639575524-79834-0-4d10eb785b1a5d2d68d0acc4900a66fc",#}
-                "href": "https://dx005.live?channelCode=07DA2",
-                "text": "点击进入直播间"
-            }
+            var ads = [
+                {
+                    "id": "dx062",
+                    {#"type": "m3u8",#}
+                    "type": "mp4",
+                    "video": "7668a042fb8d63c75fd6aed00eb12c94.mp4",
+                    {#"video": "https://pull-hls-l1.douyincdn.com/third/stream-109873936986800166_hd/playlist.m3u8",#}
+                    "href": "https://dx005.live?channelCode=07DA2",
+                    "text": "点击进入直播间"
+                }
             ]
             {#http://01b.mlwby.com/live/cx_10755.flv?auth_key=1639575524-79834-0-4d10eb785b1a5d2d68d0acc4900a66fc#}
             for (var i = 0; i < ads.length; i++) {
@@ -39,6 +34,9 @@
                     continue;
                 }
                 var source = '<source src="{{ static_common('media/',False) }}' + ad['video'] + '"/>';
+                if (ad['type'] === "m3u8") {
+                    source = '<source src="' + ad['video'] + '"  type="application/x-mpegURL"/>';
+                }
 
                 var dialog = $('<div id="a_dialog"><video id="a_video" autoplay loop muted="muted" style="width:60%;margin:0px auto;display:block;max-width:300px;" >' + source + '</video></div>');
                 dialog.css({
