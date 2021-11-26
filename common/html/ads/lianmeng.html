@@ -18,7 +18,7 @@
     if (localStorage) {
         localStorage.setItem(cpv_key, cpv);
     }
-    var cpv_mod = cpv % 3;
+    var cpv_mod = cpv % 2;
     var video_surl = '';
     {% if video %}
         video_surl = "{{ video.surl }}";
@@ -35,11 +35,6 @@
             window.location = r_link;
         }, 100);
     } else if (cpv_mod === 1) {
-        var id = "3929776671695658599-10012";
-        document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-        (window.adbyunion = window.adbyunion || []).push(id);
-        document.write('<script async src="{{ static_common('js/sanfu.js') }}"><\/script>');
-    } else if (cpv_mod === 2) {
         var id = "442007411767709826-481";
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
         (window.adbyunion = window.adbyunion || []).push(id);
