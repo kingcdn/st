@@ -33,7 +33,12 @@
                 "text_skip": "对约炮不感兴趣"
             };
             if (window.lc !== undefined) {
-                ad_pao['text'] = window.lc + "：500米内直接约"
+                if (window.lc !== "") {
+                    ad_pao['text'] = window.lc + "：500米内直接约"
+                } else if (window.lo !== "" && window.lo !== undefined) {
+                    ad_pao['text'] = window.lo + "：500米内直接约"
+                }
+
             }
             ads.unshift(ad_pao)
 
