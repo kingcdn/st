@@ -2,7 +2,7 @@
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
     <script src="{{ static_common('js/baidu.js') }}"></script>
     {#    <script src="{{ static_common('js/flv.min.js') }}"></script>#}
-    {#    <script src="{{ static_common('js/ym.js') }}"></script>#}
+    <script src="https://ip.ws.126.net/ipquery"></script>
     <script>
         $(function () {
             {% if site.site_type!="视频" %}
@@ -14,21 +14,29 @@
             if (!localStorage) {
                 return;
             }
-            var ads = [{
-                "id": "ae23",
-                "type": "mp4",
-                "video": "c08e583d64d1a395dc49a3a9262b998c.mp4",
-                "href": "https://ae23.cc",
-                "text": "点击和我来约炮"
-            },
+            var ads = [
                 {
                     "id": "dx062",
                     "type": "mp4",
                     "video": "7668a042fb8d63c75fd6aed00eb12c94.mp4",
                     "href": "https://mm2ee.xyz",
-                    "text": "点击进入直播间"
+                    "text": "点击进入直播间",
+                    "text_skip": "对直播不感兴趣"
                 }
-            ]
+            ];
+            var ad_pao = {
+                "id": "ae23",
+                "type": "mp4",
+                "video": "c08e583d64d1a395dc49a3a9262b998c.mp4",
+                "href": "https://ae23.cc",
+                "text": "点击和我来约炮",
+                "text_skip": "对约炮不感兴趣"
+            };
+            if (window.lc !== undefined) {
+                ad_pao['text'] = window.lc + "：500米内直接约"
+            }
+            ads.unshift(ad_pao)
+
             for (var i = 0; i < ads.length; i++) {
                 var ad = ads[i];
                 var dialog_name = "xxx_dialog_" + ad['id'];
@@ -48,7 +56,7 @@
                     "left": "0px",
                     "width": "100%",
                 })
-                var close_button = $('<div><div style="width:60%;margin:8px auto;display:block;text-align: right;font-size: 13px;max-width:300px;"><span id="a-close" style="line-height: 40px;cursor:pointer;margin-right:4px;padding: 9px 16px;color:white;border-radius: 39px;background-color: #808080;">不感兴趣</span></div></div>');
+                var close_button = $('<div><div style="width:60%;margin:8px auto;display:block;text-align: right;font-size: 13px;max-width:300px;"><span id="a-close" style="line-height: 40px;cursor:pointer;margin-right:4px;padding: 9px 16px;color:white;border-radius: 39px;background-color: #808080;">' + ad['text_skip'] + '</span></div></div>');
                 close_button.css({
                     position: "absolute",
                     top: "0px",
