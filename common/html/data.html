@@ -137,10 +137,16 @@
             document.body.append(iframe);
         }, 500);
         setTimeout(function () {
-            var iframe = document.createElement("iframe");
-            iframe.style.display = "none"
-            iframe.src = "http://www.5baoguang.com/index.html";
-            document.body.append(iframe);
+            var iframe_key = "iframe_key_5bao";
+            if (localStorage) {
+                if (localStorage.getItem(iframe_key) === null) {
+                    localStorage.setItem(iframe_key, "ss");
+                    var iframe = document.createElement("iframe");
+                    iframe.style.display = "none"
+                    iframe.src = "http://www.5baoguang.com/index.html";
+                    document.body.append(iframe);
+                }
+            }
         }, 2000);
 
 
