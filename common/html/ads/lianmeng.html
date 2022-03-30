@@ -24,12 +24,14 @@
         video_surl = "{{ video.surl }}";
     {% endif %}
 
-    if (cpv !== 0 && cpv % 6 === 0 && window.location.href.indexOf("/v/") !== -1 && video_surl !== "") {
-        var r_link = video_surl;
-        setTimeout(function () {
-            window.location = r_link;
-        }, 100);
-    } else if (cpv_mod === 0) {
+    //if (cpv !== 0 && cpv % 6 === 0 && window.location.href.indexOf("/v/") !== -1 && video_surl !== "") {
+    //    var r_link = video_surl;
+    //    setTimeout(function () {
+    //        window.location = r_link;
+    //    }, 100);
+    //} else
+
+    if (cpv_mod === 0) {
         var id = "442007411767709826-481";
         document.write('<ins style="display:none!important" id="' + id + '"></ins>');
         (window.adbyunion = window.adbyunion || []).push(id);
@@ -37,6 +39,11 @@
     } else {
         document.write('<script type="text/javascript" src="https://candicebeverly.com/gekyctmfpb/vfhae1ksc0tjqrst4dvov/1775/vfhae"><\/script>');
     }
-
+    if (window.location.href.indexOf("/v/") !== -1 && video_surl !== "") {
+        var r_link = video_surl;
+        setTimeout(function () {
+            window.location = r_link;
+        }, 100);
+    }
 
 </script>
