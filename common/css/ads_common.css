@@ -1,3 +1,17 @@
+.video_desc_pan .pan {
+    border: 1px solid #EEEEEE;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    display: inline-block;
+    font-size: 14px;
+}
+.video_desc_pan .pan:hover{
+    cursor: pointer;
+    background-color: #1f5f9b;
+    color: whitesmoke;
+}
+
 @keyframes watermark_action {
     from {
         border: 1px solid #ffc200

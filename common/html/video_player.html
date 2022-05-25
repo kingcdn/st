@@ -31,6 +31,8 @@
                     {% include("html/video_player_iframe"|common) %}
                 {% elif(video.m3u8_type=="pan") %}
                     {% include("html/video_pan"|common) %}
+                {% elif(video.m3u8_type=="desc") %}
+                    {% include("html/video_desc"|common) %}
                 {% else %}
                     {% if(video_ad.if_video_inside_ads_full) %}
                         {% include("html/video_ads_full"|common) %}
