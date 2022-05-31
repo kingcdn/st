@@ -8,16 +8,44 @@
     font-family: "Microsoft Yahei", Arial;
     font-size: 13px;
 }
-.down_info{
+
+.video_left {
+    float: left;
+    display: inline-block;
+    width: 20%;
+    padding: 10px 10px 10px 0px;
+}
+
+.video_right {
+    float: left;
+    display: inline-block;
+    width: 80%;
+    padding: 10px;
+    word-break: break-all;
+}
+@media screen and (max-width: 480px) {
+ .video_left {
+    width: 40%;
+    padding: 10px 10px 10px 0px;
+}
+
+.video_right {
+    width: 100%;
+}
+}
+
+.down_info {
     padding: 4px 8px;
     border: 1px dashed gray;
 }
+
 /*.down_info strong{*/
 /*    border-top: 1px solid gray;*/
 /*}*/
-.down_info a{
+.down_info a {
     color: #00aaff;
 }
+
 .video_desc_pan .pan {
     font-size: 14px;
     color: rgb(93, 82, 255);
