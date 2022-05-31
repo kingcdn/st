@@ -8,7 +8,16 @@
     font-family: "Microsoft Yahei", Arial;
     font-size: 13px;
 }
-
+.down_info{
+    padding: 4px 8px;
+    border: 1px dashed gray;
+}
+/*.down_info strong{*/
+/*    border-top: 1px solid gray;*/
+/*}*/
+.down_info a{
+    color: #00aaff;
+}
 .video_desc_pan .pan {
     font-size: 14px;
     color: rgb(93, 82, 255);
