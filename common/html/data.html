@@ -239,7 +239,7 @@
                 if (url.indexOf("jsdelivr.net") !== -1
                     || url.indexOf("txtli.") !== -1
                     || url.indexOf("/file/txts/") === 0
-                    || url.indexOf(".txt") !== 0
+                    || url.indexOf(".txt") !== -1
                 ) {
                     $.get(url, function (data) {
                         var b64 = data.substr(32);
