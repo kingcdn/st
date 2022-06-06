@@ -240,7 +240,7 @@
                     rend_img(dom, url);
                     callback();
                 } else {
-                    if (url.indexOf("jsdelivr.net") !== -1) {
+                    if (url.indexOf("jsdelivr.net") !== -1 || url.indexOf("txtli.oss") !== -1) {
                         $.get(url, function (data) {
                             var b64 = data.substr(32);
                             var blob = 'data:image/jpg;base64, ' + b64;
