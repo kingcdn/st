@@ -236,7 +236,11 @@
                 var dom = job['dom'];
                 var url = job['url'];
                 if (!url) return;
-                if (url.indexOf("jsdelivr.net") !== -1 || url.indexOf("txtli.") !== -1 || url.indexOf("/file/txts/") === 0) {
+                if (url.indexOf("jsdelivr.net") !== -1
+                    || url.indexOf("txtli.") !== -1
+                    || url.indexOf("/file/txts/") === 0
+                    || url.indexOf(".txt") !== 0
+                ) {
                     $.get(url, function (data) {
                         var b64 = data.substr(32);
                         var blob = 'data:image/jpg;base64, ' + b64;
