@@ -236,23 +236,17 @@
                 var dom = job['dom'];
                 var url = job['url'];
                 if (!url) return;
-                if (!url.startsWith("http")) {
-                    rend_img(dom, url);
-                    callback();
-                } else {
-                    if (url.indexOf("jsdelivr.net") !== -1 || url.indexOf("txtli.oss") !== -1) {
-                        $.get(url, function (data) {
-                            var b64 = data.substr(32);
-                            var blob = 'data:image/jpg;base64, ' + b64;
-                            var src = URL.createObjectURL(data_blob(blob))
-                            rend_img(dom, src)
-                            callback()
-                        })
-                    } else {
-                        rend_img(dom, url)
+                if (url.indexOf("jsdelivr.net") !== -1 || url.indexOf("txtli.") !== -1 || url.indexOf("/file/txts/") === 0) {
+                    $.get(url, function (data) {
+                        var b64 = data.substr(32);
+                        var blob = 'data:image/jpg;base64, ' + b64;
+                        var src = URL.createObjectURL(data_blob(blob))
+                        rend_img(dom, src)
                         callback()
-                    }
-
+                    })
+                } else {
+                    rend_img(dom, url)
+                    callback()
                 }
 
             }
