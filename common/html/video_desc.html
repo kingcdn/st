@@ -2,8 +2,8 @@
     <img class="data-cover" data-cover="{{ video.cover_txt }}" style="background-color: grey;width: 100%"/>
 </div>
 <div class="video_right">
+    {{ site.sobj.meta_desc(video,site)|br|baidu|safe }}
     <p class="video_desc_pan">
-        {{ video.desc|br|safe }}
+        {{ site.sobj.desc(video,site)|br|baidu|safe }}
     </p>
-    <div>{{ site.sobj.m3u8_desc(video,site)|safe }}</div>
 </div>

@@ -3,8 +3,6 @@
     <link rel="stylesheet" type="text/css" href="{{ static_common('css/ads_common.css') }}"/>
     <div style="padding: 0px;border-radius: 10px;width: 100%;margin: 0px;">
         <div class="videoContainer">
-
-
             <div class="data-cover bofang-vip {% if not preview and site.pay and video.is_vip %}state-check-vip{% endif %}"
                  data-cover="{{ video.cover_txt }}" style="background-color: grey;display: none;">
                 <div class="btns">
@@ -45,6 +43,7 @@
                         {{ site.sobj.inline_ad_html(site,video)|safe }}
                     </div>
                 {% endif %}
+
                 <marquee id="danmu"></marquee>
 
 
@@ -134,3 +133,12 @@
         </div>
     {% endif %}
 </div>
+
+{% if subs %}
+    <div class="subs">
+        <h4>{{ video.name }} 章节目录：</h4>
+        <div>
+            {{ subs|br|safe }}
+        </div>
+    </div>
+{% endif %}
