@@ -1,3 +1,7 @@
+h1 {
+    font-size: 28px;
+}
+
 .video_desc_pan {
     background-color: transparent;
     text-decoration-line: none;
@@ -37,6 +41,42 @@
     color: #00A0E2;
 }
 
+.sub {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 4px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #f6f4ec;
+    color: #333333;
+}
+
+.sub h4 {
+    text-align: center;
+    font-size: 23px;
+    margin:10px;
+}
+.sub .tip{
+    text-align: center;
+    font-size: 10px;
+    margin: 10px;
+}
+.sub div{
+    font-size: 14px;
+}
+.sub_page{
+    font-size: 16px;
+    text-align: center;
+}
+.sub_page a{
+    text-align: center;
+    margin: 8px;
+    background-color: #333;
+    color:#f6f4ec ;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
 .subs {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 4px;
     padding: 15px 10px;
@@ -44,9 +84,11 @@
     margin-bottom: 10px;
     width: 100%;
 }
-.subs div{
+
+.subs div {
     margin-top: 20px;
 }
+
 .subs a {
     display: inline-block;
     width: 30%;

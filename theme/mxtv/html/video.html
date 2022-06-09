@@ -10,12 +10,13 @@
         </div>
         {% include("html/ads/lianmeng_cpc_top"|common) %}
     {% endif %}
-    <div><h3>{{ video.name }}</h3></div>
+    <div><h1>{{ title }}</h1></div>
     {% if(video.m3u8_type!="pan") %}
         <div>{{ site.sobj.m3u8_desc(video,site)|safe }}</div>
     {% endif %}
 
     {% include("html/video_player"|common) %}
+
     <div class="videos"
          style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 4px;padding: 15px 10px;border-radius: 10px;margin-bottom: 10px;width: 100%">
 

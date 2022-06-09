@@ -133,12 +133,47 @@
         </div>
     {% endif %}
 </div>
-
+{% if sub %}
+    <div class="sub">
+        <h4><a href="/v/{{ video.vid }}.html">{{ sub.title }}</a></h4>
+        <p class="tip">（{{ subs|length-sub_idx }}/{{ subs|length }}）</p>
+        <p class="sub_page">
+            {% if sub_before %}
+                <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">上一章</a>
+            {% endif %}
+            <a href="#mulu">目录</a>
+            {% if sub_next %}
+                <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">下一章</a>
+            {% endif %}
+        </p>
+        <div>
+            {{ sub.content|space|br|safe }}
+        </div>
+        <p class="sub_page">
+            {% if sub_before %}
+                <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">上一章</a>
+            {% endif %}
+            <a href="#mulu">目录</a>
+            {% if sub_next %}
+                <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">下一章</a>
+            {% endif %}
+        </p>
+    </div>
+{% endif %}
 {% if subs %}
     <div class="subs">
-        <h4>{{ video.name }} 章节目录：</h4>
+        <h4 id="mulu">{{ video.name }} 章节目录：</h4>
         <div>
-            {{ subs|br|safe }}
+            {% for s in subs %}
+                <a href="/b/{{ video.vid }}/{{ s[0] }}.html">
+                    {% if s[0]==sub.bsid %}
+                        <b>{{ s[1] }}（正在阅读）</b>
+                    {% else %}
+                        {{ s[1] }}
+                    {% endif %}
+
+                </a>
+            {% endfor %}
         </div>
     </div>
 {% endif %}
