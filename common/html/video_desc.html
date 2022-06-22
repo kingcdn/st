@@ -1,6 +1,8 @@
-<div class="video_left">
-    <img class="data-cover" data-cover="{{ video.cover_txt }}" style="background-color: grey;width: 100%"/>
-</div>
+{% if video.has_cover %}
+    <div class="video_left">
+        <img class="data-cover" data-cover="{{ video.cover_txt }}" style="background-color: grey;width: 100%"/>
+    </div>
+{% endif %}
 <div class="video_right">
     {{ site.sobj.meta_desc(video,site)|br|baidu|safe }}
     <p class="video_desc_pan">

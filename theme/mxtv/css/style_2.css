@@ -473,3 +473,8 @@ body {
 .comments i {
     float: right;
 }
+.timeline_txt:nth-of-type(odd) {
+    background-color: #f5f8fa;
+    padding: 2px 5px 2px 0;
+    border-radius: 6px;
+}

@@ -136,28 +136,34 @@
 {% if sub %}
     <div class="sub">
         <h4><a href="/v/{{ video.vid }}.html">{{ sub.title }}</a></h4>
-        <p class="tip">（{{ subs|length-sub_idx }}/{{ subs|length }}）</p>
-        <p class="sub_page">
-            {% if sub_before %}
-                <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">上一章</a>
-            {% endif %}
-            <a href="#mulu">目录</a>
-            {% if sub_next %}
-                <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">下一章</a>
-            {% endif %}
-        </p>
+        {% if not video.sub_bsid %}
+            <p class="tip">（{{ subs|length-sub_idx }}/{{ subs|length }}）</p>
+            <p class="sub_page">
+                {% if sub_before %}
+                    <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">上一章</a>
+                {% endif %}
+
+                <a href="#mulu">目录</a>
+                {% if sub_next %}
+                    <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">下一章</a>
+                {% endif %}
+
+            </p>
+        {% endif %}
         <div>
             {{ sub.content|space|br|safe }}
         </div>
-        <p class="sub_page">
-            {% if sub_before %}
-                <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">上一章</a>
-            {% endif %}
-            <a href="#mulu">目录</a>
-            {% if sub_next %}
-                <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">下一章</a>
-            {% endif %}
-        </p>
+        {% if not video.sub_bsid %}
+            <p class="sub_page">
+                {% if sub_before %}
+                    <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">上一章</a>
+                {% endif %}
+                <a href="#mulu">目录</a>
+                {% if sub_next %}
+                    <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">下一章</a>
+                {% endif %}
+            </p>
+        {% endif %}
     </div>
 {% endif %}
 {% if subs %}

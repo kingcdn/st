@@ -54,25 +54,31 @@ h1 {
 .sub h4 {
     text-align: center;
     font-size: 23px;
-    margin:10px;
+    margin: 10px;
 }
-.sub .tip{
+
+
+
+.sub .tip {
     text-align: center;
     font-size: 10px;
     margin: 10px;
 }
-.sub div{
+
+.sub div {
     font-size: 14px;
 }
-.sub_page{
+
+.sub_page {
     font-size: 16px;
     text-align: center;
 }
-.sub_page a{
+
+.sub_page a {
     text-align: center;
     margin: 8px;
     background-color: #333;
-    color:#f6f4ec ;
+    color: #f6f4ec;
     padding: 4px 8px;
     border-radius: 4px;
 }
