@@ -38,8 +38,8 @@
     <!--导航-->
     <div class="look">
         <div class="focus">
-            {% if friend_links and friend_links.get('精品') %}
-                {% for link in friend_links['精品'] %}
+            {% if friend_links and friend_links.get('名站') %}
+                {% for link in friend_links['名站'] %}
                     <a href="{{ link.url }}" title="{{ link.name }}" target="_blank"
                        rel="external nofollow">{{ link.name }}</a>
                 {% endfor %}

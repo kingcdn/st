@@ -14,7 +14,7 @@
         <ul id='recommendLinks' class="ul_link">
             {% if friend_links %}
                 {% for cate in friend_links %}
-                    {% if cate=='精品' %}
+                    {% if cate=='名站' %}
                         {% for link in friend_links[cate] %}
                             <li class="yellow"><a target="blank" href="{{ link.url }}">{% if link.img and link.img.url_txt %}
                                 <img alt="{{ link.name }}" data-cover="{{ link.img.url_txt }}"
