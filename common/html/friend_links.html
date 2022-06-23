@@ -4,7 +4,7 @@
         <div class="link-content">
             {% for cate in friend_links %}
                 <div>
-                    <span class="cate-title">{{ cate }}类:</span>
+                    <span class="cate-title">{{ cate }}</span>
                     {% for link in friend_links[cate] %}
                         <a class="link-item" href="{{ link.url }}" target="_blank">{{ link.name }}</a>
                     {% endfor %}

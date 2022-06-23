@@ -398,11 +398,12 @@ body {
 
 .friend-link-container .cate-title {
     display: block;
-    padding: 2px 5px;
+    padding: 8px 5px;
     border-top: 1px solid #4a4949;
     font-size: 14px;
     color: #fff;
-    border-radius: 4px 0px 0px 4px
+    border-radius: 4px 0px 0px 4px;
+    font-weight: bold;
 }
 
 .friend-link-container .container-title {
@@ -415,10 +416,10 @@ body {
 .friend-link-container .link-item {
     padding: 2px 8px;
     display: inline-block;
-    background-color: #ffc200;
-    color: white;
+    background-color: #2c2611;
+    color: #dcd1d1;
     margin: 4px 2px;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 4px;
 }
 
