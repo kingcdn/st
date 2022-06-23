@@ -8,9 +8,9 @@
     {% if site.icon %}
         <link rel="shortcut icon" href="{{ site.icon }}">
     {% endif %}
-    <link rel="stylesheet" href="https://cdndelivr.oss-cn-guangzhou.aliyuncs.com/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdndelivr.oss-cn-guangzhou.aliyuncs.com/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ static('css/style_2.css',site.theme) }}"/>
-
 
 
     <script src="https://cdndelivr.oss-cn-guangzhou.aliyuncs.com/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
@@ -82,17 +82,20 @@
                         {#                        </a>#}
                         <a href="https://app.wsdghja.com/?agentId=7173532" target="_blank" style="width: 12%;">
                             <img src="{{ static('imgs/down.png',site.theme) }}"/>
-                            <span>官方App</span>
+                            <span>App</span>
                         </a>
                     </div>
                 </div>
             {% endif %}
 
-            {% if site.key=="madou" %}
-                <div style="text-align: center;padding-top: 6px">
-                    <p style="display: inline-block;color: #e90e0e;margin: 0px">请牢记永久中文域名：麻豆传媒.net</p>
-                </div>
-            {% endif %}
+
+            <div style="text-align: center;padding-top: 6px">
+                {% if site.key=="madou" %}
+                    <p style="color: #e90e0e;margin: 0px">请牢记永久中文域名：麻豆传媒.net</p>
+                {% endif %}
+                <p style="color: #e90e0e;margin: 0px">DRM removal, please email gordicarmink@gmail.com</p>
+            </div>
+
 
         </div>
         <div class="bottom-round"></div>
@@ -112,12 +115,12 @@
         {% if site.github %}
             <p><a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a></p>
         {% endif %}
-{#        {% if site.email %}#}
-            <p><a href="mailto:gordicarmink@gmail.com">任何事务请咨询：gordicarmink@gmail.com</a></p>
-{#        {% endif %}#}
+        {#        {% if site.email %}#}
+        <p><a href="mailto:gordicarmink@gmail.com">任何事务请咨询：gordicarmink@gmail.com</a></p>
+        {#        {% endif %}#}
         {% if site.tg_group %}
             <p>
-{#                <a href="https://t.me/{{ site.tg_group }}" target="_blank" style="color: red">加入TG官方频道，享受无限制播放</a>#}
+                {#                <a href="https://t.me/{{ site.tg_group }}" target="_blank" style="color: red">加入TG官方频道，享受无限制播放</a>#}
             </p>
         {% endif %}
     </div>
