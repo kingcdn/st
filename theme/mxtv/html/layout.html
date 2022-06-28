@@ -93,7 +93,10 @@
                 {% if site.key=="madou" %}
                     <p style="color: #e90e0e;margin: 0px">请牢记永久中文域名：麻豆传媒.net</p>
                 {% endif %}
-                <p style="color: #e90e0e;margin: 0px;font-size: 12px;">DRM removal, please email gordicarmink@gmail.com</p>
+                {% if site.source=="kuaimao" %}
+                    <p style="color: #e90e0e;margin: 0px;font-size: 12px;">DRM removal, please email
+                        gordicarmink@gmail.com</p>
+                {% endif %}
             </div>
 
 
@@ -115,9 +118,9 @@
         {% if site.github %}
             <p><a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a></p>
         {% endif %}
-        {#        {% if site.email %}#}
-        <p><a href="mailto:gordicarmink@gmail.com">任何事务请咨询：gordicarmink@gmail.com</a></p>
-        {#        {% endif %}#}
+        {% if site.source=="kuaimao" %}
+            <p><a href="mailto:gordicarmink@gmail.com">任何事务请咨询：gordicarmink@gmail.com</a></p>
+        {% endif %}
         {% if site.tg_group %}
             <p>
                 {#                <a href="https://t.me/{{ site.tg_group }}" target="_blank" style="color: red">加入TG官方频道，享受无限制播放</a>#}
