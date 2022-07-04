@@ -23,7 +23,7 @@ input {
 
 body {
     background-color: #fff;
-    max-width: 992px;
+    /*max-width: 992px;*/
     display: block;
     margin: 0px auto;
 }
