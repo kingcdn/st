@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="hubtraffic-domain-validation" content="afb29f3d99bb4500"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{ mix_meta(site,[
+    {"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"},
+    {"http-equiv":"X-UA-Compatible","content":"ie=edge"},
+    {"charset":"utf-8"},{"http-equiv":"Cache-Control","content":site.key}])|safe }}
     {% if site.icon %}
         <link rel="shortcut icon" href="{{ site.icon }}">
     {% endif %}
     <link rel="stylesheet"
           href="https://cdndelivr.oss-cn-guangzhou.aliyuncs.com/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ static('css/style_2.css',site.theme) }}"/>
-
-
     <script src="https://cdndelivr.oss-cn-guangzhou.aliyuncs.com/gh/jquery/jquery@3.3.1/dist/jquery.js"></script>
     {% if site.auth %}
         <script src="https://cdndelivr.oss-cn-guangzhou.aliyuncs.com/npm/js-base64@3.6.1/base64.min.js"></script>
@@ -21,13 +19,11 @@
     <script src="https://cdndelivr.oss-cn-guangzhou.aliyuncs.com/gh/twbs/bootstrap@3.0.3/dist/js/bootstrap.min.js"></script>
     {% include("html/title"|common) %}
     {% include("html/meta_seo"|common) %}
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
     {% block head %}{% endblock %}
     <style type="text/css">
         .videos .rowdx div .item .image {
         {{ site.css.item_height }}
         }
-
         @media screen and (min-width: 640px) {
 
         }
