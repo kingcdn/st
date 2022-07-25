@@ -4,6 +4,7 @@
        language="zh-CN">
     {% if video.m3u8 %}
         <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
+{#        <source src="https://vs34.thisav.com/dash/e5BM_sacWnLJdeGqJvHiuQ,1657835580/599379_dashinit.mp4" type="video/mp4"/>#}
     {% endif %}
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">

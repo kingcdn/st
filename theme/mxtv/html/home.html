@@ -14,7 +14,7 @@
                 {% for source in site.multi_sources %}
                     <div class="item-box ">
                         <a href="{{ link(site,source.key_display,tag_now,order_now) }}">
-                            <div class="item {% if(source.key_display==source_now) %}active{% endif %}">{{ source.name }}</div>
+                            <div class="item {% if(source.key_display==source_now) %}active{% endif %}">{{ source.name|_ }}</div>
                         </a>
                     </div>
                 {% endfor %}
@@ -26,7 +26,7 @@
             {% for cate in site.cates %}
                 <div class="item-box ">
                     <a href="{{ link(site,source_now,None,order_now,1,cate) }}">
-                        <div class="item {% if(cate_now==cate) %}active{% endif %}">{{ cate }}</div>
+                        <div class="item {% if(cate_now==cate) %}active{% endif %}">{{ cate|_ }}</div>
                     </a>
                 </div>
             {% endfor %}
@@ -40,7 +40,7 @@
                 {% for tag in tag_group %}
                     <div class="item-box ">
                         <a href="{{ link(site,source_now,tag,order_now,1,cate_now) }}">
-                            <div class="item {% if(tag_now==tag) %}active{% endif %}">{{ tag }}</div>
+                            <div class="item {% if(tag_now==tag) %}active{% endif %}">{{ tag|_ }}</div>
                         </a>
                     </div>
                 {% endfor %}
@@ -52,29 +52,29 @@
             {% for order in orders %}
                 <div class="item-box">
                     <a href="{{ link(site,source_now,tag_now,order,1,cate_now) }}">
-                        <div class="item {% if(order==order_now) %}active{% endif %}">{{ order }}</div>
+                        <div class="item {% if(order==order_now) %}active{% endif %}">{{ order|_ }}</div>
                     </a>
                 </div>
             {% endfor %}
             {% if site.site_type=="视频" %}
                 <div class="item-box">
                     <a href="https://94se.net/channel/z8c95NHtQE.html" target="_blank">
-                        <div class="item">美女钓鱼</div>
+                        <div class="item">{{ "美女钓鱼"|_ }}</div>
                     </a>
                 </div>
                 <div class="item-box">
                     <a href="https://mm6db.xyz" target="_blank">
-                        <div class="item">学生妹直播</div>
+                        <div class="item">{{ "学生妹直播"|_ }}</div>
                     </a>
                 </div>
                 <div class="item-box">
                     <a href="https://c82ty.com" target="_blank">
-                        <div class="item">买彩票</div>
+                        <div class="item">{{ "买彩票"|_ }}</div>
                     </a>
                 </div>
                 <div class="item-box">
                     <a href="https://dk99kf.com" target="_blank">
-                        <div class="item">棋牌游戏</div>
+                        <div class="item">{{ "棋牌游戏"|_ }}</div>
                     </a>
                 </div>
             {% endif %}
@@ -95,24 +95,24 @@
             <div class="rowdx">
                 <div>
                     <a href="{{ link(site,source_now,tag_now,order_now,1,cate_now) }}">
-                        <div class="item">首页</div>
+                        <div class="item">{{ "首页"|_ }}</div>
                     </a>
                 </div>
                 {% if(page>1) %}
                     <div>
                         <a href="{{ link(site,source_now,tag_now,order_now,page-1,cate_now) }}">
-                            <div class="item">上一页</div>
+                            <div class="item">{{ "上一页"|_ }}</div>
                         </a>
                     </div>
                 {% endif %}
                 <div>
-                    <div class="item selection">第{{ page }}页</div>
+                    <div class="item selection">{{ "第"|_ }}{{ page }}{{ "页"|_ }}</div>
                 </div>
 
 
                 <div>
                     <a href="{{ link(site,source_now,tag_now,order_now,page + 1,cate_now) }}">
-                        <div class="item">下一页</div>
+                        <div class="item">{{ "下一页"|_ }}</div>
                     </a>
                 </div>
 
@@ -126,6 +126,9 @@
             {#var t51638 = parseInt(Date.parse(new Date()) / 100000);#}
             {#document.write('<script async src="https://9du.srgwxvm.cn/' + t51638 + '51638"><\/script>');#}
         </script>
+    </div>
+    <div style="text-align: center">
+        <p><a href="/lang-change">{{ "切换语言"|_ }}</a></p>
     </div>
 {% endblock %}
 

@@ -24,6 +24,7 @@
         .videos .rowdx div .item .image {
         {{ site.css.item_height }}
         }
+
         @media screen and (min-width: 640px) {
 
         }
@@ -37,7 +38,7 @@
             <div class="collection_top">
                 <div class="left" style="min-width: 100px;overflow: hidden;">
                     <div style="font-size: 12px;font-weight: bold;">
-                        <a style="font-size: 16px;" href="/index.html">{{ site.name }}</a>
+                        <a style="font-size: 16px;" href="/index.html">{{ site.name|_ }}</a>
                     </div>
                     <div style="font-size: 8px;">
                         {% if site.tg_group %}
@@ -58,19 +59,19 @@
                     <div class="big-apps">
                         <a href="https://mm6db.xyz" target="_blank" style="width: 12%;">
                             <img src="{{ static('imgs/live.png',site.theme) }}"/>
-                            <span>直播</span>
+                            <span>{{ "直播"|_ }}</span>
                         </a>
                         <a href="https://mm6db.xyz" target="_blank" style="width: 12%;">
                             <img id="yuehui" src="{{ static('imgs/yuehui.png',site.theme) }}"/>
-                            <span>约炮</span>
+                            <span>{{ "约炮"|_ }}</span>
                         </a>
                         <a href="https://ty83f.net" target="_blank" style="width: 12%;">
                             <img src="{{ static('imgs/manhua.png',site.theme) }}"/>
-                            <span>太阳城</span>
+                            <span>{{ "太阳城"|_ }}</span>
                         </a>
                         <a href="https://dk99kf.com" target="_blank" style="width: 12%;">
                             <img src="{{ static('imgs/qipai.png',site.theme) }}"/>
-                            <span>棋牌</span>
+                            <span>{{ "棋牌"|_ }}</span>
                         </a>
                         {#                        <a href="http://madou.168843.me/" target="_blank" style="width: 12%;">#}
                         {#                            <img src="{{ static('imgs/money.png',site.theme) }}"/>#}
@@ -87,7 +88,7 @@
 
             <div style="text-align: center;padding-top: 6px">
                 {% if site.key=="madou" %}
-                    <p style="color: #e90e0e;margin: 0px">请牢记永久中文域名：麻豆传媒.net</p>
+                    <p style="color: #e90e0e;margin: 0px">{{ "请牢记永久中文域名"|_ }}：麻豆传媒.net</p>
                 {% endif %}
                 {% if site.source=="kuaimao" %}
                     <p style="color: #e90e0e;margin: 0px;font-size: 12px;">DRM removal, please email
@@ -112,10 +113,10 @@
     {% include("html/friend_links"|common) %}
     <div style="text-align: center">
         {% if site.github %}
-            <p><a target="_blank" href="{{ site.github }}">点击去Github收藏发布页</a></p>
+            <p><a target="_blank" href="{{ site.github }}">{{ "点击去Github收藏发布页"|_ }}</a></p>
         {% endif %}
         {% if site.source=="kuaimao" %}
-            <p><a href="mailto:gordicarmink@gmail.com">任何事务请咨询：gordicarmink@gmail.com</a></p>
+            <p><a href="mailto:gordicarmink@gmail.com">{{ "任何事务请咨询"|_ }}：gordicarmink@gmail.com</a></p>
         {% endif %}
         {% if site.tg_group %}
             <p>
