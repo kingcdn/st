@@ -140,27 +140,55 @@
             <p class="tip">（{{ subs|length-sub_idx }}/{{ subs|length }}）</p>
             <p class="sub_page">
                 {% if sub_before %}
-                    <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">上一章</a>
+                    <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">
+                        {% if not site.sub_img %}
+                            上一章
+                        {% else %}
+                            上一张
+                        {% endif %}
+                    </a>
                 {% endif %}
 
-                <a href="#mulu">目录</a>
+                {% if not site.sub_img %}
+                    <a href="#mulu">目录</a>
+                {% endif %}
                 {% if sub_next %}
-                    <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">下一章</a>
+                    <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">
+                        {% if not site.sub_img %}
+                            下一章
+                        {% else %}
+                            下一张
+                        {% endif %}
+                    </a>
                 {% endif %}
 
             </p>
         {% endif %}
         <div>
-            {{ sub.content|space|br|safe }}
+            <img src="{{ sub.content }}" width="100%" style="margin: 4px;"/>
         </div>
         {% if not video.sub_bsid %}
             <p class="sub_page">
                 {% if sub_before %}
-                    <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">上一章</a>
+                    <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">
+                        {% if not site.sub_img %}
+                            上一章
+                        {% else %}
+                            上一张
+                        {% endif %}
+                    </a>
                 {% endif %}
-                <a href="#mulu">目录</a>
+                {% if not site.sub_img %}
+                    <a href="#mulu">目录</a>
+                {% endif %}
                 {% if sub_next %}
-                    <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">下一章</a>
+                    <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">
+                        {% if not site.sub_img %}
+                            下一章
+                        {% else %}
+                            下一张
+                        {% endif %}
+                    </a>
                 {% endif %}
             </p>
         {% endif %}
@@ -168,18 +196,30 @@
 {% endif %}
 {% if subs %}
     <div class="subs">
-        <h4 id="mulu">{{ video.name }} 章节目录：</h4>
-        <div>
-            {% for s in subs %}
-                <a href="/b/{{ video.vid }}/{{ s[0] }}.html">
-                    {% if s[0]==sub.bsid %}
-                        <b>{{ s[1] }}（正在阅读）</b>
-                    {% else %}
-                        {{ s[1] }}
-                    {% endif %}
+        {% if site.sub_img %}
+            <h4 id="mulu">{{ video.name }} </h4>
+            <div>
+                {% for s in subs %}
+                    <a href="/b/{{ video.vid }}/{{ s.bsid }}.html">
+                        <img src="{{ s.content }}" width="100%" style="margin: 4px;"/>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h4 id="mulu">{{ video.name }} 章节目录：</h4>
+            <div>
+                {% for s in subs %}
+                    <a href="/b/{{ video.vid }}/{{ s.bsid }}.html">
+                        {% if s.bsid==sub.bsid %}
+                            <b>{{ s.title }}（正在阅读）</b>
+                        {% else %}
+                            {{ s.title }}
+                        {% endif %}
 
-                </a>
-            {% endfor %}
-        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+
     </div>
 {% endif %}
