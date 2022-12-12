@@ -165,7 +165,12 @@
             </p>
         {% endif %}
         <div>
-            <img src="{{ sub.content }}" width="100%" style="margin: 4px;"/>
+            {% if not site.sub_img %}
+                {{ sub.content }}
+            {% else %}
+                <img src="{{ sub.content }}" width="100%" style="margin: 4px;"/>
+            {% endif %}
+
         </div>
         {% if not video.sub_bsid %}
             <p class="sub_page">
