@@ -166,7 +166,7 @@
         {% endif %}
         <div>
             {% if not site.sub_img %}
-                {{ sub.content|br }}
+                {{ sub.content|br|safe }}
             {% else %}
                 <img src="{{ sub.content }}" width="100%" style="margin: 4px;"/>
             {% endif %}
