@@ -10,18 +10,20 @@
         </div>
         {% include("html/ads/lianmeng_cpc_top"|common) %}
     {% endif %}
-    <div><h1>{{ title }}</h1></div>
-    <div class="nav_type">
-        <div class="listdx">
-            {% for ke in video.tags %}
-                <div class="item-box ">
-                    <a href="{{ link(site,source_now,ke,order_now,1,cate_now) }}">
-                        <div class="item">{{ ke }}</div>
-                    </a>
-                </div>
-            {% endfor %}
+    <div><h1 style="font-size: 15px;">{{ title }}</h1></div>
+    {% if video.tags|length>0 %}
+        <div class="nav_type">
+            <div class="listdx">
+                {% for ke in video.tags %}
+                    <div class="item-box ">
+                        <a href="{{ link(site,source_now,ke,order_now,1,cate_now) }}">
+                            <div class="item">{{ ke }}</div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    {% endif %}
     {% if(video.m3u8_type!="pan") %}
         <div>{{ site.sobj.m3u8_desc(video,site)|safe }}</div>
     {% endif %}

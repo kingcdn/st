@@ -1,0 +1,27 @@
+{% if subs and site.sub_img %}
+    <div class="videos"
+         style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 4px;padding: 10px 10px;border-radius: 10px;margin-bottom: 10px;width: 100%">
+        <div class="listdx">
+            <div class="rowdx" style="padding: 0px;">
+                {% for s in subs %}
+                    <div class="col-xs-2 col-sm-2 col-md-2 timeline" style="padding: 2px;">
+                        <a href="/b/{{ video.vid }}/{{ s.bsid }}.html">
+                            <div class="item">
+                                {% if s.is_txt %}
+                                    <div class="image" style="max-height: 80px;{% if sub_idx==loop.index %}border-radius:6px;border:6px solid #ffc200;{% else %}border-radius:1px;border:1px solid #f6f4ed;{% endif %}">
+                                        <div referrerpolicy="no-referrer" data-cover="
+                                                    {% if s.thum %}{{ s.thum }}{% else %}{{ video.cover }}{% endif %}"
+                                             class="data-cover"
+                                             width="100%" style=""></div>
+                                    </div>
+                                {% else %}
+                                    <img src="{{ s.content }}" width="100%" style="margin: 4px;"/>
+                                {% endif %}
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

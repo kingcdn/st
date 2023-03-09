@@ -31,9 +31,11 @@
                     {% include("html/video_pan"|common) %}
                 {% elif(video.m3u8_type=="desc") %}
                     {% include("html/video_desc"|common) %}
+                {% elif(video.m3u8_type=="txt") %}
+                    {% include("html/video_txt"|common) %}
                 {% else %}
                     {% if(video_ad.if_video_inside_ads_full) %}
-                        {% include("html/video_ads_full"|common) %}
+                        {% include("html/video_url"|common) %}
                     {% else %}
                         {% include("html/video_ads_small"|common) %}
                     {% endif %}
@@ -108,19 +110,19 @@
         {% endif %}
     </div>
     {% if site.site_type=="视频" %}
-        <div style="text-align: center;margin: 12px 0px;">
+        <div style="text-align: center;margin: 12px 0px;word-break: keep-all;display: inline-block;">
             <a href="https://mm6db.xyz" target="_blank"
-               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin: 2px 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;display: inline-block">
                 官方约炮App</a>
             <a href="https://ty83f.net" target="_blank"
-               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin: 2px 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;display: inline-block">
                 太阳城</a>
             <a href="https://mm6db.xyz" target="_blank"
-               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+               style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin: 2px 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;display: inline-block">
                 美眉直播</a>
             {% if nid %}
                 <a href="/v/{{ nid }}.html"
-                   style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin-left: 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;">
+                   style="cursor: pointer;cursor: pointer;padding: 3px 8px;margin: 2px 5px;background-color: #fff131;border-radius: 5px;font-weight: 700;display: inline-block">
                     下一个视频</a>
             {% endif %}
 
@@ -133,14 +135,16 @@
         </div>
     {% endif %}
 </div>
+{% include("html/subs_img"|common) %}
 {% if sub %}
     <div class="sub">
-        <h4><a href="/v/{{ video.vid }}.html">{{ sub.title }}</a></h4>
-        {% if not video.sub_bsid %}
-            <p class="tip">（{{ subs|length-sub_idx }}/{{ subs|length }}）</p>
+        {% if not sub.is_pic and not sub.is_video %}
+            <h4><a href="/v/{{ video.vid }}.html">{{ sub.title }}</a></h4>
+        {% endif %}
+        {% if not video.sub_bsid and (not sub.is_pic and not sub.is_video) %}
             <p class="sub_page">
                 {% if sub_before %}
-                    <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">
+                    <a href="/b/{{ video.vid }}/{{ sub_before.bsid }}.html">
                         {% if not site.sub_img %}
                             上一章
                         {% else %}
@@ -148,12 +152,12 @@
                         {% endif %}
                     </a>
                 {% endif %}
-
+                <a class="tip">（{{ sub_idx }}/{{ subs|length }}）</a>
                 {% if not site.sub_img %}
                     <a href="#mulu">目录</a>
                 {% endif %}
                 {% if sub_next %}
-                    <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">
+                    <a href="/b/{{ video.vid }}/{{ sub_next.bsid }}.html">
                         {% if not site.sub_img %}
                             下一章
                         {% else %}
@@ -168,14 +172,27 @@
             {% if not site.sub_img %}
                 {{ sub.content|br|safe }}
             {% else %}
-                <img src="{{ sub.content }}" width="100%" style="margin: 4px;"/>
+                {% if sub.is_pic %}
+                    {% if sub.is_txt %}
+                        <div class="image">
+                            <img referrerpolicy="no-referrer" data-cover="{{ sub.content }}"
+                                 class="data-cover"
+                                 width="100%" style="margin: 4px;"/>
+                        </div>
+                    {% else %}
+                        <img src="{{ sub.content }}" width="100%" style="margin: 4px;"/>
+                    {% endif %}
+                {% elif sub.is_video %}
+                    {% include("html/video_url"|common) %}
+                {% endif %}
+
             {% endif %}
 
         </div>
-        {% if not video.sub_bsid %}
+        {% if not video.sub_bsid and (not sub.is_pic and not sub.is_video) %}
             <p class="sub_page">
                 {% if sub_before %}
-                    <a href="/b/{{ video.vid }}/{{ sub_before[0] }}.html">
+                    <a href="/b/{{ video.vid }}/{{ sub_before.bsid }}.html">
                         {% if not site.sub_img %}
                             上一章
                         {% else %}
@@ -183,11 +200,12 @@
                         {% endif %}
                     </a>
                 {% endif %}
+                <a class="tip">（{{ sub_idx }}/{{ subs|length }}）</a>
                 {% if not site.sub_img %}
                     <a href="#mulu">目录</a>
                 {% endif %}
                 {% if sub_next %}
-                    <a href="/b/{{ video.vid }}/{{ sub_next[0] }}.html">
+                    <a href="/b/{{ video.vid }}/{{ sub_next.bsid }}.html">
                         {% if not site.sub_img %}
                             下一章
                         {% else %}
@@ -199,32 +217,4 @@
         {% endif %}
     </div>
 {% endif %}
-{% if subs %}
-    <div class="subs">
-        {% if site.sub_img %}
-            <h4 id="mulu">{{ video.name }} </h4>
-            <div>
-                {% for s in subs %}
-                    <a href="/b/{{ video.vid }}/{{ s.bsid }}.html">
-                        <img src="{{ s.content }}" width="100%" style="margin: 4px;"/>
-                    </a>
-                {% endfor %}
-            </div>
-        {% else %}
-            <h4 id="mulu">{{ video.name }} 章节目录：</h4>
-            <div>
-                {% for s in subs %}
-                    <a href="/b/{{ video.vid }}/{{ s.bsid }}.html">
-                        {% if s.bsid==sub.bsid %}
-                            <b>{{ s.title }}（正在阅读）</b>
-                        {% else %}
-                            {{ s.title }}
-                        {% endif %}
-
-                    </a>
-                {% endfor %}
-            </div>
-        {% endif %}
-
-    </div>
-{% endif %}
+{% include("html/subs_txt"|common) %}

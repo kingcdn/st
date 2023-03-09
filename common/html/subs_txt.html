@@ -1,0 +1,16 @@
+{% if subs and not site.sub_img %}
+    <div class="subs">
+        <h4 id="mulu">{{ video.name }} 章节目录：</h4>
+        <div>
+            {% for s in subs %}
+                <a href="/b/{{ video.vid }}/{{ s.bsid }}.html">
+                    {% if s.bsid==sub.bsid %}
+                        <b>{{ s.title }}（正在阅读）</b>
+                    {% else %}
+                        {{ s.title }}
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

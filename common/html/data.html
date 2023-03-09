@@ -194,7 +194,8 @@
             cover_doms.each(function (idx) {
                 var cover_dom = $(cover_doms[idx]);
                 var cover_url = cover_dom.attr("data-cover");
-                cover_jobs.push({"url": cover_url, "dom": cover_dom})
+                var data_type = cover_dom.attr("type");
+                cover_jobs.push({"url": cover_url, "dom": cover_dom, "data_type": data_type})
             })
             if (cover_jobs.length === 0) {
                 return
@@ -251,9 +252,24 @@
                 dom.removeClass("data-cover");
             }
 
+            function rend_video(dom, src) {
+                {#dom.attr("src", src)#}
+                dom.removeAttr("data-cover").removeClass("data-cover");
+                dom.removeClass("data-cover");
+                {#$('#video').append($('<source></source>').attr('type', 'application/x-mpegURL').attr('src', src))#}
+                {#var player = videojs('video');#}
+                window.myPlayer.src({
+                    type: "video/mp4",
+                    src: src
+                });
+                {#window.myPlayer.play();#}
+            }
+
             function ajax_parse_img_txt(job, callback) {
                 var dom = job['dom'];
                 var url = job['url'];
+                var data_type = job['data_type'];
+                console.log(data_type, url);
                 if (!url) return;
                 if (url.indexOf("jsdelivr.net") !== -1
                     || url.indexOf("txtli.") !== -1
@@ -262,9 +278,15 @@
                 ) {
                     $.get(url, function (data) {
                         var b64 = data.substr(32);
-                        var blob = 'data:image/jpg;base64, ' + b64;
-                        var src = URL.createObjectURL(data_blob(blob))
-                        rend_img(dom, src)
+                        if (data.substr(0, 2) === "d_") {
+                            b64 = data.substr(34).replaceAll("_-_", "d", -1);
+                        }
+                        if (data_type === "application/x-mpegURL") {
+                            rend_video(dom, URL.createObjectURL(data_blob('data:video/mp4;base64, ' + b64)))
+                        } else {
+                            rend_img(dom, URL.createObjectURL(data_blob('data:image/jpg;base64, ' + b64)))
+                        }
+
                         callback()
                     })
                 } else {

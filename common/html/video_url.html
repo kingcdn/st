@@ -1,11 +1,15 @@
-{#<img data-cover="{{ video.cover_txt }}" class="data-cover" style="display: none" id="video_cover"/>#}
 <video id="video" class="play video-js vjs-big-play-centered" controls
        controlsList="nodownload" preload="preload"
        language="zh-CN">
-    {% if video.m3u8 %}
-        <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
-{#        <source src="https://vs34.thisav.com/dash/e5BM_sacWnLJdeGqJvHiuQ,1657835580/599379_dashinit.mp4" type="video/mp4"/>#}
+    {% if sub and sub.is_txt and sub.is_video %}
+        <div class="data-cover" id="source-data" data-cover="{{ sub.content }}" type="application/x-mpegURL"/>
+    {% else %}
+        {% if video.m3u8 %}
+            <source src="{{ video.m3u8|safe }}" type="application/x-mpegURL"/>
+            {#        <source src="https://vs34.thisav.com/dash/e5BM_sacWnLJdeGqJvHiuQ,1657835580/599379_dashinit.mp4" type="video/mp4"/>#}
+        {% endif %}
     {% endif %}
+
     {% if video.sub %}
         <track kind="subtitles" src="{{ video.sub }}" srclang="zh-cn" label="中文" default mode="showing">
     {% endif %}
@@ -95,6 +99,7 @@
             },
             language: 'zh-CN',
         });
+        window.myPlayer = myPlayer;
         $('#switch-source').click(function () {
             myPlayer.src({
                 type: "application/x-mpegURL",
@@ -125,9 +130,6 @@
             {% endfor %}
 
         {% endif %}
-        myPlayer.on("dblclick", function (e) {
-            $(this).pause()
-        })
         {% if site.show_video_inside_ads %}
             var eleAd = $('#advertisement');
             var timer_v = undefined;
@@ -183,7 +185,7 @@
                     elePreview.removeClass("hide");
                 } else {
                     if (myPlayer.currentTime() >= 300) {
-                        myPlayer.pause();
+                        {#myPlayer.pause();#}
                     } else {
                         elePreview.removeClass("finished");
                     }
@@ -191,7 +193,7 @@
             {% endif %}
             {% if site.show_video_inside_ads %}
                 if (eleAd && !eleAd.hasClass("played")) {
-                    myPlayer.pause();
+                    {#myPlayer.pause();#}
                     removeAd();
                 }
             {% endif %}
